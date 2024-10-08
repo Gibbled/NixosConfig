@@ -11,6 +11,7 @@
       <home-manager/nixos>
       ./modules/users/ranjit.nix
       ./modules/system/locale.nix
+      ./modules/system/packages.nix
     ];
 
   # Bootloader.
@@ -145,56 +146,14 @@ programs.neovim = {
   #Enable Docker
   virtualisation.docker.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  pkgs.lact
-  pkgs.neovim
-  pkgs.lsb-release
-  pkgs.usbutils
-  pkgs.pciutils
-  pkgs.wget
-  pkgs.luajitPackages.luarocks-nix
-  pkgs.texliveFull
-  pkgs.hack-font
-  pkgs.openssh
-  pkgs.ccache
-  pkgs.tmux
-  pkgs.stow
-  pkgs.git
-  pkgs.lua
-  pkgs.ripgrep 
-  pkgs.fd 
-  pkgs.neofetch 
-  pkgs.tree-sitter 
-  pkgs.jq
-  pkgs.neofetch
-  pkgs.pandoc
-  pkgs.zotero
-  pkgs.kitty
-  pkgs.pass
-  pkgs.nodejs
-  pkgs.blender-hip
-  pkgs.blender
-  pkgs.btop
-  pkgs.kicad
-  pkgs.virt-manager
-  pkgs.virt-manager-qt
-  pkgs.docker
-  pkgs.usbutils
-
-
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+   };
 
   # List services that you want to enable:
 
