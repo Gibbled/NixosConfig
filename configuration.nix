@@ -13,6 +13,7 @@
       ./modules/system/locale.nix
       ./modules/system/packages.nix
       ./modules/system/ssh.nix
+      ./modules/system/neovim.nix
     ];
 
   # Bootloader.
