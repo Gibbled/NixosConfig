@@ -151,7 +151,6 @@ programs.neovim = {
   configure = {
     customRC = ''
       set number
-      set cc=80
       set list
       set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
       #if &diff
