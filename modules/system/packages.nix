@@ -37,6 +37,8 @@
   pkgs.virt-manager-qt
   pkgs.docker
   pkgs.usbutils
+  pkgs.mpv
+  pkgs.killall
   ];
 
   # Install firefox.
