@@ -14,6 +14,7 @@
       ./modules/system/flakes.nix
       ./modules/system/firewall.nix
       ./modules/system/proxy.nix
+      ./modules/system/firefox.nix
       ./modules/system/desktop-environment.nix
       ./modules/system/remote-desktop.nix
       ./modules/machines/ax8pro/hardware.nix
