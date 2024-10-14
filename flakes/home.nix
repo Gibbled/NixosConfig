@@ -5,6 +5,11 @@
   home.username = "ranjit";
   home.homeDirectory = "/home/ranjit";
 
+  imports = [
+    nix-colors.homeManagerModules.default
+  ];
+
+  colorScheme = nix-colors.colorSchemes.tokyo-night-dark;
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
 

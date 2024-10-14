@@ -12,6 +12,7 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors-url = "github:misterio77/nix-colors";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -34,6 +35,10 @@
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
+	     bar = nixpkgs.lib.nixosSystem {
+             # ...
+             specialArgs = { inherit nix-colors; };
+             };
         ];
       };
     };
