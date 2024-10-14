@@ -3,7 +3,6 @@
 {
   imports =
     [ 
-      <home-manager/nixos>
       ./modules/users/ranjit.nix
       ./modules/system/locale.nix
       ./modules/system/packages.nix
