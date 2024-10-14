@@ -1,5 +1,4 @@
 {
-  description = "Collection of nix-compatible color schemes, and a home-manager module to make theming easier.";
 
   inputs = {
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
