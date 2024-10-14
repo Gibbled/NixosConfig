@@ -1,13 +1,13 @@
-{ config, pkgs, nix-colors, ... }:
+{ config, pkgs,  ... }:
 
 {
   # TODO please change the username & home directory to your own
   home.username = "ranjit";
   home.homeDirectory = "/home/ranjit";
-
   imports = [
-    #nix-colors.homeManagerModules.default
+    ./nix-colors.nix
   ];
+
 
   colorScheme = nix-colors.colorSchemes.tokyo-night-dark;
   # link the configuration file in current directory to the specified location in home directory
