@@ -15,29 +15,18 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      # TODO please change the hostname to your own
-      xybr = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
+ outputs = { nixpkgs, home-manager, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      homeConfigurations."ranjit" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+        extraSpecialArgs = { inherit inputs; };
 
-            # TODO replace ryan with your own username
-            home-manager.users.ranjit = import ./flakes/home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-          }
-        ];
+        modules = [ ./flakes/home.nix ];
       };
     };
-  };
+
 }
