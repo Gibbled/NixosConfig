@@ -35,9 +35,8 @@
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
-	     nixpkgs.lib.nixosSystem {
-             # ...
-             specialArgs = { inherit nix-colors; };
+	    #for nix-colors
+	    specialArgs = { inherit nix-colors; };
              };
         ];
       };
