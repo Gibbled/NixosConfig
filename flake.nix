@@ -12,6 +12,7 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors-url = "github:misterio77/nix-colors";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -19,6 +20,7 @@
       # TODO please change the hostname to your own
       xybr = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	extraSpecialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
 

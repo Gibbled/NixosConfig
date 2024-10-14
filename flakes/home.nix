@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [ inputs.nix-colors.homeManagerModules.default
+  ];
+
+  colorScheme = inputs.nix-colors.colorScheme.tokyo-night-dark;
   # TODO please change the username & home directory to your own
   home.username = "ranjit";
   home.homeDirectory = "/home/ranjit";
