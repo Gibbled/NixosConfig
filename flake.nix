@@ -19,6 +19,7 @@
     nixosConfigurations = {
       # TODO please change the hostname to your own
       xybr = nixpkgs.lib.nixosSystem {
+	specialArgs = { inherit nix-colors; };
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
