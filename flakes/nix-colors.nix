@@ -6,6 +6,8 @@
     nix-colors.homeManagerModules.default
   ];
 
+colorScheme = nix-colors.colorSchemes.tokyo-night-dark;
+
 
   programs = {
 
