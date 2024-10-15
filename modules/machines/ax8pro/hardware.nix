@@ -35,7 +35,7 @@
 
 
   #All the AMDgpu stuff
-  hardware.opengl = true;
+  hardware.opengl.emable = true;
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
   hardware.graphics.extraPackages = with pkgs; [
