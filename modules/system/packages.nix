@@ -39,9 +39,6 @@
   pkgs.usbutils
   pkgs.mpv
   pkgs.killall
-  #Might not need this but amdvulkan was failing because it couln't find it. 
-  #Remove when no longer needed
-  pkgs.libffi
   ];
 
   # Install firefox.
