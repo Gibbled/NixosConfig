@@ -5,7 +5,7 @@
   home.username = "ranjit";
   home.homeDirectory = "/home/ranjit";
   imports = [
-  #./nix-colors.nix
+  inputs.nix-colors.homeManagerModules.default
   ];
 
   # link the configuration file in current directory to the specified location in home directory
