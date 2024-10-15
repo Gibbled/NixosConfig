@@ -35,10 +35,7 @@
 
 
   #All the AMDgpu stuff
-  hardware.opengl = {
-  driSupport = true;
-  driSupport32Bit = true;
-  };
+  hardware.opengl = true;
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
   hardware.graphics.extraPackages = with pkgs; [
