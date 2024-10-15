@@ -32,7 +32,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            extraSpecialArgs = { inherit inputs; };
+            specialArgs = { inherit inputs; };
             # TODO replace ryan with your own username
             home-manager.users.ranjit = import ./flakes/home.nix;
 
