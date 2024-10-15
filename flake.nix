@@ -12,16 +12,17 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
       # TODO please change the hostname to your own
       xybr = nixpkgs.lib.nixosSystem {
+	#specialArgs = { inherit nix-colors; };
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-	  ./flakes/nix-colors.nix
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
