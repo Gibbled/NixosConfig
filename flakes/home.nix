@@ -67,9 +67,6 @@
     gawk
     zstd
     gnupg
-    gcc
-    llvm
-    clang
     # nix related
     #
     # it provides the command `nom` works just like `nix`
