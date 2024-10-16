@@ -3,7 +3,7 @@
 {
   imports =
     [ 
-      ./modules/users/ranjit.nix
+      #./modules/users/ranjit.nix
       ./modules/system/locale.nix
       ./modules/system/packages.nix
       ./modules/system/ssh.nix
