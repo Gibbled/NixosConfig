@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/ranjit";
   imports = [
   #  inputs.nix-colors.homeManagerModules.default
-  ./ranjit.nix
+  #./ranjit.nix
   ];
 
   xresources.properties = {
@@ -85,25 +85,18 @@
     enableCompletion = true;
     # TODO add your custom bashrc here
     bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin"
+    PATH="$HOME/.local/bin:$PATH:$HOME/bin"
+    export LESS="-X"
+    PAGER=less LESS=R
+    clear && `which neofetch`
     '';
 
-    # set some aliases, feel free to add more or remove some
     shellAliases = {
     vi = "nvim";
     };
   };
 
-  # This value determines the home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update home Manager without changing this value. See
-  # the home Manager release notes for a list of state version
-  # changes in each release.
   home.stateVersion = "23.11";
 
-  # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
