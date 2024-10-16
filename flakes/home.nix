@@ -72,7 +72,6 @@
     enable = true;
     # custom settings
     settings = {
-      enableBashIntegration = true;
       add_newline = true;
       aws.disabled = true;
       gcloud.disabled = true;
