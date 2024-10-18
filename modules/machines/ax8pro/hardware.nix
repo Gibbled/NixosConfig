@@ -43,6 +43,6 @@
   #
   #for QMK
 ];
-  hardware.keyboard.qmk.enable = 1;
+  hardware.keyboard.qmk.enable = true;
 
 }
