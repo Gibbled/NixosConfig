@@ -1,6 +1,6 @@
 {
 
-description = "Home manager configuration. with flakes"
+description = "Home manager configuration. with flakes";
 
 inputs = {
   nixpkgs.url = "nixpkgs/nixos-unstable";
