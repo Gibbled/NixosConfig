@@ -3,6 +3,7 @@
   home = {
     packages = with pkgs; [
       hello
+      gnumake
     ];
 
     # This needs to actually be set to your username
