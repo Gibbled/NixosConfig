@@ -16,7 +16,6 @@
   "video=Card1-DP-2:1920x1080@60"
   "video=Card1-HDMI-1:1920x1080@60"
   "video=Card1-HDMI-2:1920x1080@60"
-  "dmesg_restrict=0"
 ];
   systemd.tmpfiles.rules =
   let
