@@ -18,7 +18,7 @@ outputs = { nixpkgs, home-manager, ... }:
     pkgs = import nixpkgs { inherit system; };
   in {
     homeConfigurations = {
-    ranjit = home-manager.lib.homeManagerConfiguration {
+    xybr = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [ ./flakes/home.nix ];
     };
