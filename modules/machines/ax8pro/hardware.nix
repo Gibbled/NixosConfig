@@ -42,7 +42,7 @@
   #pkgs.amdvlk
   #
   #for QMK
-  hardware.keyboard.qmk.emable = "true";
+  hardware.keyboard.qmk.enable = "true";
 ];
 
 }
