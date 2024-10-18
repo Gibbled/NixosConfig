@@ -1,6 +1,9 @@
 {config, pkgs, lib, systemSettings, userSettings, home-manager, ... }:
 {
 
+  imports = [
+  home-manager.nixosModules.home-manager
+  ];
   users.users.ranjit = {
   isNormalUser = true;
   description = "Ranjit";
