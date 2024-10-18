@@ -18,6 +18,7 @@
       ./modules/system/remote-desktop.nix
       ./modules/machines/ax8pro/hardware.nix
       ./modules/machines/ax8pro/hardware-configuration.nix
+      ./home-manager/flake.nix
     ];
 
   system.stateVersion = "24.05"; # Did you read the comment?
