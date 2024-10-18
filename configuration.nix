@@ -10,7 +10,7 @@
       ./modules/system/neovim.nix
       ./modules/system/suid.nix
       ./modules/system/docker.nix
-      ./modules/system/flakes.nix
+      #./modules/system/flakes.nix
       ./modules/system/firewall.nix
       ./modules/system/proxy.nix
       ./modules/system/firefox.nix
