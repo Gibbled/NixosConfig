@@ -60,7 +60,7 @@
     pciutils # lspci
     usbutils # lsusb
     #Home-manager
-    home-manager.home-manger
+    home-manager.home-manager
   ];
 
   # basic configuration of git, please change to your own
