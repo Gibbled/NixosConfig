@@ -40,6 +40,9 @@
   rocmPackages.clr.icd
   #This breaks the build. hope it fixed soon. -v 2024.Q3.2 2024.10.15
   #pkgs.amdvlk
+  #
+  #for QMK
+  hardware.keyboard.qmk.emable = "true";
 ];
 
 }
