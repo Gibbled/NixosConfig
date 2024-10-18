@@ -96,7 +96,7 @@
     gc = "git commit -a -m $1";
     sgp = "sudo git pull";
     upd = "sudo nix-channel --update && sudo nix flake update";
-    rebuild = "sudo nixos-rebuild swtich --upgrade |& nom";
+    rebuild = "sudo nixos-rebuild switch --upgrade |& nom";
 
     };
   };
