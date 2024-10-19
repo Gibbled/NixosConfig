@@ -32,7 +32,7 @@
   pkgs.pass
   pkgs.nodejs
   pkgs.btop
-  pkgs.kicad
+  #pkgs.kicad
   pkgs.virt-manager
   pkgs.virt-manager-qt
   pkgs.docker
