@@ -65,6 +65,7 @@
     wl-clipboard
     gcc
     luajitPackages.jsregexp
+    luajitPackages.luarocks-nix
     rustup
   ];
 
