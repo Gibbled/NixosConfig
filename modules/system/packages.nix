@@ -32,7 +32,7 @@
   pkgs.pass
   pkgs.nodejs
   pkgs.btop
-  pkgs.python312Packages.wxpython
+  pkgs.python311Packages.wxpython
   pkgs.kicad-unstable
   pkgs.virt-manager
   pkgs.virt-manager-qt
