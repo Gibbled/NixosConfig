@@ -65,7 +65,7 @@
     wl-clipboard
     gcc
     luajitPackages.jsregexp
-    rust
+    rustup
   ];
 
   # basic configuration of git, please change to your own
