@@ -63,6 +63,8 @@
     home-manager
     
     wl-clipboard
+    gcc
+    luajitPackages.jsregexp
   ];
 
   # basic configuration of git, please change to your own
