@@ -5,7 +5,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  pkgs.python311
   pkgs.lact
   pkgs.neovim
   pkgs.lsb-release
@@ -33,6 +32,7 @@
   pkgs.pass
   pkgs.nodejs
   pkgs.btop
+  pkgs.python312Packages.wxpython
   pkgs.kicad-unstable
   pkgs.virt-manager
   pkgs.virt-manager-qt
