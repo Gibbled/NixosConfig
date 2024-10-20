@@ -73,7 +73,6 @@
   # starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;
-    # custom settings
     settings = {
       add_newline = true;
       aws.disabled = true;
@@ -85,7 +84,6 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    # TODO add your custom bashrc here
     bashrcExtra = ''
     PATH="$HOME/.local/bin:$PATH:$HOME/bin"
     export LESS="-X"
@@ -102,6 +100,15 @@
 
     };
   };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
+  
 
   home.stateVersion = "23.11";
 
