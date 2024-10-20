@@ -110,7 +110,7 @@
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
-      tokyo-night-nvim
+      tokyonight-nvim
     ];
   };
   
