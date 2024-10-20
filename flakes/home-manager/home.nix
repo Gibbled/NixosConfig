@@ -61,6 +61,8 @@
     usbutils # lsusb
     #Home-manager
     home-manager
+    
+    wl-clipboard
   ];
 
   # basic configuration of git, please change to your own
