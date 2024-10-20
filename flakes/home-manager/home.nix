@@ -115,6 +115,7 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       tokyonight-nvim
+      mason-nvim
     ];
   };
   
