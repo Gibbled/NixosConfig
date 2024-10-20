@@ -32,8 +32,8 @@
   pkgs.pass
   pkgs.nodejs
   pkgs.btop
-  pkgs.python311Packages.wxpython
-  pkgs.kicad-unstable
+  #pkgs.python311Packages.wxpython
+  #pkgs.kicad-unstable
   pkgs.virt-manager
   pkgs.virt-manager-qt
   pkgs.docker
