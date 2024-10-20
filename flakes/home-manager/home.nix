@@ -107,6 +107,11 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      tokyo-night-nvim
+    ];
   };
   
 
