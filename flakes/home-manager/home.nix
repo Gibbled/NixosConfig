@@ -67,6 +67,7 @@
     luajitPackages.jsregexp
     luajitPackages.luarocks-nix
     rustup
+    kicad
   ];
 
   # basic configuration of git, please change to your own
