@@ -8,8 +8,43 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
-  boot.initrd.kernelModules = [ ];
+  #boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
+  #boot.initrd.kernelModules = [ ];
+   boot.initrd = let interface = "wlp2s0"; in
+    {
+      # crypto coprocessor and wifi modules
+      availableKernelModules = [ "ccm" "ctr" "iwlmvm" "iwlwifi" "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
+
+      systemd = {
+        enable = true;
+
+        packages = [ pkgs.wpa_supplicant ];
+        initrdBin = [ pkgs.wpa_supplicant ];
+        targets.initrd.wants = [ "wpa_supplicant@${interface}.service" ];
+
+        # prevent WPA supplicant from requiring `sysinit.target`.
+        services."wpa_supplicant@".unitConfig.DefaultDependencies = false;
+
+        users.root.shell = "/bin/systemd-tty-ask-password-agent";
+
+        network.enable = true;
+        network.networks."10-wlan" = {
+          matchConfig.Name = interface;
+          networkConfig.DHCP = "yes";
+        };
+      };
+
+      secrets."/etc/wpa_supplicant/wpa_supplicant-${interface}.conf" =
+        /root/secrets/wpa_supplicant.conf;
+
+      network.enable = true;
+      network.ssh = {
+        enable = true;
+        port = 22;
+        hostKeys = [ "/etc/ssh/ssh_host_ed25519_key" ];
+        authorizedKeys = default.user.openssh.authorizedKeys.keys;
+      };
+    };
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.kernel.sysctl = { "kernel.dmesg_restrict" = 0; };
