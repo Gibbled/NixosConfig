@@ -44,6 +44,7 @@
         hostKeys = [ "/etc/ssh/ssh_host_ed25519_key" ];
         authorizedKeys = config.users.users.ranjit.openssh.authorizedKeys.keys;
       };
+    };
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.kernel.sysctl = { "kernel.dmesg_restrict" = 0; };
@@ -78,5 +79,4 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableAllFirmware;
   #hardware.amdgpu.amdvlk.enable = true;
   hardware.amdgpu.opencl.enable = true;
-    };
 }
