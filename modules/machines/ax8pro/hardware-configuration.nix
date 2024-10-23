@@ -44,6 +44,7 @@
         hostKeys = [ "/etc/ssh/ssh_host_ed25519_key" ];
         authorizedKeys = config.users.users.ranjit.openssh.authorizedKeys.keys;
       };
+  boot.initrd.luks.devices."luks-49f412a3-d499-4a81-9cef-cf31c8d8169b".device = "/dev/disk/by-uuid/49f412a3-d499-4a81-9cef-cf31c8d8169b";
     };
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];

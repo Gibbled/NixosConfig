@@ -9,7 +9,7 @@
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "12G";
 
-  boot.initrd.luks.devices."luks-16dd3b28-2ac7-4ea3-a866-e8b6939020f5".device = "/dev/disk/by-uuid/16dd3b28-2ac7-4ea3-a866-e8b6939020f5";
+  #boot.initrd.luks.devices."luks-16dd3b28-2ac7-4ea3-a866-e8b6939020f5".device = "/dev/disk/by-uuid/16dd3b28-2ac7-4ea3-a866-e8b6939020f5";
   networking.hostName = "xybr"; # Define your hostname.
   boot.kernelParams = [
   "video=Card1-DP-1:1920x1080@60"
