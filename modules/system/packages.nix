@@ -40,6 +40,7 @@
   pkgs.usbutils
   pkgs.mpv
   pkgs.killall
+  pkgs.alejandra
   ];
 
   # Install firefox.
