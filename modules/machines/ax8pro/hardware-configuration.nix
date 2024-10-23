@@ -42,7 +42,7 @@
         enable = true;
         port = 22;
         hostKeys = [ "/etc/ssh/ssh_host_ed25519_key" ];
-        authorizedKeys = ranjit.user.openssh.authorizedKeys.keys;
+        authorizedKeys = users.ranjit.openssh.authorizedKeys.keys;
       };
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
