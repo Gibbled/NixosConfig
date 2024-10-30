@@ -1,4 +1,4 @@
-{ config, pkgs, lib, systemSettings, userSettings, home-manager, ... }:
+{ config, pkgs, ... }:
 {
 
   imports = [
@@ -27,6 +27,8 @@
       mason-nvim
     ];
   };
+
+  programs.home-manager.enable = true;
 
 
   };
