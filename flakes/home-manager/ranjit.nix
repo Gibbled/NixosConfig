@@ -2,7 +2,7 @@
 {
 
   imports = [
-  home-manager.nixosModules.home-manager
+  nixosModules.home-manager
   ];
   users.users.ranjit = {
   isNormalUser = true;
