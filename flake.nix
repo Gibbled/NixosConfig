@@ -36,9 +36,7 @@
             home-manager.useUserPackages = true;
 
             # TODO replace ryan with your own username
-            home-manager.users.ranjit = import [ 
-	      ./flakes/home-manager/home.nix
-              ./flakes/home-manager/ranjit.nix ];
+            home-manager.users.ranjit = import  ./flakes/home-manager/home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
