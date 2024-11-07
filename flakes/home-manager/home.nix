@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/ranjit";
   imports = [
   #  inputs.nix-colors.homeManagerModules.default
+     ./flake.nix
   ];
 
   xresources.properties = {
