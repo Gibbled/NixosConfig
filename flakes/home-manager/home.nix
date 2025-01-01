@@ -66,6 +66,7 @@
     luajitPackages.luarocks-nix
     rustup
     kicad
+    orca-slicer
   ];
 
   # basic configuration of git, please change to your own
