@@ -67,6 +67,7 @@
     rustup
     kicad
     orca-slicer
+    blender-hip
   ];
 
   # basic configuration of git, please change to your own
