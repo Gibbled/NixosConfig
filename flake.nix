@@ -14,9 +14,12 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, ... }: {
+  outputs = inputs @ { nixpkgs, home-manager, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+    flake = {
     nixosConfigurations = {
       # TODO please change the hostname to your own
       xybr = nixpkgs.lib.nixosSystem {
@@ -41,4 +44,8 @@
       };
     };
   };
+  systems = [
+    "x86_64-linux"
+  ];
+};
 }
