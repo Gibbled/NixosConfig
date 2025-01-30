@@ -6,8 +6,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.tmp.useTmpfs = true;
-  boot.tmp.tmpfsSize = "12G";
+  #boot.tmp.useTmpfs = true;
+  #boot.tmp.tmpfsSize = "32G";
 
   networking.hostName = "xybr"; # Define your hostname.
   boot.kernelParams = [

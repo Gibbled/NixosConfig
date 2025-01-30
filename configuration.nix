@@ -5,6 +5,7 @@
     [ 
       ./modules/users/ranjit.nix
       ./modules/system/locale.nix
+      ./modules/system/ollama.nix
       ./modules/system/packages.nix
       ./modules/system/ssh.nix
       ./modules/system/neovim.nix

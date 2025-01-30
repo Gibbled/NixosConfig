@@ -1,4 +1,4 @@
-{ pkgs, config, home-manager, ... }:
+{ pkgs, config, home-manager, nix-colors, ... }:
 
 {
   

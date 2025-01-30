@@ -70,7 +70,6 @@
     blender-hip
     freecad
     openscad
-    ollama-rocm
 
 
     obs-studio
@@ -85,6 +84,10 @@
     meshlab
 
     ardour
+    orca-slicer
+    ollama
+    #Ollama with rocm support does not complile :(
+    #ollama-rocm
 
 
   ];
