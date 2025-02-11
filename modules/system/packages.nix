@@ -39,6 +39,7 @@
   mpv
   killall
   alejandra
+  privoxy	
   ];
 
   # Install firefox.

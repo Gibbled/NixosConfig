@@ -86,9 +86,10 @@
     ardour
     orca-slicer
     ollama
-    #Ollama with rocm support does not complile :(
-    #ollama-rocm
 
+    tor-browser
+    chromium
+    firefox
 
   ];
 
@@ -126,6 +127,7 @@
     sgp = "sudo git pull";
     upd = "sudo nix-channel --update && sudo nix flake update";
     rebuild = "sudo nixos-rebuild switch --upgrade |& nom";
+    cleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage --delete-old";
 
     };
   };
