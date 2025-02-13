@@ -8,21 +8,22 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" "amdgpu" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "CONFIG_SECURITY_DMESG_RESTRICT=y" ];
+  boot.kernelParams = [ "CONFIG_SECURITY_DMESG_RESTRICT=n" ];
+
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5cac56ce-5dc9-4385-96ba-7e7e90d6b71a";
+    { device = "/dev/disk/by-uuid/f816a502-96e3-45d2-925c-ec91a36be2c1";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-ac05b8ba-07f3-4138-a241-354b41fd94e6".device = "/dev/disk/by-uuid/ac05b8ba-07f3-4138-a241-354b41fd94e6";
+  boot.initrd.luks.devices."luks-1b330f42-069c-4695-93f5-e37a0a1edd84".device = "/dev/disk/by-uuid/1b330f42-069c-4695-93f5-e37a0a1edd84";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/60EB-4517";
+    { device = "/dev/disk/by-uuid/13FE-1658";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -35,6 +36,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.eth0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

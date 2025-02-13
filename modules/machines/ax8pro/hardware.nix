@@ -8,8 +8,8 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.tmp.useTmpfs = true;
-  boot.tmp.tmpfsSize = "32G";
+  #boot.tmp.useTmpfs = true;
+  #boot.tmp.tmpfsSize = "32G";
 
   networking.hostName = "xybr"; # Define your hostname.
 #  boot.kernelParams = [
