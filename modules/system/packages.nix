@@ -34,6 +34,7 @@
   btop
   virt-manager
   virt-manager-qt
+  qemu
   docker
   usbutils
   mpv
