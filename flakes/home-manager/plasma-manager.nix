@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, plasma-manager, ... }:
 {
 imports = [ <plasma-manager/modules> ];
 

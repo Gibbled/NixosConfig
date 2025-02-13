@@ -5,7 +5,7 @@
 
 imports = [
 ./home.nix
-#./nix-colors.nix
+#./plasma-manager.nix
 ];
 
 

@@ -4,8 +4,6 @@
   home.username = "ranjit";
   home.homeDirectory = "/home/ranjit";
   imports = [
-  ./plasma-manager/flake.nix
-  ./plasma-manager.nix
   ];
 
   xresources.properties = {

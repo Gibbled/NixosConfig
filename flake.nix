@@ -13,11 +13,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     nix-colors.url = "github:misterio77/nix-colors";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, flake-parts, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, flake-parts, plasma-manager, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
     nixosConfigurations = {
@@ -26,6 +32,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
