@@ -9,8 +9,8 @@ in {
   services.searx = {
     enable = true;
 
-    #package =
-      #(pkgs.searxng.override {
+    package =
+      (pkgs.searxng.override {
         ## FIXME: https://github.com/NixOS/nixpkgs/issues/380351
         #python3 = pkgs.python3.override {
           #packageOverrides = pyFinal: pyPrev: {
@@ -43,20 +43,20 @@ in {
             #});
           #};
         #};
-      #})
-      #.overrideAttrs (o: {
-      #  postInstall = ''
-      #    ${o.postInstall or ""}
-      #      ## Replace logo
-      #      cp ${./logo.png} $out/${pkgs.python3.sitePackages}/searx/static/themes/simple/img/searxng.png
-      #  '';
-      #});
+      })
+      .overrideAttrs (o: {
+        postInstall = ''
+          ${o.postInstall or ""}
+            ## Replace logo
+            cp ${./logo.png} $out/${pkgs.python3.sitePackages}/searx/static/themes/simple/img/searxng.png
+        '';
+      });
 
     #environmentFile = config.sops.secrets.searxng.path;
 
     settings = {
       general = {
-        instance_name = "Search";
+        instance_name = "GragFind";
         debug = false;
         enable_metrics = false;
       };
