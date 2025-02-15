@@ -6,6 +6,7 @@
       ./modules/users/ranjit.nix
       ./modules/system/locale.nix
       ./modules/system/ollama.nix
+      ./modules/system/virt-manager.nix
       ./modules/system/searxng.nix
       ./modules/system/privoxy.nix
       ./modules/system/tor-browser.nix
