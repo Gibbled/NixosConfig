@@ -11,6 +11,9 @@
     "Xft.dpi" = 172;
   };
 
+
+
+
   home.packages = with pkgs; [
     neofetch
     # archives
@@ -71,6 +74,7 @@
     freecad
     openscad
 
+    filezilla
 
     obs-studio
     octaveFull
@@ -90,8 +94,22 @@
     tor-browser
     chromium
     firefox
+    signal-desktop
+    #nheko
+    #neochat
+
+    plover.dev
+    vial
+    via
+    qmk
+    qmk-udev-rules
+    qmk_hid
+    keymapviz
+
 
   ];
+
+
 
   # basic configuration of git, please change to your own
   programs.git = {
@@ -128,6 +146,7 @@
     upd = "sudo nix-channel --update && sudo nix flake update";
     rebuild = "sudo nixos-rebuild switch --upgrade |& nom";
     cleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage --delete-old";
+    dmesg = "sudo dmesg";
 
     };
   };
