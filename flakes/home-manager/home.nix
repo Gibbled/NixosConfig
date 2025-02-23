@@ -88,6 +88,7 @@
     meshlab
 
     ardour
+    qjackctl
     orca-slicer
     ollama
 
@@ -105,6 +106,10 @@
     qmk-udev-rules
     qmk_hid
     keymapviz
+    #streamcontroller
+
+    calibre
+
 
 
   ];
