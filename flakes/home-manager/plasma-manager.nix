@@ -1,19 +1,179 @@
-{ pkgs, plasma-manager, ... }:
+{ pkgs, ... }:
 {
-imports = [ <plasma-manager/modules> ];
+  home.stateVersion = "23.11";
 
   programs.plasma = {
     enable = true;
+
+    #
+    # Some high-level settings:
+    #
+    workspace = {
+      clickItemTo = "open"; # If you liked the click-to-open default from plasma 5
+      lookAndFeel = "org.kde.breezedark.desktop";
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 32;
+      };
+      iconTheme = "Papirus-Dark";
+      #wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Patak/contents/images/1080x1920.png";
+      #wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Nuvole/contents/images/1080x1920.png";
+    };
+
+
+    fonts = {
+      general = {
+        family = "Hack";
+        pointSize = 12;
+      };
+    };
+
+    #desktop.widgets = [
+      #{
+        #plasmusicToolbar = {
+          #position = {
+            #horizontal = 51;
+            #vertical = 100;
+          #};
+          #size = {
+            #width = 250;
+            #height = 250;
+          #};
+        #};
+      #}
+    #];
+
+    panels = [
+      # Windows-like panel at the bottom
+      {
+        location = "bottom";
+        widgets = [
+          # We can configure the widgets by adding the name and config
+          # attributes. For example to add the the kickoff widget and set the
+          # icon to "nix-snowflake-white" use the below configuration. This will
+          # add the "icon" key to the "General" group for the widget in
+          # ~/.config/plasma-org.kde.plasma.desktop-appletsrc.
+          {
+            name = "org.kde.plasma.kickoff";
+            config = {
+              General = {
+                icon = "nix-snowflake-white";
+                alphaSort = true;
+              };
+            };
+          }
+          # Or you can configure the widgets by adding the widget-specific options for it.
+          # See modules/widgets for supported widgets and options for these widgets.
+          # For example:
+          # Adding configuration to the widgets can also for example be used to
+          # pin apps to the task-manager, which this example illustrates by
+          # pinning dolphin and konsole to the task-manager by default with widget-specific options.
+          {
+            iconTasks = {
+              launchers = [
+                "applications:org.kde.dolphin.desktop"
+                "applications:org.kde.konsole.desktop"
+              ];
+            };
+          }
+          # Or you can do it manually, for example:
+          # If no configuration is needed, specifying only the name of the
+          # widget will add them with the default configuration.
+          "org.kde.plasma.marginsseparator"
+          # If you need configuration for your widget, instead of specifying the
+          # the keys and values directly using the config attribute as shown
+          # above, plasma-manager also provides some higher-level interfaces for
+          # configuring the widgets. See modules/widgets for supported widgets
+          # and options for these widgets. The widgets below shows two examples
+          # of usage, one where we add a digital clock, setting 12h time and
+          # first day of the week to Sunday and another adding a systray with
+          # some modifications in which entries to show.
+          {
+            digitalClock = {
+              calendar.firstDayOfWeek = "sunday";
+              time.format = "12h";
+            };
+          }
+          {
+            systemTray.items = {
+              # We explicitly show bluetooth and battery
+              shown = [
+                "org.kde.plasma.bluetooth"
+                "org.kde.plasma.volume"
+                "org.kde.plasma.networkmanagement"
+              ];
+              # And explicitly hide networkmanagement and volume
+              hidden = [
+                "org.kde.plasma.battery"
+              ];
+            };
+          }
+        ];
+        hiding = "autohide";
+      }
+      # Application name, Global menu and Song information and playback controls at the top
+    ];
+
+    window-rules = [
+      {
+        description = "Dolphin";
+        match = {
+          window-class = {
+            value = "dolphin";
+            type = "substring";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "force";
+          };
+          # `apply` defaults to "apply-initially"
+          maximizehoriz = true;
+          maximizevert = true;
+        };
+      }
+    ];
+
+    powerdevil = {
+      AC = {
+        powerButtonAction = "lockScreen";
+        autoSuspend = {
+          action = "shutDown";
+          idleTimeout = 1000;
+        };
+        turnOffDisplay = {
+          idleTimeout = 1000;
+          idleTimeoutWhenLocked = "immediately";
+        };
+      };
+      battery = {
+        powerButtonAction = "sleep";
+        whenSleepingEnter = "standbyThenHibernate";
+      };
+      lowBattery = {
+        whenLaptopLidClosed = "hibernate";
+      };
+    };
+
+    kwin = {
+      edgeBarrier = 0; # Disables the edge-barriers introduced in plasma 6.1
+      cornerBarrier = false;
+
+      #scripts.polonium.enable = true;
+    };
+
+    kscreenlocker = {
+      lockOnResume = true;
+      timeout = 10;
+    };
+
+    #
+    # Some mid-level settings:
+    #
+
     shortcuts = {
-      "ActivityManager"."switch-to-activity-9ae433ee-61bb-4f27-a73a-05cddee915f7" = [ ];
-      "ActivityManager"."switch-to-activity-ab6960bc-6582-4264-be9c-fb3c195f1f1e" = [ ];
-      "ActivityManager"."switch-to-activity-be924cdb-b275-4dbd-bca6-283d79b9d7fc" = [ ];
-      "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = "Meta+Alt+L";
-      "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = ",Meta+Alt+K";
-      "kaccess"."Toggle Screen Reader On and Off" = "Meta+Alt+S";
-      "kcm_touchpad"."Disable Touchpad" = "Touchpad Off";
-      "kcm_touchpad"."Enable Touchpad" = "Touchpad On";
-      "kcm_touchpad"."Toggle Touchpad" = ["Touchpad Toggle" "Meta+Ctrl+Zenkaku Hankaku,Touchpad Toggle" "Meta+Ctrl+Zenkaku Hankaku"];
       "kmix"."decrease_microphone_volume" = "Microphone Volume Down";
       "kmix"."decrease_volume" = "Volume Down";
       "kmix"."decrease_volume_small" = "Shift+Volume Down";
@@ -23,7 +183,7 @@ imports = [ <plasma-manager/modules> ];
       "kmix"."mic_mute" = ["Microphone Mute,Microphone Mute" "Meta+Volume Mute,Mute Microphone"];
       "kmix"."mute" = "Volume Mute";
       "ksmserver"."Halt Without Confirmation" = "Ctrl+Alt+Shift+PgDown,,Shut Down Without Confirmation";
-      "ksmserver"."Lock Session" = ["Screensaver" "Alt+Shift+L,Meta+L" "Screensaver,Lock Session"];
+      "ksmserver"."Lock Session" = ["Screensaver" "Alt+Shift+L" "Screensaver,Lock Session"];
       "ksmserver"."Log Out" = "Ctrl+Alt+Del";
       "ksmserver"."Log Out Without Confirmation" = "Ctrl+Alt+Shift+Del,,Log Out Without Confirmation";
       "ksmserver"."LogOut" = [ ];
@@ -34,12 +194,11 @@ imports = [ <plasma-manager/modules> ];
       "kwin"."Cycle Overview" = ",none,Cycle through Overview and Grid View";
       "kwin"."Cycle Overview Opposite" = ",none,Cycle through Grid View and Overview";
       "kwin"."Decrease Opacity" = [ ];
-      "kwin"."Edit Tiles" = "Meta+T";
       "kwin"."Expose" = "Ctrl+F9";
       "kwin"."ExposeAll" = ["Ctrl+F10" "Launch (C),Ctrl+F10" "Launch (C),Toggle Present Windows (All desktops)"];
       "kwin"."ExposeClass" = "Ctrl+F7";
       "kwin"."ExposeClassCurrentDesktop" = ",none,Toggle Present Windows (Window class on current desktop)";
-      "kwin"."Grid View" = "Meta+G";
+      "kwin"."Grid View" = "Ctrl+Alt+G";
       "kwin"."Increase Opacity" = [ ];
       "kwin"."Kill Window" = "Ctrl+Alt+Esc,Meta+Ctrl+Esc,Kill Window";
       "kwin"."Move Tablet to Next Output" = ",none,Move the tablet to the next output";
@@ -54,7 +213,6 @@ imports = [ <plasma-manager/modules> ];
       "kwin"."Show Desktop" = ",Meta+D,Peek at Desktop";
       "kwin"."Switch One Desktop Down" = "Ctrl+Shift+Down,Meta+Ctrl+Down,Switch One Desktop Down";
       "kwin"."Switch One Desktop Up" = "Ctrl+Shift+Up,Meta+Ctrl+Up,Switch One Desktop Up";
-      "kwin"."Switch One Desktop to the Left" = "Ctrl+Shift+Left,Meta+Ctrl+Left,Switch One Desktop to the Left";
       "kwin"."Switch One Desktop to the Right" = "Ctrl+Shift+Right,Meta+Ctrl+Right,Switch One Desktop to the Right";
       "kwin"."Switch Window Down" = "Meta+Alt+Down";
       "kwin"."Switch Window Left" = "Meta+Alt+Left";
@@ -109,10 +267,6 @@ imports = [ <plasma-manager/modules> ];
       "kwin"."Window Above Other Windows" = [ ];
       "kwin"."Window Below Other Windows" = [ ];
       "kwin"."Window Close" = "Alt+F4";
-      "kwin"."Window Custom Quick Tile Bottom" = "none,,Custom Quick Tile Window to the Bottom";
-      "kwin"."Window Custom Quick Tile Left" = "none,,Custom Quick Tile Window to the Left";
-      "kwin"."Window Custom Quick Tile Right" = "none,,Custom Quick Tile Window to the Right";
-      "kwin"."Window Custom Quick Tile Top" = "none,,Custom Quick Tile Window to the Top";
       "kwin"."Window Fullscreen" = [ ];
       "kwin"."Window Grow Horizontal" = [ ];
       "kwin"."Window Grow Vertical" = [ ];
@@ -127,8 +281,6 @@ imports = [ <plasma-manager/modules> ];
       "kwin"."Window On All Desktops" = [ ];
       "kwin"."Window One Desktop Down" = ",Meta+Ctrl+Shift+Down,Window One Desktop Down";
       "kwin"."Window One Desktop Up" = ",Meta+Ctrl+Shift+Up,Window One Desktop Up";
-      "kwin"."Window One Desktop to the Left" = ",Meta+Ctrl+Shift+Left,Window One Desktop to the Left";
-      "kwin"."Window One Desktop to the Right" = ",Meta+Ctrl+Shift+Right,Window One Desktop to the Right";
       "kwin"."Window One Screen Down" = [ ];
       "kwin"."Window One Screen Up" = [ ];
       "kwin"."Window One Screen to the Left" = [ ];
@@ -245,7 +397,11 @@ imports = [ <plasma-manager/modules> ];
       "services/systemsettings.desktop"."kcm-screenlocker" = [ ];
       "services/systemsettings.desktop"."kcm-users" = [ ];
     };
+    #
+    # Some low-level settings:
+    #
     configFile = {
+
       "baloofilerc"."General"."dbVersion" = 2;
       "baloofilerc"."General"."exclude filters" = "*~,*.part,*.o,*.la,*.lo,*.loT,*.moc,moc_*.cpp,qrc_*.cpp,ui_*.h,cmake_install.cmake,CMakeCache.txt,CTestTestfile.cmake,libtool,config.status,confdefs.h,autom4te,conftest,confstat,Makefile.am,*.gcode,.ninja_deps,.ninja_log,build.ninja,*.csproj,*.m4,*.rej,*.gmo,*.pc,*.omf,*.aux,*.tmp,*.po,*.vm*,*.nvram,*.rcore,*.swp,*.swap,lzo,litmain.sh,*.orig,.histfile.*,.xsession-errors*,*.map,*.so,*.a,*.db,*.qrc,*.ini,*.init,*.img,*.vdi,*.vbox*,vbox.log,*.qcow2,*.vmdk,*.vhd,*.vhdx,*.sql,*.sql.gz,*.ytdl,*.tfstate*,*.class,*.pyc,*.pyo,*.elc,*.qmlc,*.jsc,*.fastq,*.fq,*.gb,*.fasta,*.fna,*.gbff,*.faa,po,CVS,.svn,.git,_darcs,.bzr,.hg,CMakeFiles,CMakeTmp,CMakeTmpQmake,.moc,.obj,.pch,.uic,.npm,.yarn,.yarn-cache,__pycache__,node_modules,node_packages,nbproject,.terraform,.venv,venv,core-dumps,lost+found";
       "baloofilerc"."General"."exclude filters version" = 9;
@@ -300,20 +456,10 @@ imports = [ <plasma-manager/modules> ];
       "kdeglobals"."WM"."inactiveForeground" = "112,125,138";
       "kiorc"."Confirmations"."ConfirmDelete" = true;
       "kscreenlockerrc"."Daemon"."Autolock" = false;
-      "kscreenlockerrc"."Daemon"."LockOnResume" = false;
-      "kscreenlockerrc"."Daemon"."Timeout" = 0;
       "ksmserverrc"."General"."confirmLogout" = false;
       "ksmserverrc"."General"."loginMode" = "emptySession";
       "kwalletrc"."Wallet"."First Use" = false;
       "kwinrc"."Activities/LastVirtualDesktop"."be924cdb-b275-4dbd-bca6-283d79b9d7fc" = "f24e2cda-564a-49f9-943d-63fb3a8a8d17";
-      "kwinrc"."Desktops"."Id_1" = "690f163a-1c02-453b-9a2f-c830e4a13c33";
-      "kwinrc"."Desktops"."Id_2" = "b674c2c7-d4d5-415b-bd9e-83ca09798e4f";
-      "kwinrc"."Desktops"."Id_3" = "f24e2cda-564a-49f9-943d-63fb3a8a8d17";
-      "kwinrc"."Desktops"."Id_4" = "5cfa62ee-7136-4e11-bb38-6ea077b6a08d";
-      "kwinrc"."Desktops"."Name_1" = "Desktop 2";
-      "kwinrc"."Desktops"."Name_2" = "Desktop 1";
-      "kwinrc"."Desktops"."Number" = 4;
-      "kwinrc"."Desktops"."Rows" = 2;
       "kwinrc"."Tiling"."padding" = 4;
       "kwinrc"."Tiling/053156a2-406e-56a4-a32c-6d76a508f28b"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
       "kwinrc"."Tiling/18d05852-165c-5e9f-827b-8b035a8ef61f"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":[{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}]}";
@@ -330,9 +476,17 @@ imports = [ <plasma-manager/modules> ];
       "kwinrc"."Xwayland"."Scale" = 2;
       "plasma-localerc"."Formats"."LANG" = "en_GB.UTF-8";
       "plasma-localerc"."Translations"."LANGUAGE" = "en_US";
-    };
-    dataFile = {
-
+      kwinrc.Desktops.Number = {
+        value = 8;
+        # Forces kde to not change this value (even through the settings app).
+        immutable = true;
+      };
+      kscreenlockerrc = {
+        Greeter.WallpaperPlugin = "org.kde.potd";
+        # To use nested groups use / as a separator. In the below example,
+        # Provider will be added to [Greeter][Wallpaper][org.kde.potd][General].
+        "Greeter/Wallpaper/org.kde.potd/General".Provider = "bing";
+      };
     };
   };
 }

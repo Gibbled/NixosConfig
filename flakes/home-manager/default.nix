@@ -5,8 +5,7 @@
 
 imports = [
 ./home.nix
-#./plasma-manager.nix
-./newpm.nix
+./plasma-manager.nix
 ];
 
 
