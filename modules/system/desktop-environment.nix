@@ -14,6 +14,10 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  #This should make gtk apps look less shitty
+  programs.dconf.enable = true;
+
+
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
   konsole

@@ -112,6 +112,7 @@
 
     #For KDE Theming
     kdePackages.qtstyleplugin-kvantum
+    catppuccin-kvantum
 
     #For Tmux themes
     tmuxPlugins.tokyo-night-tmux
