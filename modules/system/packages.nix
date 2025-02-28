@@ -11,6 +11,7 @@
   usbutils
   pciutils
   wget
+  fwupd
   luajitPackages.luarocks-nix
   texliveFull
   hack-font
@@ -51,9 +52,9 @@
   nixpkgs.config.allowUnfree = true;
 
 
-              nixpkgs.config.permittedInsecurePackages = [
-                "olm-3.2.16"
-              ];
+          #    nixpkgs.config.permittedInsecurePackages = [
+          #      "olm-3.2.16"
+          #    ];
 
 
 }

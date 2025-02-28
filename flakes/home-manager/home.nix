@@ -110,6 +110,14 @@
 
     calibre
 
+    #For KDE Theming
+    kdePackages.qtstyleplugin-kvantum
+
+    #For Tmux themes
+    tmuxPlugins.tokyo-night-tmux
+
+    #For Arduino
+    arduino
 
 
   ];
