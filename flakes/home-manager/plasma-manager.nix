@@ -1,6 +1,17 @@
 {
   programs.plasma = {
     enable = true;
+    
+    fonts = {
+      general = {
+        family = "Hack";
+        pointSize = 18;
+      };
+    };
+
+
+
+
     shortcuts = {
       "ActivityManager"."switch-to-activity-9ae433ee-61bb-4f27-a73a-05cddee915f7" = [ ];
       "ActivityManager"."switch-to-activity-ab6960bc-6582-4264-be9c-fb3c195f1f1e" = [ ];
@@ -276,7 +287,7 @@
       "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
       "kded5rc"."Module-device_automounter"."autoload" = false;
       "kdeglobals"."DirSelect Dialog"."DirSelectDialog Size" = "820,584";
-      "kdeglobals"."General"."font" = "Hack,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
+      "kdeglobals"."General"."font" = "Hack,18,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
       "kdeglobals"."KDE"."LookAndFeelPackage" = "org.kde.breezedark.desktop";
       "kdeglobals"."KDE"."SingleClick" = true;
       "kdeglobals"."KDE"."widgetStyle" = "kvantum-dark";

@@ -43,10 +43,11 @@
   killall
   alejandra
   privoxy	
+  #firefox-bin
   ];
 
   # Install firefox.
-  programs.firefox.enable = true;
+  #programs.firefox-bin.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

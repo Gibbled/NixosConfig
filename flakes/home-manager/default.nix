@@ -6,6 +6,7 @@
 imports = [
 ./home.nix
 ./plasma-manager.nix
+./firefox.nix
 ];
 
 

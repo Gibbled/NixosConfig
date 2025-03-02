@@ -94,7 +94,8 @@
 
     tor-browser
     chromium
-    firefox
+    #firefox-bin
+    librewolf-bin
     signal-desktop
     #nheko
     #neochat
@@ -119,6 +120,8 @@
 
     #For Arduino
     arduino
+
+    ffmpeg
 
 
   ];
