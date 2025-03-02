@@ -10,6 +10,82 @@
     };
 
 
+    panels = [
+      # Windows-like panel at the bottom
+      {
+        location = "floating";
+	lengthMode = "fit";
+        widgets = [
+          # We can configure the widgets by adding the name and config
+          # attributes. For example to add the the kickoff widget and set the
+          # icon to "nix-snowflake-white" use the below configuration. This will
+          # add the "icon" key to the "General" group for the widget in
+          # ~/.config/plasma-org.kde.plasma.desktop-appletsrc.
+          {
+            name = "org.kde.plasma.kickoff";
+            config = {
+              General = {
+                icon = "nix-snowflake-white";
+                alphaSort = true;
+              };
+            };
+          }
+
+	  {
+	    name = "org.kde.plasma.pager";
+	    config  = {};
+
+
+	  }
+          # Or you can configure the widgets by adding the widget-specific options for it.
+          # See modules/widgets for supported widgets and options for these widgets.
+          # For example:
+          # Adding configuration to the widgets can also for example be used to
+          # pin apps to the task-manager, which this example illustrates by
+          # pinning dolphin and konsole to the task-manager by default with widget-specific options.
+          {
+            iconTasks = {
+              launchers = [
+                "applications:org.kde.dolphin.desktop"
+                "applications:kitty.desktop"
+              ];
+            };
+          }
+          # Or you can do it manually, for example:
+          # widget will add them with the default configuration.
+          "org.kde.plasma.marginsseparator"
+          # If you need configuration for your widget, instead of specifying the
+          # the keys and values directly using the config attribute as shown
+          # above, plasma-manager also provides some higher-level interfaces for
+          # configuring the widgets. See modules/widgets for supported widgets
+          # and options for these widgets. The widgets below shows two examples
+          # of usage, one where we add a digital clock, setting 12h time and
+          # first day of the week to Sunday and another adding a systray with
+          # some modifications in which entries to show.
+          {
+            digitalClock = {
+              calendar.firstDayOfWeek = "sunday";
+              time.format = "12h";
+            };
+          }
+          {
+            systemTray.items = {
+              # We explicitly show bluetooth and battery
+              shown = [
+                "org.kde.plasma.bluetooth"
+                "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.volume"
+              ];
+              # And explicitly hide networkmanagement and volume
+              hidden = [
+                "org.kde.plasma.battery"
+              ];
+            };
+          }
+        ];
+        hiding = "autohide";
+      }
+    ];
 
 
     shortcuts = {
@@ -279,6 +355,11 @@
       "baloofilerc"."General"."dbVersion" = 2;
       "baloofilerc"."General"."exclude filters" = "*~,*.part,*.o,*.la,*.lo,*.loT,*.moc,moc_*.cpp,qrc_*.cpp,ui_*.h,cmake_install.cmake,CMakeCache.txt,CTestTestfile.cmake,libtool,config.status,confdefs.h,autom4te,conftest,confstat,Makefile.am,*.gcode,.ninja_deps,.ninja_log,build.ninja,*.csproj,*.m4,*.rej,*.gmo,*.pc,*.omf,*.aux,*.tmp,*.po,*.vm*,*.nvram,*.rcore,*.swp,*.swap,lzo,litmain.sh,*.orig,.histfile.*,.xsession-errors*,*.map,*.so,*.a,*.db,*.qrc,*.ini,*.init,*.img,*.vdi,*.vbox*,vbox.log,*.qcow2,*.vmdk,*.vhd,*.vhdx,*.sql,*.sql.gz,*.ytdl,*.tfstate*,*.class,*.pyc,*.pyo,*.elc,*.qmlc,*.jsc,*.fastq,*.fq,*.gb,*.fasta,*.fna,*.gbff,*.faa,po,CVS,.svn,.git,_darcs,.bzr,.hg,CMakeFiles,CMakeTmp,CMakeTmpQmake,.moc,.obj,.pch,.uic,.npm,.yarn,.yarn-cache,__pycache__,node_modules,node_packages,nbproject,.terraform,.venv,venv,core-dumps,lost+found";
       "baloofilerc"."General"."exclude filters version" = 9;
+      kwinrc.Desktops.Number = {
+        value = 8;
+        # Forces kde to not change this value (even through the settings app).
+        immutable = true;
+      };
       "dolphinrc"."KFileDialog Settings"."Places Icons Auto-resize" = false;
       "dolphinrc"."KFileDialog Settings"."Places Icons Static Size" = 22;
       "kactivitymanagerdrc"."activities"."be924cdb-b275-4dbd-bca6-283d79b9d7fc" = "Default";
