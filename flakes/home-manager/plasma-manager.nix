@@ -121,7 +121,7 @@
       "kwin"."Edit Tiles" = "Meta+T";
       "kwin"."Expose" = "Ctrl+F9";
       "kwin"."ExposeAll" = ["Ctrl+F10" "Launch (C),Ctrl+F10" "Launch (C),Toggle Present Windows (All desktops)"];
-      "kwin"."ExposeClass" = "Ctrl+F7";
+      "kwin"."ExposeClass" = "";
       "kwin"."ExposeClassCurrentDesktop" = ",none,Toggle Present Windows (Window class on current desktop)";
       "kwin"."Grid View" = "Ctrl+Alt+G";
       "kwin"."Increase Opacity" = [ ];
@@ -179,10 +179,10 @@
       "kwin"."Switch to Desktop 20" = [ ];
       "kwin"."Switch to Desktop 3" = "Ctrl+F3";
       "kwin"."Switch to Desktop 4" = "Ctrl+F4";
-      "kwin"."Switch to Desktop 5" = [ ];
-      "kwin"."Switch to Desktop 6" = [ ];
-      "kwin"."Switch to Desktop 7" = [ ];
-      "kwin"."Switch to Desktop 8" = [ ];
+      "kwin"."Switch to Desktop 5" = "Ctrl+F5";
+      "kwin"."Switch to Desktop 6" = "Ctrl+F6";
+      "kwin"."Switch to Desktop 7" = "Ctrl+F7";
+      "kwin"."Switch to Desktop 8" = "Ctrl+F8";
       "kwin"."Switch to Desktop 9" = [ ];
       "kwin"."Switch to Next Desktop" = [ ];
       "kwin"."Switch to Next Screen" = [ ];
