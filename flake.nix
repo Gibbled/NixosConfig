@@ -41,6 +41,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 	    home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+	    home-manager.backupFileExtension = "backup";
 
 
             # TODO replace ryan with your own username

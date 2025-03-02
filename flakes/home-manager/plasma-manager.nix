@@ -13,7 +13,7 @@
     panels = [
       # Windows-like panel at the bottom
       {
-        location = "floating";
+        location = "bottom";
 	lengthMode = "fit";
         widgets = [
           # We can configure the widgets by adding the name and config
