@@ -48,6 +48,8 @@
               launchers = [
                 "applications:org.kde.dolphin.desktop"
                 "applications:kitty.desktop"
+                "applications:firefox.desktop"
+                "applications:OrcaSlicer.desktop"
               ];
             };
           }
