@@ -91,6 +91,8 @@
 
 
     shortcuts = {
+      "services.firefox.desktop"."_launch" = "Ctrl+Alt+R";
+      "services.kitty.desktop"."_launch" = "Ctrl+Alt+T";
       "ActivityManager"."switch-to-activity-9ae433ee-61bb-4f27-a73a-05cddee915f7" = [ ];
       "ActivityManager"."switch-to-activity-ab6960bc-6582-4264-be9c-fb3c195f1f1e" = [ ];
       "ActivityManager"."switch-to-activity-be924cdb-b275-4dbd-bca6-283d79b9d7fc" = [ ];
@@ -341,8 +343,6 @@
       "plasmashell"."switch to next activity" = [ ];
       "plasmashell"."switch to previous activity" = [ ];
       "plasmashell"."toggle do not disturb" = [ ];
-      "services.firefox.desktop"."_launch" = "Ctrl+Alt+R";
-      "services.kitty.desktop"."_launch" = "Ctrl+Alt+T";
       "services.org.kde.konsole.desktop"."_launch" = [ ];
       "services.org.kde.plasma-systemmonitor.desktop"."_launch" = [ ];
       "services.plasma-manager-commands.desktop"."launch-konsole" = [ ];
