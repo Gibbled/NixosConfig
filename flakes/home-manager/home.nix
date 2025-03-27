@@ -164,6 +164,7 @@
     rebuild = "sudo nixos-rebuild switch --upgrade |& nom";
     cleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage --delete-old";
     dmesg = "sudo dmesg";
+    epoch = "echo \"obase\=2;`date '+%s'`\" | bc";
 
     };
   };
