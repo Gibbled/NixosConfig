@@ -44,6 +44,7 @@
   alejandra
   privoxy	
   #firefox-bin
+  bc
   ];
 
   # Install firefox.
