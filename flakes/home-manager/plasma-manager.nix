@@ -50,6 +50,7 @@
                 "applications:kitty.desktop"
                 "applications:firefox.desktop"
                 "applications:OrcaSlicer.desktop"
+                "applications:virt-manager.desktop"
               ];
             };
           }

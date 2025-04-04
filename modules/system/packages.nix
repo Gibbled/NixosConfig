@@ -45,6 +45,7 @@
   privoxy	
   #firefox-bin
   bc
+  wireshark
   ];
 
   # Install firefox.
