@@ -16,7 +16,10 @@ rocmOverrideGfx = "11.0.2";
 
 services.open-webui = {
 
-enable = true;
+#enable = true;
+#Its broken at the moment, so disabled 20250415
+enable = false;
+
 
 environment = {
   ANONYMIZED_TELEMETRY = "False";

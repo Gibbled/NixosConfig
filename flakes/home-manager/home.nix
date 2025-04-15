@@ -96,7 +96,7 @@
     chromium
     #firefox-bin
     librewolf-bin
-    signal-desktop
+    signal-desktop-source
     #nheko
     #neochat
 
@@ -109,7 +109,8 @@
     keymapviz
     #streamcontroller
 
-    calibre
+    #Broken 20250415
+    #calibre
 
     #For KDE Theming
     kdePackages.qtstyleplugin-kvantum
