@@ -16,9 +16,7 @@ rocmOverrideGfx = "11.0.2";
 
 services.open-webui = {
 
-#enable = true;
-#Its broken at the moment, so disabled 20250415
-enable = false;
+enable = true;
 
 
 environment = {
