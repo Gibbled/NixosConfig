@@ -13,7 +13,7 @@
       listenPort = 51820;
 
       # Path to the private key file.
-      privateKeyFile = "/etc/wireguard/keys/private.key";
+      privateKeyFile = "/etc/wireguard/keys/privatekey";
 
       peers = [{
         publicKey = "hY8/uhiXJdGcQPw5Cj8sOtDoM+69pR0gZpYsO5SY0yQ=";

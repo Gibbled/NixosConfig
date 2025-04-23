@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    sops-nix.url = "github:Mic92/sops-nix";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -23,7 +24,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, flake-parts, plasma-manager, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, flake-parts, plasma-manager, sops-nix, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
     nixosConfigurations = {
@@ -32,6 +33,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+	  sops-nix.nixosModules.sops
 
 
           # make home-manager as a module of nixos
@@ -40,7 +42,11 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-	    home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+	    home-manager.sharedModules = [ 
+
+	      plasma-manager.homeManagerModules.plasma-manager 
+              sops-nix.homeManagerModules.sops
+	      ];
 	    home-manager.backupFileExtension = "backup";
 
 
