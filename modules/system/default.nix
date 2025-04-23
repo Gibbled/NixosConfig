@@ -23,6 +23,7 @@ imports = [
 ./tor-browser.nix
 ./virt-manager.nix
 ./wireshark.nix
+./wireguard.nix
 
 ];
 

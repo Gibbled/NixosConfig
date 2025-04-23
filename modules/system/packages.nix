@@ -46,6 +46,9 @@
   #firefox-bin
   bc
   wireshark
+
+  wireguard-tools
+  wg-netmanager
   ];
 
   # Install firefox.
