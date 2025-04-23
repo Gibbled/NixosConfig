@@ -11,6 +11,8 @@ imports = [
 ./git.nix
 ./starship.nix
 ./bash.nix
+./home-packages.nix
+./nvim.nix
 ];
 
 
