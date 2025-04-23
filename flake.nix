@@ -3,7 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
-    sops-nix.url = "github:Mic92/sops-nix";
+     sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/master";
