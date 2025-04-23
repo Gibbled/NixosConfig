@@ -49,6 +49,9 @@
 
   wireguard-tools
   wg-netmanager
+
+  sops
+  age
   ];
 
   # Install firefox.
