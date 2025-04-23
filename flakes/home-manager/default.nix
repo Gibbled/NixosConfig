@@ -8,6 +8,9 @@ imports = [
 ./plasma-manager.nix
 ./firefox.nix
 ./sops.nix
+./git.nix
+./starship.nix
+./bash.nix
 ];
 
 
