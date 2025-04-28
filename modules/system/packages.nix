@@ -39,7 +39,6 @@
   docker
   docker-compose
   usbutils
-  mpv
   killall
   alejandra
   privoxy	

@@ -98,7 +98,6 @@
     keymapviz
     #streamcontroller
 
-    #Broken 20250415
     calibre
 
     #For KDE Theming
@@ -112,6 +111,9 @@
     arduino
 
     ffmpeg
+    vlc
+    mpv
+    
 
 
   ];
