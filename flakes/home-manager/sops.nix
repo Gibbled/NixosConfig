@@ -5,7 +5,7 @@
   sops = {
     age.keyFile = "/home/ranjit/.config/sops/age/keys.txt"; # must have no password!
 
-    defaultSopsFile = ./secrets.yaml;
+    defaultSopsFile = /etc/nixos/.sops.yaml;
     defaultSymlinkPath = "/run/user/1000/secrets";
     defaultSecretsMountPoint = "/run/user/1000/secrets.d";
 
