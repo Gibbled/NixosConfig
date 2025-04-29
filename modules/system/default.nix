@@ -24,6 +24,7 @@ imports = [
 ./virt-manager.nix
 ./wireshark.nix
 ./wireguard.nix
+./ccache.nix
 
 ];
 
