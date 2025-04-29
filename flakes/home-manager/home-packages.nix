@@ -83,7 +83,6 @@
 
     tor-browser
     chromium
-    #firefox-bin
     librewolf-bin
     signal-desktop
     #nheko

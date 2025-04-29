@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.kernel.sysctl."kernel.dmesg_restrict" = 0;
   boot.kernelParams = [ "CONFIG_SECURITY_DMESG_RESTRICT=n" ];
 
 
