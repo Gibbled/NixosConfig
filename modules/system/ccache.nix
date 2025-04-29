@@ -4,7 +4,6 @@
 
 programs.ccache.enable = true;
 
-
 nixpkgs.overlays = [
   (self: super: {
     ccacheWrapper = super.ccacheWrapper.override {
@@ -30,7 +29,19 @@ nixpkgs.overlays = [
         fi
       '';
     };
+        #ffmpeg-full = super.ffmpeg-full.override { stdenv = super.ccacheStdenv; };
   })
+
 ];
+
+programs.ccache.packageNames = [ "qtcore" 
+				 "libreoffice" 
+				 "octave" 
+				 "freecad" 
+				 "openscad"  
+				 #"ffmpeg-full"  
+				 "kdenlive"  
+				 "chromium"  
+				 ];
 
 }

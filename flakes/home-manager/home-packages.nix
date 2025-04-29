@@ -110,10 +110,10 @@
     #For Arduino
     arduino
 
-    ffmpeg
     vlc
     mpv
     
+    ffmpeg-full
 
 
   ];
