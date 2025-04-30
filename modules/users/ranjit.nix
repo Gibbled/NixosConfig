@@ -1,12 +1,12 @@
 {config, pkgs, lib, systemSettings, userSettings, ... }:
 {
-  sops.secrets.ranjit-password.neededForUsers = true;
-  users.mutableUsers = false;
+  #sops.secrets.ranjit-password.neededForUsers = true;
+  #users.mutableUsers = false;
 
   users.users.ranjit = {
 
   isNormalUser = true;
-  hashedPasswordFile = config.sops-secrets.ranjit-password.path;
+  #hashedPasswordFile = config.sops-secrets.ranjit-password.path;
   description = "Ranjit";
   uid = 1001;
   extraGroups = [ "networkmanager" "wheel" "docker" "video" "lp" "dialout" "tor"  "kvm" "libvirt" "usb" "input" "lpadmin" "plugdev" "pcap" "pipewire" "sddm" "crontab" "wireshark" ];
