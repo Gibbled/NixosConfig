@@ -50,6 +50,7 @@
   wg-netmanager
 
   sops
+  ssh-to-age
   age
 
   smartmontools
