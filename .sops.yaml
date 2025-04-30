@@ -1,10 +1,11 @@
 keys:
-  - &ranjit age1pundg56tq8258t4emcqy28p0gszey5mdkp3j34kg38yvzw080c3qeua5h8
-  - &xybr   age1lwg9tkx6w4c7vzrnru8thhfegqwttzdlwh6gqwu5hzxzwsyfpa0ss0ahjp
+  - &users:
+    - &ranjit age1pundg56tq8258t4emcqy28p0gszey5mdkp3j34kg38yvzw080c3qeua5h8
+  - &hosts:
+    - &xybr age1lwg9tkx6w4c7vzrnru8thhfegqwttzdlwh6gqwu5hzxzwsyfpa0ss0ahjp
+  
 creation_rules:
-#  - path_regex: ./secrets/secrets/[^/]+\.(yaml|json|env|ini)$
-#  - path_regex: ./secrets/secrets.yaml$
-  - path_regex: ./secrets/secrets.yaml
+  - path_regex: secrets.yaml$
     key_groups:
     - age:
       - *ranjit
