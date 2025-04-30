@@ -25,6 +25,7 @@ imports = [
 ./wireshark.nix
 ./wireguard.nix
 ./ccache.nix
+./smartd.nix
 
 ];
 

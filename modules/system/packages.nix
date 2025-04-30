@@ -51,6 +51,8 @@
 
   sops
   age
+
+  smartmontools
   ];
 
   # Install firefox.
