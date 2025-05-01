@@ -44,6 +44,8 @@ programs.ccache.packageNames = [ "qtcore"
 				 "kicad"  
 				 "kdenlive"  
 				 "ollama"  
+				 "qemu"  
+				 "virt-manager"  
 				 ];
 
 }

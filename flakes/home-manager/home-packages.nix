@@ -36,7 +36,6 @@
     # nix related
     nix-output-monitor
     # productivity
-    btop-rocm  # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
     # system call monitoring

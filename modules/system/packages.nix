@@ -31,7 +31,7 @@
   kitty
   pass
   nodejs
-  btop
+  btop-hip
   virt-manager
   virt-manager-qt
   qemu
