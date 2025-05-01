@@ -29,7 +29,6 @@ nixpkgs.overlays = [
         fi
       '';
     };
-        #ffmpeg-full = super.ffmpeg-full.override { stdenv = super.ccacheStdenv; };
   })
 
 ];
@@ -44,6 +43,7 @@ programs.ccache.packageNames = [ "qtcore"
 				 "chromium"  
 				 "kicad"  
 				 "kdenlive"  
+				 "ollama"  
 				 ];
 
 }

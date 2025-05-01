@@ -1,7 +1,5 @@
 {config, pkgs, lib, systemSettings, userSettings, ... }:
 {
-  #sops.secrets.ranjit-password.neededForUsers = true;
-  #users.mutableUsers = false;
 
   users.users.ranjit = {
 
