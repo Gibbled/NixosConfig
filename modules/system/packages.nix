@@ -26,7 +26,6 @@
   neofetch
   tree-sitter
   jq
-  neofetch
   pandoc
   zotero
   kitty
