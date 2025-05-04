@@ -17,6 +17,8 @@
   hack-font
   openssh
   ccache
+  ccacheStdenv
+  ccacheWrapper
   tmux
   stow
   git
@@ -31,7 +33,7 @@
   kitty
   pass
   nodejs
-  btop-hip
+  btop-rocm
   virt-manager
   virt-manager-qt
   qemu

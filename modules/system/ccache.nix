@@ -4,6 +4,8 @@
 
 programs.ccache.enable = true;
 
+nix.settings.extra-sandbox-paths = [ config.programs.ccache.cacheDir ];
+
 nixpkgs.overlays = [
   (self: super: {
     ccacheWrapper = super.ccacheWrapper.override {
@@ -33,42 +35,40 @@ nixpkgs.overlays = [
 
 ];
 
-programs.ccache.packageNames = [ "qtcore" 
+programs.ccache.packageNames = [ #"qtcore" 
 				 "libreoffice" 
 				 "octave" 
 				 "freecad" 
 				 "openscad"  
 				 #"ffmpeg-full"  
-				 "kdenlive"  
 				 "chromium"  
 				 "kicad"  
-				 "kdenlive"  
-				 "ollama"  
-				 "qemu"  
-				 "virt-manager"  
+				 #"kdenlive"  
+				 #"ollama"  
+				 #"qemu"  
+				 #"virt-manager"  
 				 "docker"  
-				 "privoxy"  
-				 "wireshark"  
-				 "searxng"  
-				 "tor-browser"  
-				 "neovim"  
+				 #"privoxy"  
+				 #"wireshark"  
+				 #"searx-ng"  
+				 #"tor-browser"  
+				 #"neovim"  
 				 "gnupg"  
-				 "age"  
-				 "vial"  
-				 "via"  
-				 "qmk"  
-				 "mpv"  
-				 "vlc"  
-				 "gcc"  
-				 "llvm"  
-				 "openscad"  
-				 "filezilla"  
-				 "meshlab"  
-				 "inkscape"  
-				 "blender-hip"  
-				 "btop-rocm"  
+				 #"age"  
+				 #"vial"  
+				 #"via"  
+				 #"qmk"  
+				 #"mpv"  
+				 # "vlc"  
+				 #"gcc"  
+				 #"llvm"  
+				 #"filezilla"  
+				 #"meshlab"  
+				 #"inkscape"  
+				 #"blender-hip"  
+				 #"btop-rocm"  
 				 "ardour"  
-				 "qjackctl"  
+				 #"qjackctl"  
 				 ];
 
 }
