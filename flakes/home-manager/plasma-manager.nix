@@ -51,6 +51,7 @@
                 "applications:firefox.desktop"
                 "applications:OrcaSlicer.desktop"
                 "applications:virt-manager.desktop"
+                "applications:blender.desktop"
               ];
             };
           }
@@ -92,6 +93,8 @@
 
 
     shortcuts = {
+      "services.virt-manager.desktop"."_launch" = "Ctrl+Alt+W";
+      "services.blender.desktop"."_launch" = "Ctrl+Alt+E";
       "services.firefox.desktop"."_launch" = "Ctrl+Alt+R";
       "services.kitty.desktop"."_launch" = "Ctrl+Alt+T";
       "ActivityManager"."switch-to-activity-9ae433ee-61bb-4f27-a73a-05cddee915f7" = [ ];
