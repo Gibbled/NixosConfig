@@ -27,6 +27,7 @@ imports = [
 #./ccache.nix
 ./smartd.nix
 #./sops.nix
+./ddclient.nix
 ];
 
 }
