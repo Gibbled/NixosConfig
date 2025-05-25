@@ -55,6 +55,8 @@
   age
 
   smartmontools
+
+  inetutils
   ];
 
   # Install firefox.
