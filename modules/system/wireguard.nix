@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  networking.networkmanager.dns = "systemd-resolved";
+  services.resolved.enable = true;
   networking.wg-quick.interfaces = let
     server_ip = "cloud.homeunix.org";
   in {
