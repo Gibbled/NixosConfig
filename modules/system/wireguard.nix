@@ -1,7 +1,14 @@
 { pkgs, ... }: {
+
+
   networking.networkmanager.dns = "systemd-resolved";
   services.resolved.enable = true;
   networking.wg-quick.interfaces = let
+  systemd.services.wg-quick-wg0 = {
+    requires = [ "network-online.target" "NetworkManager.service" ];
+    after = [ "graphical.target" ];
+    wants = [ "graphical.target" ];
+      };
     server_ip = "cloud.homeunix.org";
   in {
     wg0 = {
