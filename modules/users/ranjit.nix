@@ -4,6 +4,7 @@
   users.users.ranjit = {
 
   isNormalUser = true;
+  hashedPasswordFile = config.sops.secrets.ranjit-password.path;
   #hashedPasswordFile = config.sops-secrets.ranjit-password.path;
   description = "Ranjit";
   uid = 1001;
