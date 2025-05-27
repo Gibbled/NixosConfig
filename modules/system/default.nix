@@ -26,8 +26,8 @@ imports = [
 ./wireguard.nix
 #./ccache.nix
 ./smartd.nix
-#./sops.nix
 ./ddclient.nix
+./sops.nix
 ];
 
 }
