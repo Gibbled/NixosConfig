@@ -13,4 +13,9 @@ sops.secrets.private_keys = {
 sops.secrets.ranjit-password = { 
   neededForUsers = true;
 };
+
+sops.secrets.wireguard-gragnet = { 
+    restartUnits = [ "wg-quick-wg0.service" ];
+    path = "/etc/wireguard/keys/privatekey";
+};
 }

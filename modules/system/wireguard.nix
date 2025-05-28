@@ -1,6 +1,8 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, sops-nix, ... }: 
 
 
+
+{
   networking.networkmanager.dns = "systemd-resolved";
   services.resolved.enable = true;
   networking.wg-quick.interfaces = let
