@@ -22,6 +22,7 @@
   tmux
   stow
   git
+  gh
   lua
   ripgrep
   fd

@@ -18,4 +18,8 @@ sops.secrets.wireguard-gragnet = {
     restartUnits = [ "wg-quick-wg0.service" ];
     path = "/etc/wireguard/keys/privatekey";
 };
+
+sops.secrets.github-gibbled = {
+  owner = config.users.users.ranjit.name;
+};
 }
