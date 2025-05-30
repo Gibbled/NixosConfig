@@ -37,6 +37,9 @@
         modules = [
           ./configuration.nix
 	  ./modules/system
+	  ./modules/machines/ax8pro/hardware.nix
+	  ./modules/users/ranjit.nix
+          ./hardware-configuration.nix
 	  sops-nix.nixosModules.sops
 
 
