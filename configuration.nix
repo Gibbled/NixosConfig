@@ -4,7 +4,7 @@
   imports =
     [ 
       ./modules/users/ranjit.nix
-      ./modules/system
+      #./modules/system
       ./modules/machines/ax8pro/hardware.nix
       ./hardware-configuration.nix
     ];

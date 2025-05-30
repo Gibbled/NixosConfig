@@ -36,6 +36,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+	  ./modules/system
 	  sops-nix.nixosModules.sops
 
 
