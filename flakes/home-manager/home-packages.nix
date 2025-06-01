@@ -84,6 +84,8 @@
     chromium
     librewolf-bin
     signal-desktop
+    session-desktop
+    whatsie
     #nheko
     #neochat
 
