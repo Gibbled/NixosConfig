@@ -58,5 +58,7 @@
 programs.xwayland.enable = true;
 
 #Allow the wheel group to not use a password for sudo
-security.sudo.wheelNeedsPassword = false;
+#security.sudo.wheelNeedsPassword = false;
+#Yubikeys working now, so switch password back on.
+security.sudo.wheelNeedsPassword = true;
 }

@@ -2,55 +2,45 @@
   config,
   pkgs,
   lib,
-  configVars,
   ...
 }:
 
-
-let
-  homeDirectory = "/home/${configVars.username}";
-in
 {
-  options = {
-    yubikey = {
-      enable = lib.mkEnableOption "Enable yubikey support";
-    };
-  };
-  config = lib.mkIf config.yubikey.enable {
-    environment.systemPackages = builtins.attrValues {
-      inherit (pkgs)
-      yubioath-flutter # gui-based authenticator tool. yubioath-desktop on older nixpkg channels
-      yubikey-manager # cli-based authenticator tool. accessed via `ykman`
 
-      pam_u2f # for yubikey with sudo
-      ;
-    };
+services.udev.packages = [ pkgs.yubikey-personalization ];
+services.pcscd.enable = true;
 
-    # Yubikey required services and config. See Dr. Duh NixOS config for
-    # reference
-    services.pcscd.enable = true; # smartcard service
-    services.udev.packages = [ pkgs.yubikey-personalization ];
+programs.gnupg.agent = {
+  enable = true;
+  enableSSHSupport = true;
+};
 
-    services.yubikey-agent.enable = true;
 
-    # yubikey login / sudo
-    security.pam = lib.optionalAttrs pkgs.stdenv.isLinux {
-      sshAgentAuth.enable = true;
-      u2f = {
-        enable = true;
-        settings = {
-          cue = true; # Tells user they need to press the button
-          authFile = "${homeDirectory}/.config/Yubico/u2f_keys";
-        };
-      };
-      services = {
-        login.u2fAuth = true;
-        sudo = {
-          u2fAuth = true;
-          sshAgentAuth = true; # Use SSH_AUTH_SOCK for sudo
-        };
-      };
-    };
-  };
+
+security.pam.services = {
+  login.u2fAuth = true;
+  sudo.u2fAuth = true;
+};
+
+security.pam.yubico = {
+   enable = true;
+   debug = true;
+   mode = "challenge-response";
+   id = [ "4872437" 
+          "4872881"
+   ];
+
+};
+
+services.udev.extraRules = ''
+      ACTION=="remove",\
+       ENV{ID_BUS}=="usb",\
+       ENV{ID_MODEL_ID}=="0116",\
+       ENV{ID_VENDOR_ID}=="1050",\
+       ENV{ID_VENDOR}=="Yubico",\
+       RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
+  '';
+
+
+
 }
-
