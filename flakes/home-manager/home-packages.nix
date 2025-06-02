@@ -112,6 +112,7 @@
 
     vlc
     mpv
+    youtube-music
     
     ffmpeg-full
 
