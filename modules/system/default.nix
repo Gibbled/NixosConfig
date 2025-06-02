@@ -28,6 +28,7 @@ imports = [
 ./smartd.nix
 ./ddclient.nix
 ./sops.nix
+./yubikey.nix
 ];
 
 }
