@@ -54,6 +54,7 @@
   sops
   ssh-to-age
   age
+  yubioath-flutter
 
   smartmontools
 
