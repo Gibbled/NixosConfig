@@ -55,6 +55,9 @@
   ssh-to-age
   age
   yubioath-flutter
+  yubikey-manager
+  pam_u2f
+
 
   smartmontools
 
