@@ -56,12 +56,14 @@
   age
   yubioath-flutter
   yubikey-manager
+  yubikey-personalization
   pam_u2f
 
 
   smartmontools
 
   inetutils
+  dunst
   ];
 
   # Install firefox.
