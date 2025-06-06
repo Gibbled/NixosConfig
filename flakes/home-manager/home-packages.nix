@@ -115,6 +115,8 @@
     youtube-music
     
     ffmpeg-full
+    
+    kdePackages.marble
 
 
   ];
