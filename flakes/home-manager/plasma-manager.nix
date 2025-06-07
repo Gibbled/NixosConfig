@@ -25,8 +25,7 @@
             name = "org.kde.plasma.kickoff";
             config = {
               General = {
-                #icon = "nix-snowflake-white";
-                icon = "logo.png";
+                icon = "nix-snowflake-white";
                 alphaSort = true;
               };
             };
