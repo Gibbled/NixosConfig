@@ -13,7 +13,7 @@
     panels = [
       # Windows-like panel at the bottom
       {
-        location = "bottom";
+        location = "top";
 	lengthMode = "fit";
         widgets = [
           # We can configure the widgets by adding the name and config
@@ -25,7 +25,8 @@
             name = "org.kde.plasma.kickoff";
             config = {
               General = {
-                icon = "nix-snowflake-white";
+                #icon = "nix-snowflake-white";
+                icon = "logo.png";
                 alphaSort = true;
               };
             };

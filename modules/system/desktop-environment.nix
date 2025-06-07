@@ -21,6 +21,7 @@
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
   konsole
+  kontact
   oxygen
   kate
 ];
