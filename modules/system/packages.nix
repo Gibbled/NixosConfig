@@ -69,6 +69,8 @@
 
   inetutils
   dunst
+  espeak
+  
   ];
 
   # Install firefox.
