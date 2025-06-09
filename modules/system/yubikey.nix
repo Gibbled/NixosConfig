@@ -20,7 +20,7 @@ programs.gnupg.agent = {
 
 
 security.pam.services = {
-  login.u2fAuth = true;
+  login.u2fAuth = false;
   sudo.u2fAuth = true;
 };
 
