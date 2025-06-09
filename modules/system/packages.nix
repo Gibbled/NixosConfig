@@ -57,6 +57,11 @@
   yubioath-flutter
   yubikey-manager
   yubikey-personalization
+  yubikey-personalization-gui
+  yubikey-touch-detector 
+  age-plugin-yubikey
+  piv-agent
+  yubico-piv-tool
   pam_u2f
 
 
