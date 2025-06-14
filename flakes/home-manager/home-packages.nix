@@ -85,7 +85,8 @@
     librewolf-bin
     signal-desktop
     session-desktop
-    whatsie
+    zapzap
+    #whatsie
     #nheko
     #neochat
 
