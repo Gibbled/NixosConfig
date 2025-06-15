@@ -26,7 +26,7 @@ security.pam.services = {
 
 security.pam.yubico = {
    enable = true;
-   debug = true;
+   debug = false;
    mode = "challenge-response";
    id = [ "4872437" 
           "4872881"
