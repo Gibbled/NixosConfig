@@ -69,6 +69,11 @@
   inetutils
   dunst
   espeak
+
+
+  #for secureboot
+  niv
+  sbctl
   
   ];
 
