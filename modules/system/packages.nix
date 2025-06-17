@@ -74,6 +74,10 @@
   #for secureboot
   niv
   sbctl
+
+
+  #Don't have Python installed
+  python3
   
   ];
 

@@ -29,7 +29,6 @@ imports = [
 ./ddclient.nix
 ./sops.nix
 ./yubikey.nix
-./lanzabote.nix
 ];
 
 }
