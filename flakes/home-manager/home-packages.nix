@@ -56,7 +56,7 @@
     luajitPackages.jsregexp
     luajitPackages.luarocks-nix
     rustup
-    kicad
+    #kicad
     darktable
     blender-hip
     freecad
