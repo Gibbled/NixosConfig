@@ -12,7 +12,7 @@ imports = [
 ./ldfix.nix
 ./locale.nix
 ./neovim.nix
-#./ollama.nix
+./ollama.nix
 ./packages.nix
 ./privoxy.nix
 ./proxy.nix
