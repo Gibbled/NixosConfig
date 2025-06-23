@@ -67,7 +67,6 @@
   smartmontools
 
   inetutils
-  dunst
   espeak
 
 
