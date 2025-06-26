@@ -36,5 +36,6 @@ environment.systemPackages = with pkgs; [
 
   systemd.services.lactd.wantedBy = ["multi-user.target"];
   hardware.keyboard.qmk.enable = true;
+  nix.settings.download-buffer-size = 524288000;
 
 }
