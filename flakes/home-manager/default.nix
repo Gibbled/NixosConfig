@@ -13,6 +13,7 @@ imports = [
 ./bash.nix
 ./home-packages.nix
 ./nvim.nix
+./dotfiles.nix
 ];
 
 

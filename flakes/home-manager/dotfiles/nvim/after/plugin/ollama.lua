@@ -1,0 +1,2 @@
+        --require('gen').command = '/home/ranjit/bin/ollama/ollama run $model $prompt'
+	----------------require('gen').command = '/home/ranjit/bin/ollama/ollama run $model $prompt'
