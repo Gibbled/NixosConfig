@@ -5,7 +5,7 @@
 home.file.".config/kitty/kitty.conf".source = ./dotfiles/kitty/kitty.conf;
 home.file.".config/kitty/current-theme.conf".source = ./dotfiles/kitty/current-theme.conf;
 
-#home.file.".config/nvim/init.lua".source = ./dotfiles/nvim/init.lua;
+home.file.".config/nvim/init.lua".source = ./dotfiles/nvim/init.lua;
 home.file.".config/nvim/after/plugin/colours.lua".source = ./dotfiles/nvim/after/plugin/colours.lua;
 home.file.".config/nvim/after/plugin/fugitive.lua".source = ./dotfiles/nvim/after/plugin/fugitive.lua;
 home.file.".config/nvim/after/plugin/harpoon.lua".source = ./dotfiles/nvim/after/plugin/harpoon.lua;

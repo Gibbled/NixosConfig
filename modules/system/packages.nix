@@ -77,6 +77,9 @@
 
   #Don't have Python installed
   python3
+
+  vimPlugins.mini-base16
+  vimPlugins.base16-nvim
   
   ];
 

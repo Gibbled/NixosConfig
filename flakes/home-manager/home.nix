@@ -3,7 +3,9 @@
 {
   home.username = "ranjit";
   home.homeDirectory = "/home/ranjit";
+  stylix.targets.neovim.enable = false;
   imports = [
+
   ];
 
   xresources.properties = {
