@@ -6,7 +6,7 @@ imports = [
 
 ./desktop-environment.nix
 ./docker.nix
-./firefox.nix
+#./firefox.nix
 ./firewall.nix
 ./flakes.nix
 ./ldfix.nix

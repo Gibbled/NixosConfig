@@ -83,8 +83,6 @@
   
   ];
 
-  # Install firefox.
-  #programs.firefox-bin.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
