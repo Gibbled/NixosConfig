@@ -28,6 +28,7 @@
 	zen-mode-nvim
 	snacks-nvim
 	noice-nvim
+        nvim-treesitter-parsers.latex
       ];
     };
 
