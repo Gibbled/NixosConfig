@@ -15,6 +15,14 @@
         nvim-treesitter.withAllGrammars
         tokyonight-nvim
         mason-nvim
+	fugitive-gitlab-vim
+	telescope-nvim
+	nvim-tree-lua
+	ollama-nvim
+	harpoon
+	lualine-nvim
+	lsp_extensions-nvim
+	undotree
       ];
     };
 
