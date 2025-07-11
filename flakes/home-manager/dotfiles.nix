@@ -16,6 +16,7 @@ home.file.".config/nvim/after/plugin/nvim-tree.lua".source = ./dotfiles/nvim/aft
 home.file.".config/nvim/after/plugin/ollama.lua".source = ./dotfiles/nvim/after/plugin/ollama.lua;
 home.file.".config/nvim/after/plugin/telescope.lua".source = ./dotfiles/nvim/after/plugin/telescope.lua;
 home.file.".config/nvim/after/plugin/undotree.lua".source = ./dotfiles/nvim/after/plugin/undotree.lua;
+home.file.".config/nvim/after/plugin/noice.lua".source = ./dotfiles/nvim/after/plugin/noice.lua;
 home.file.".config/nvim/lua/ranjit/init.lua".source = ./dotfiles/nvim/lua/ranjit/init.lua;
 home.file.".config/nvim/lua/ranjit/packer.lua".source = ./dotfiles/nvim/lua/ranjit/packer.lua;
 home.file.".config/nvim/lua/ranjit/remap.lua".source = ./dotfiles/nvim/lua/ranjit/remap.lua;

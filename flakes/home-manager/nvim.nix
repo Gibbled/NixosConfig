@@ -23,6 +23,11 @@
 	lualine-nvim
 	lsp_extensions-nvim
 	undotree
+	render-markdown-nvim
+	twilight-nvim
+	zen-mode-nvim
+	snacks-nvim
+	noice-nvim
       ];
     };
 
