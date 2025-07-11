@@ -39,11 +39,27 @@ in {
           installation_mode = "force_installed";
        };
         "sponsorBlocker@ajay.app" = {
-          install_url = "https://addons/mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
           installation_mode = "force_installed";
           };
         "jid1-MnnxcxisBPnSXQ@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
+          installation_mode = "force_installed";
+        };
+        "{884679b9-5d6b-48b2-90a7-15ae26ce568a}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/watch-on-odysee/latest.xpi";
+          installation_mode = "force_installed";
+        };
+        "idcac-pub@guus.ninja" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
+          installation_mode = "force_installed";
+        };
+        "enhancerforyoutube@maximerf.addons.mozilla.org" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/latest.xpi";
+          installation_mode = "force_installed";
+        };
+        "jid1-BoFifL9Vbdl2zQ@jetpack" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
           installation_mode = "force_installed";
         };
       };
