@@ -83,7 +83,7 @@
     tor-browser
     chromium
     librewolf-bin
-    signal-desktop
+    signal-desktop-bin
     session-desktop
     zapzap
     #whatsie
