@@ -31,6 +31,11 @@ in {
         "browser.newtabpage.activity-stream.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+	"network.proxy.http" = "127.0.0.1";
+	"network.proxy.http_port" = 8118;
+	"network.proxy.type" = 1;
+	"network.proxy.share_proxy_settings" = true;
+
       };
 
       ExtensionSettings = {
