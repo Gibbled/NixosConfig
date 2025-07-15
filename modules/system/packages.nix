@@ -1,4 +1,4 @@
-{ config, pkgs , ... }:
+{ confi, pkgs , ... }:
 
 {
 
@@ -13,7 +13,7 @@
   wget
   fwupd
   luajitPackages.luarocks-nix
-  texliveFull
+  #texliveFull
   hack-font
   openssh
   #ccache

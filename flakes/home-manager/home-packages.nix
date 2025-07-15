@@ -57,7 +57,7 @@
     luajitPackages.luarocks-nix
     rustup
     kicad
-    darktable
+    #darktable
     blender-hip
     freecad
     openscad
@@ -71,7 +71,7 @@
     kdePackages.kdenlive
     zotero
     yt-dlp
-    gimp
+    #gimp
     inkscape
     meshlab
 
@@ -93,7 +93,7 @@
     plover.dev
     vial
     via
-    qmk
+    #qmk
     qmk-udev-rules
     qmk_hid
     keymapviz
