@@ -11,6 +11,7 @@
       PAGER=less LESS=R
       clear && `which neofetch`
       export GDK_DPI_SCALE="2"
+      export NIXPKGS_ALLOW_UNFREE=1
       '';
 
       shellAliases = {
