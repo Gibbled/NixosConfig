@@ -13,7 +13,7 @@
     panels = [
       # Windows-like panel at the bottom
       {
-        location = "top";
+        location = "bottom";
 	lengthMode = "fit";
         widgets = [
           # We can configure the widgets by adding the name and config
@@ -371,6 +371,7 @@
       "kactivitymanagerdrc"."activities"."be924cdb-b275-4dbd-bca6-283d79b9d7fc" = "Default";
       "kactivitymanagerdrc"."main"."currentActivity" = "be924cdb-b275-4dbd-bca6-283d79b9d7fc";
       "kcminputrc"."Mouse"."cursorSize" = 32;
+      "kcminputrc"."Mouse"."cursorTheme" = "Bibata-Modern-Amber";
       "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
       "kded5rc"."Module-device_automounter"."autoload" = false;
       "kdeglobals"."DirSelect Dialog"."DirSelectDialog Size" = "820,584";
@@ -450,8 +451,14 @@
       "kwinrc"."Desktops"."Id_6" = "e2eb8364-1ab5-49e8-b3a0-66f34edb259e";
       "kwinrc"."Desktops"."Id_7" = "8587182b-808c-445b-8c73-a32ee5a75db2";
       "kwinrc"."Desktops"."Id_8" = "9912ef68-8818-48e6-a46d-c8a40b50ccdf";
-      "kwinrc"."Desktops"."Name_1" = "Desktop 2";
-      "kwinrc"."Desktops"."Name_2" = "Desktop 1";
+      "kwinrc"."Desktops"."Name_1" = "Desktop 1";
+      "kwinrc"."Desktops"."Name_2" = "Desktop 2";
+      "kwinrc"."Desktops"."Name_3" = "Desktop 3";
+      "kwinrc"."Desktops"."Name_4" = "Desktop 4";
+      "kwinrc"."Desktops"."Name_5" = "Desktop 5";
+      "kwinrc"."Desktops"."Name_6" = "Desktop 6";
+      "kwinrc"."Desktops"."Name_7" = "Desktop 7";
+      "kwinrc"."Desktops"."Name_8" = "Desktop 8";
       "kwinrc"."Desktops"."Number[$i]" = 8;
       "kwinrc"."Desktops"."Rows" = 2;
       "kwinrc"."EdgeBarrier"."CornerBarrier" = false;
@@ -477,6 +484,7 @@
       "kwinrc"."Tiling.d0ee5a5c-6a17-5dd9-b898-5ca97de21ca0"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
       "kwinrc"."Xwayland"."Scale" = 2;
       "kwinrc"."org.kde.kdecoration2"."ButtonsOnLeft" = "SF";
+      "kwinrc"."org.kde.kdecoration2"."theme" = "__aurorae__svg__Sweet-Dark-transparent";
       "kwinrulesrc"."1"."Description" = "Dolphin";
       "kwinrulesrc"."1"."maximizehoriz" = true;
       "kwinrulesrc"."1"."maximizehorizrule" = 3;

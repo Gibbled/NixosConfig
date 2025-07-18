@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs;  [
   lact
   neovim
+  nixd
   lsb-release
   usbutils
   pciutils
@@ -85,6 +86,10 @@
 
   #for stylix
   pkgs.bibata-cursors
+
+
+  gpsbabel-gui
+  gpsbabel
   
   ];
 

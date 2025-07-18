@@ -9,6 +9,8 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
   services.displayManager.sddm.wayland.enable = true;
+  #Rootless wayland
+  services.displayManager.sddm.settings.General.DisplayServer = "wayland";
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -18,7 +20,6 @@
   programs.dconf.enable = true;
 
 
-
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
   konsole
   kontact
@@ -26,6 +27,11 @@
   kate
 ];
 
+  # environment.sessionVariables = {
+   # QT_STYLE_OVERRIDE = "Utterly-Round";
+    #QT_GLOBAL_THEME_OVERRIDE = "Kvantum";
+    #QT_WINDOW_DECORATIONS_OVERRIDE = "Sweet-Dark-transparent";
+#  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
