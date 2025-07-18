@@ -7,18 +7,19 @@
   #autoEnable = false;
   #targets.neovim.enable = false;
   #targets.blender.enable = true;
-  base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml"; 
+  base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml"; 
+  #cursor.package = pkgs.bibata-cursors;
+  #cursor.name = "Bibata-Modern-Ice";
   #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml"; 
-  };
-  stylix.fonts = {
+  fonts = {
     serif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Serif";
+      package = pkgs.nerd-fonts.hack;
+      name = "Hack Font";
     };
 
     sansSerif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans";
+      package = pkgs.nerd-fonts.hack;
+      name = "Hack Font";
     };
 
     monospace = {
@@ -30,7 +31,26 @@
       package = pkgs.noto-fonts-emoji;
       name = "Noto Color Emoji";
     };
+
+    sizes = {
+      applications = 14;
+      terminal = 16;
+      desktop = 14;
+      popups = 14;
+    };
+
   };
 
+    opacity = {
+      applications = 0.8;
+      terminal = 0.8;
+      desktop = 0.8;
+      popups = 0.6;
+    };
+
+  
+
+
+  };
 
 }

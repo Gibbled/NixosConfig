@@ -15,6 +15,7 @@ let
 in {
   programs.firefox = {
     enable = true;
+    profiles.New-Main.extensions.force = true;
 
     policies = {
       DisableTelemetry = true;
@@ -35,7 +36,6 @@ in {
 	"network.proxy.http_port" = 8118;
 	"network.proxy.type" = 1;
 	"network.proxy.share_proxy_settings" = true;
-
       };
 
       ExtensionSettings = {

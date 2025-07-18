@@ -81,6 +81,10 @@
 
   vimPlugins.mini-base16
   vimPlugins.base16-nvim
+
+
+  #for stylix
+  pkgs.bibata-cursors
   
   ];
 

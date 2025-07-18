@@ -1,10 +1,12 @@
 { config, pkgs,  ... }:
 
 {
-stylix.targets.firefox.colorTheme.enable = true;
-stylix.targets.firefox.enable = true;
-stylix.targets.firefox.profileNames = [ "New-Main" ];
-programs.firefox.profiles.New-Main.extensions.force = true;
+stylix = {
+targets.firefox.colorTheme.enable = true;
+targets.firefox.enable = true;
+targets.firefox.profileNames = [ "New-Main" ];
+
+};
 
 
 
