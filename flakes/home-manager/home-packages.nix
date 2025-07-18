@@ -72,6 +72,7 @@
     zotero
     yt-dlp
     #gimp
+    gimp3-with-plugins
     inkscape
     meshlab
 
