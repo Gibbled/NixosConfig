@@ -36,10 +36,8 @@
   pass
   nodejs
   btop-rocm
-  virt-manager
   virt-manager-qt
   qemu
-  dnsmasq
   docker
   docker-compose
   usbutils
