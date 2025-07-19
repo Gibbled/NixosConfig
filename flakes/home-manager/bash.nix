@@ -23,6 +23,8 @@
       epoch = "echo \"obase\=2;`date '+%s'`\" | bc";
       gnr = "ssh -i /home/ranjit/.ssh/id_noringu_ecdsa -p 2525 'ranjit@gragnet.dyndns.org'";
       grr = "ssh -i /home/ranjit/.ssh/id_ringu_ecdsa -p 2525 'ranjit@gragnet.dyndns.org'";
+      bootclean = "sudo nixos-rebuild boot"; 
+      fullclean = "cleanup&&bootclean";
 
       };
     };
