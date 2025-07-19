@@ -8,19 +8,27 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-  services.displayManager.sddm.wayland.enable = true;
-  #Rootless wayland
-  services.displayManager.sddm.settings.General.DisplayServer = "wayland";
-  services.displayManager.sddm.settings.Theme.ThemeDir = "/run/current-system/sw/share/sddm/themes";
+  
+  services.displayManager.sddm = {
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  wayland.enable = true;
+  settings.General.DisplayServer = "wayland";
+  settings.Theme.ThemeDir = "/run/current-system/sw/share/sddm/themes";
+  enable = true;
+  theme = "sddm-astronaut-theme";
+
+  };
+  #services.displayManager.sddm.wayland.enable = true;
+  #services.displayManager.sddm.settings.General.DisplayServer = "wayland";
+  #services.displayManager.sddm.settings.Theme.ThemeDir = "/run/current-system/sw/share/sddm/themes";
+  #services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.theme = "sddm-astronaut-theme";
+
   services.desktopManager.plasma6.enable = true;
 
   #This should make gtk apps look less shitty
   programs.dconf.enable = true;
 
-  services.displayManager.sddm.theme = "sddm-astronaut-theme";
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
   #konsole

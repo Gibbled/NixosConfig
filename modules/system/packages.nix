@@ -91,9 +91,11 @@
 
   sddm-astronaut
   kdePackages.qtmultimedia
-  
   ];
 
+  
+
+  
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
