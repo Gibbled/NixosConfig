@@ -30,12 +30,7 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #lanzaboote = {
-      #url = "github:nix-community/lanzaboote/v0.4.2";
 
-      # Optional but recommended to limit the size of your system closure.
-      #inputs.nixpkgs.follows = "nixpkgs";
-    #};
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,40 +43,18 @@
     nixosConfigurations = {
       # TODO please change the hostname to your own
       xybr = nixpkgs.lib.nixosSystem {
+
         system = "x86_64-linux";
+
         modules = [
           ./configuration.nix
 	  ./modules/system
 	  ./modules/machines/ax8pro/hardware.nix
+	  ./modules/machines/ax8pro/hardware-configuration.nix
 	  ./modules/users/ranjit.nix
-          ./hardware-configuration.nix
 	  sops-nix.nixosModules.sops
 	  stylix.nixosModules.stylix
 
-	  #lanzaboote.nixosModules.lanzaboote
-
-	    #({ pkgs, lib, ... }: {
-
-            #environment.systemPackages = [
-              # For debugging and troubleshooting Secure Boot.
-              #pkgs.sbctl
-            #];
-
-            # Lanzaboote currently replaces the systemd-boot module.
-            # This setting is usually set to true in configuration.nix
-            # generated at installation time. So we force it to false
-            # for now.
-            #boot.loader.systemd-boot.enable = lib.mkForce false;
-
-            #boot.lanzaboote = {
-              #enable = true;
-              #pkiBundle = "/var/lib/sbctl";
-            #};
-          #})
-
-
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -94,18 +67,47 @@
 	    home-manager.backupFileExtension = "backup";
 
 
-            # TODO replace ryan with your own username
-            #home-manager.users.ranjit = import ./flakes/home-manager/home.nix;
             home-manager.users.ranjit = import ./flakes/home-manager;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+          }
+        ];
+      };
+
+      stinkpad = nixpkgs.lib.nixosSystem {
+
+        system = "x86_64-linux";
+
+        modules = [
+          ./configuration.nix
+	  ./modules/system
+	  #Not needed on this machine no amd stuff 
+	  #./modules/machines/T430/hardware.nix
+	  ./modules/machines/T430/hardware-configuration.nix
+	  ./modules/users/ranjit.nix
+	  sops-nix.nixosModules.sops
+	  stylix.nixosModules.stylix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+	    home-manager.sharedModules = [ 
+
+	      plasma-manager.homeManagerModules.plasma-manager 
+              sops-nix.homeManagerModules.sops
+	      ];
+	    home-manager.backupFileExtension = "backup";
+
+
+            home-manager.users.ranjit = import ./flakes/home-manager;
+
           }
         ];
       };
     };
-  };
+    };
   systems = [
     "x86_64-linux"
   ];
-};
+  };
 }
