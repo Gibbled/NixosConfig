@@ -80,8 +80,7 @@
         modules = [
           ./configuration.nix
 	  ./modules/system
-	  #Not needed on this machine no amd stuff 
-	  #./modules/machines/T430/hardware.nix
+	  ./modules/machines/T430/hardware.nix
 	  ./modules/machines/T430/hardware-configuration.nix
 	  ./modules/users/ranjit.nix
 	  sops-nix.nixosModules.sops
