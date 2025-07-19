@@ -88,6 +88,9 @@
 
   gpsbabel-gui
   gpsbabel
+
+  sddm-astronaut
+  kdePackages.qtmultimedia
   
   ];
 

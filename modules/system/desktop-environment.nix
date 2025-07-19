@@ -11,6 +11,7 @@
   services.displayManager.sddm.wayland.enable = true;
   #Rootless wayland
   services.displayManager.sddm.settings.General.DisplayServer = "wayland";
+  services.displayManager.sddm.settings.Theme.ThemeDir = "/run/current-system/sw/share/sddm/themes";
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -19,9 +20,10 @@
   #This should make gtk apps look less shitty
   programs.dconf.enable = true;
 
+  services.displayManager.sddm.theme = "sddm-astronaut-theme";
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  konsole
+  #konsole
   kontact
   oxygen
   kate
