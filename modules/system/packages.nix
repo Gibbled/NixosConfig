@@ -35,6 +35,7 @@
   pandoc
   zotero
   kitty
+  alacritty
   pass
   nodejs
   btop-rocm
