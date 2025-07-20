@@ -3,7 +3,7 @@
 {   
 
 imports = [
-
+./smartd.nix
 ];
 
 }
