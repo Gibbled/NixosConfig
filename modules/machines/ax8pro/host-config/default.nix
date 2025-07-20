@@ -6,6 +6,7 @@ imports = [
 
 ./ollama.nix
 ./ddclient.nix
+./smartd.nix
 ];
 
 }

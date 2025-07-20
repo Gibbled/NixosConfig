@@ -112,7 +112,7 @@
      hotkeys.commands."firefox" = {
        name = "Launch Firefox";
        key = "Ctrl+Alt+R";
-       command = "blender";
+       command = "firefox";
      };
 
     shortcuts = {
