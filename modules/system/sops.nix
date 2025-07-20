@@ -19,6 +19,16 @@ sops.secrets.wireguard-gragnet = {
     path = "/etc/wireguard/keys/privatekey";
 };
 
+sops.secrets.Authorized_Keys = {
+     path = "/home/ranjit/.ssh/authorized_keys";
+     owner = config.users.users.ranjit.name;
+};
+
+sops.secrets.Samsung2 = {
+    owner = config.users.users.ranjit.name;
+};
+
+
 sops.secrets.github-gibbled = {
   owner = config.users.users.ranjit.name;
 };
