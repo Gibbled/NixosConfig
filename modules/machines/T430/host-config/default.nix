@@ -4,6 +4,7 @@
 
 imports = [
 ./smartd.nix
+./packages.nix
 ];
 
 }

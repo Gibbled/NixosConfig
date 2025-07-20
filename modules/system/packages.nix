@@ -38,7 +38,6 @@
   alacritty
   pass
   nodejs
-  btop-rocm
   virt-manager-qt
   qemu
   docker

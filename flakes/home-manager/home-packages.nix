@@ -58,7 +58,6 @@
     rustup
     kicad
     #darktable
-    blender-hip
     freecad
     openscad
 
