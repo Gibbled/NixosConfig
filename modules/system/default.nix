@@ -6,13 +6,12 @@ imports = [
 
 ./desktop-environment.nix
 ./docker.nix
-#./firefox.nix
 ./firewall.nix
 ./flakes.nix
 ./ldfix.nix
 ./locale.nix
 ./neovim.nix
-./ollama.nix
+#./ollama.nix
 ./packages.nix
 ./privoxy.nix
 ./proxy.nix
@@ -24,9 +23,8 @@ imports = [
 ./virt-manager.nix
 ./wireshark.nix
 ./wireguard.nix
-#./ccache.nix
 ./smartd.nix
-./ddclient.nix
+#./ddclient.nix
 ./sops.nix
 ./yubikey.nix
 ./stylix.nix

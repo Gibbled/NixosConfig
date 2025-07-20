@@ -46,6 +46,7 @@
 	  ./modules/system
 	  ./modules/machines/ax8pro/hardware.nix
 	  ./modules/machines/ax8pro/hardware-configuration.nix
+	  ./modules/machines/ax8pro/host-config
 	  ./modules/users/ranjit.nix
 	  sops-nix.nixosModules.sops
 	  stylix.nixosModules.stylix
@@ -77,6 +78,7 @@
 	  ./modules/system
 	  ./modules/machines/T430/hardware.nix
 	  ./modules/machines/T430/hardware-configuration.nix
+	  ./modules/machines/T430/host-config
 	  ./modules/users/ranjit.nix
 	  sops-nix.nixosModules.sops
 	  stylix.nixosModules.stylix
