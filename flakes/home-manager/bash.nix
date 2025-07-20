@@ -9,7 +9,7 @@
       PATH="$HOME/.local/bin:$PATH:$HOME/bin"
       export LESS="-X"
       PAGER=less LESS=R
-      clear && `which neofetch`
+      clear && `which nitch`
       export GDK_DPI_SCALE="2"
       export NIXPKGS_ALLOW_UNFREE=1
       '';
