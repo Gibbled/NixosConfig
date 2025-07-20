@@ -16,6 +16,7 @@
   luajitPackages.luarocks-nix
   #texliveFull
   hack-font
+  noto-fonts-color-emoji
   openssh
   #ccache
   #ccacheStdenv
@@ -28,6 +29,7 @@
   ripgrep
   fd
   neofetch
+  nitch
   tree-sitter
   jq
   pandoc

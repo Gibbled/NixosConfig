@@ -13,8 +13,8 @@
   #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml"; 
   fonts = {
     serif = {
-      package = pkgs.nerd-fonts.hack;
-      name = "Hack Font";
+      package = pkgs.aleo-fonts;
+      name = "Aleo";
     };
 
     sansSerif = {
@@ -23,12 +23,12 @@
     };
 
     monospace = {
-      package = pkgs.nerd-fonts.hack;
-      name = "Hack Font";
+      package = pkgs.maple-mono.variable;
+      name = "Maple Mono";
     };
 
     emoji = {
-      package = pkgs.noto-fonts-emoji;
+      package = pkgs.noto-fonts-color-emoji;
       name = "Noto Color Emoji";
     };
 
