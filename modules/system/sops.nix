@@ -9,6 +9,11 @@ sops.age.keyFile = "/home/ranjit/.config/sops/age/keys.txt";
 
 sops.secrets.private_keys = {
   owner = config.users.users.ranjit.name;
+  path = "/home/ranjit/.ssh/id_ed25519-20250202";
+};
+sops.secrets.public_keys = {
+  owner = config.users.users.ranjit.name;
+  path = "/home/ranjit/.ssh/id_ed25519-20250202.pub";
 };
 sops.secrets.ranjit-password = { 
   neededForUsers = true;
