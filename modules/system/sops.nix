@@ -29,6 +29,11 @@ sops.secrets.Authorized_Keys = {
      owner = config.users.users.ranjit.name;
 };
 
+sops.secrets.ddclient_secret = {
+     path = "/home/ranjit/.config/ddclient/secret.txt";
+     owner = config.users.users.ranjit.name;
+};
+
 sops.secrets.Samsung2 = {
     owner = config.users.users.ranjit.name;
 };
