@@ -19,9 +19,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    nix-colors.url = "github:misterio77/nix-colors";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,8 +30,7 @@
     };
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, flake-parts, plasma-manager, sops-nix, stylix, ... }:
-    ####
+   outputs = inputs @ { nixpkgs, home-manager, plasma-manager, sops-nix, stylix, ... }:
     let
       userOptions = {
         userName = "ranjit";
@@ -45,8 +41,7 @@
       };
     in
 
-    flake-parts.lib.mkFlake { inherit inputs; } {
-    flake = {
+    {
     nixosConfigurations = {
       xybr = nixpkgs.lib.nixosSystem {
 
@@ -113,9 +108,4 @@
       };
     };
     };
-    ####
-  systems = [
-    "x86_64-linux"
-  ];
-  };
 }
