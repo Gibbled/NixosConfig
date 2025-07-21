@@ -28,8 +28,9 @@
   lua
   ripgrep
   fd
-  neofetch
-  nitch
+  #neofetch
+  #nitch
+  fastfetch
   tree-sitter
   jq
   pandoc

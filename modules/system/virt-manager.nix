@@ -7,7 +7,7 @@ virtualisation.spiceUSBRedirection.enable = true;
 
 virtualisation.libvirtd = {
   enable = true;
-  qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+  qemu.vhostUserPackages = with pkgs; [ virtiofsd dnsmasq ];
 };
 
 }

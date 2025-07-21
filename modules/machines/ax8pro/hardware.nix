@@ -20,22 +20,30 @@
 #];
 
   #All the AMDgpu stuff
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+    systemd.tmpfiles.rules = 
+  let
+    rocmEnv = pkgs.symlinkJoin {
+      name = "rocm-combined";
+      paths = with pkgs.rocmPackages; [
+        rocblas
+        hipblas
+        clr
+      ];
+    };
+  in [
+    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
   ];
-  hardware.graphics.extraPackages = with pkgs; [
-  rocmPackages.clr.icd
-  amdvlk
-];
-environment.systemPackages = with pkgs; [
-  clinfo
-];
 
+  environment.systemPackages = with pkgs; [
+  clinfo
+  lact
+  ];
 
   systemd.packages = with pkgs; [ lact ];
-
   systemd.services.lactd.wantedBy = ["multi-user.target"];
   hardware.keyboard.qmk.enable = true;
   nix.settings.download-buffer-size = 524288000;
+  hardware.graphics.enable = true;
+
 
 }

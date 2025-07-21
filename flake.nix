@@ -34,6 +34,16 @@
   };
 
   outputs = inputs @ { nixpkgs, home-manager, flake-parts, plasma-manager, sops-nix, stylix, ... }:
+    ####
+    let
+      userOptions = {
+        userName = "ranjit";
+      };
+      systemOptions = { 
+        system = "x86_64-linux";
+      };
+    in
+
     flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
     nixosConfigurations = {
@@ -102,6 +112,7 @@
       };
     };
     };
+    ####
   systems = [
     "x86_64-linux"
   ];
