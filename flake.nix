@@ -43,7 +43,7 @@
 
     {
     nixosConfigurations = {
-      stinkpad = ./flakes/hosts/stinkpad/stinkpad.nix;
+      import = ./flakes/hosts/stinkpad/stinkpad.nix;
       xybr = nixpkgs.lib.nixosSystem {
 
         system = "x86_64-linux";
