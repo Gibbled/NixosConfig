@@ -10,14 +10,17 @@
     };
 
      workspace = {
-      #windowDecorations.library = "org.kde.kwin.aurorae";
-      #windowDecorations.theme = "__aurorae__svg__Sweet-Dark-transparent";
       lookAndFeel = "stylix";
       cursor = {
         theme = "Bibata-Modern-Ice";
         size = 32;
       };
-      iconTheme = "Candy-Icons";
+      iconTheme = "BeautySolar";
+      theme = "Sweet-Ambar-Blue";
+      windowDecorations = {
+        library = "org.kde.kwin.aurorae";
+	theme = "__aurorae__svg__Sweet-Dark-transparent";
+      };
     };
 
 
@@ -88,13 +91,13 @@
             systemTray.items = {
               # We explicitly show bluetooth and battery
               shown = [
-                "org.kde.plasma.bluetooth"
                 "org.kde.plasma.networkmanagement"
                 "org.kde.plasma.volume"
               ];
               # And explicitly hide networkmanagement and volume
               hidden = [
                 "org.kde.plasma.battery"
+                "org.kde.plasma.bluetooth"
               ];
             };
           }
@@ -175,12 +178,12 @@
       "kactivitymanagerdrc"."activities"."be924cdb-b275-4dbd-bca6-283d79b9d7fc" = "Default";
       "kactivitymanagerdrc"."main"."currentActivity" = "be924cdb-b275-4dbd-bca6-283d79b9d7fc";
       "kcminputrc"."Mouse"."cursorSize" = 32;
-      "kcminputrc"."Mouse"."cursorTheme" = "Bibata-Modern-Amber";
+      #"kcminputrc"."Mouse"."cursorTheme" = "Bibata-Modern-Amber";
       "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
       "kded5rc"."Module-device_automounter"."autoload" = false;
       "kdeglobals"."DirSelect Dialog"."DirSelectDialog Size" = "820,584";
       "kdeglobals"."General"."font" = "Hack,18,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
-      "kdeglobals"."KDE"."LookAndFeelPackage" = "org.kde.breezedark.desktop";
+      #"kdeglobals"."KDE"."LookAndFeelPackage" = "org.kde.breezedark.desktop";
       "kdeglobals"."KDE"."SingleClick" = true;
       "kdeglobals"."KDE"."widgetStyle" = "kvantum-dark";
       "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;
@@ -288,7 +291,7 @@
       "kwinrc"."Tiling.d0ee5a5c-6a17-5dd9-b898-5ca97de21ca0"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
       "kwinrc"."Xwayland"."Scale" = 2;
       "kwinrc"."org.kde.kdecoration2"."ButtonsOnLeft" = "SF";
-      "kwinrc"."org.kde.kdecoration2"."theme" = "__aurorae__svg__Sweet-Dark-transparent";
+      #"kwinrc"."org.kde.kdecoration2"."theme" = "__aurorae__svg__Sweet-Dark-transparent";
       "kwinrulesrc"."1"."Description" = "Dolphin";
       "kwinrulesrc"."1"."maximizehoriz" = true;
       "kwinrulesrc"."1"."maximizehorizrule" = 3;
