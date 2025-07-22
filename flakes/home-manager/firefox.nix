@@ -36,6 +36,20 @@ in {
 	"network.proxy.http_port" = 8118;
 	"network.proxy.type" = 1;
 	"network.proxy.share_proxy_settings" = true;
+        "browser.ml.chat.prompt.prefix" = "fuck you Mozilla";
+        "browser.ml.chat.prompts.0" = "fuck you Mozilla";
+        "browser.ml.chat.prompts.1" = "fuck you Mozilla";
+        "browser.ml.chat.prompts.2" = "fuck you Mozilla";
+        "browser.ml.chat.prompts.3" = "fuck you Mozilla";
+        "browser.ml.chat.prompts.4" = "fuck you Mozilla";
+        "browser.ml.chat.provider" = "fuck you Mozilla";
+        "browser.ml.chat.shortcuts" = "fuck you Mozilla";
+        "browser.ml.chat.shortcuts.custom" = "fuck you Mozilla";
+        "browser.ml.chat.shortcuts.longPress" = "fuck you Mozilla";
+	"browser.ml.chat.enabled" = false;
+	"browser.ml.chat.sidebar" = false;
+	"browser.ml.enable" = false;
+	"browser.ml.modelHubRootUrl" = "fuck you Mozilla";
       };
 
       ExtensionSettings = {
