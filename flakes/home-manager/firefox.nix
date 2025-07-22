@@ -32,6 +32,7 @@ in {
         "browser.newtabpage.activity-stream.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+        "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = lock-false;	
 	"network.proxy.http" = "127.0.0.1";
 	"network.proxy.http_port" = 8118;
 	"network.proxy.type" = 1;
@@ -46,9 +47,9 @@ in {
         "browser.ml.chat.shortcuts" = "fuck you Mozilla";
         "browser.ml.chat.shortcuts.custom" = "fuck you Mozilla";
         "browser.ml.chat.shortcuts.longPress" = "fuck you Mozilla";
-	"browser.ml.chat.enabled" = false;
-	"browser.ml.chat.sidebar" = false;
-	"browser.ml.enable" = false;
+	"browser.ml.chat.enabled" = lock-false;
+	"browser.ml.chat.sidebar" = lock-false;
+	"browser.ml.enable" = lock-false;
 	"browser.ml.modelHubRootUrl" = "fuck you Mozilla";
       };
 
