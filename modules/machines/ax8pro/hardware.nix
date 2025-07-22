@@ -3,22 +3,49 @@
 {
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  #This is temporary because 6.13.2 gives an oops when rebuilding the system
-  #boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  #boot.tmp.useTmpfs = true;
-  #boot.tmp.tmpfsSize = "32G";
+  boot = {
+  kernelPackages = pkgs.linuxPackages_latest;
+  loader.systemd-boot.enable = true;
+  loader.efi.canTouchEfiVariables = true;
+
+
+    plymouth = {
+      enable = true;
+      theme = "cyanide";
+      themePackages = with pkgs; [
+        # By default we would install all themes
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [ 
+	  "rings" 
+	  "abstract_ring" 
+	  "cyanide"
+	  "glitch"
+	  "glowing"
+	  ];
+        })
+      ];
+    };
+
+    # Enable "Silent boot"
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
+    ];
+    # Hide the OS choice for bootloaders.
+    # It's still possible to open the bootloader list by pressing any key
+    # It will just not appear on screen unless a key is pressed
+    loader.timeout = 0;
+
+  };
+
+
 
   networking.hostName = "xybr"; # Define your hostname.
-#  boot.kernelParams = [
-#  "video=Card1-DP-1:1920x1080@60"
-#  "video=Card1-DP-2:1920x1080@60"
-#  "video=Card1-HDMI-1:1920x1080@60"
-#  "video=Card1-HDMI-2:1920x1080@60"
-#];
-
   #All the AMDgpu stuff
     systemd.tmpfiles.rules = 
   let
