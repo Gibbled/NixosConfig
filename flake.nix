@@ -43,7 +43,6 @@
 
     {
     nixosConfigurations = {
-      import = ./flakes/hosts/stinkpad/stinkpad.nix;
       xybr = nixpkgs.lib.nixosSystem {
 
         system = "x86_64-linux";
@@ -76,37 +75,36 @@
         ];
       };
 
-      #stinkpad = nixpkgs.lib.nixosSystem {
+      stinkpad = nixpkgs.lib.nixosSystem {
 
-        #system = "x86_64-linux";
-#
-        #modules = [
-          #./configuration.nix
-	  #./modules/system
-	  #./modules/machines/T430/hardware.nix
-	  #./modules/machines/T430/hardware-configuration.nix
-	  #./modules/machines/T430/host-config
-	  #./modules/users/ranjit.nix
-	  #sops-nix.nixosModules.sops
-	  #stylix.nixosModules.stylix
+        system = "x86_64-linux";
 
-          #home-manager.nixosModules.home-manager
-          #{
-            #home-manager.useGlobalPkgs = true;
-            #home-manager.useUserPackages = true;
-	    #home-manager.sharedModules = [ 
+        modules = [
+          ./configuration.nix
+	  ./modules/system
+	  ./modules/machines/T430/hardware.nix
+	  ./modules/machines/T430/hardware-configuration.nix
+	  ./modules/machines/T430/host-config
+	  ./modules/users/ranjit.nix
+	  sops-nix.nixosModules.sops
+	  stylix.nixosModules.stylix
 
-	      #plasma-manager.homeManagerModules.plasma-manager 
-              #sops-nix.homeManagerModules.sops
-	      #];
-	    #home-manager.backupFileExtension = "backup";
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+	    home-manager.sharedModules = [ 
+	      plasma-manager.homeManagerModules.plasma-manager 
+              sops-nix.homeManagerModules.sops
+	      ];
+	    home-manager.backupFileExtension = "backup";
 
 
-            #home-manager.users.ranjit = import ./flakes/home-manager;
+            home-manager.users.ranjit = import ./flakes/home-manager;
 
-          #}
-        #];
-      #};
+         }
+        ];
+      };
     };
     };
 }
