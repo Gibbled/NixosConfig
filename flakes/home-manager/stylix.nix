@@ -5,11 +5,10 @@ stylix = {
 targets.firefox.colorTheme.enable = true;
 targets.firefox.enable = true;
 targets.firefox.profileNames = [ "New-Main" ];
+targets.firefox.firefoxGnomeTheme.enable = true;
 targets.neovim.enable = false;
 targets.kde.enable = false;
 
-#targets.kde.decorations = "__aurorae__svg__Sweet-Dark-transparent";
-#targets.kde.decorations = "Sweet-Dark-transparent";
 };
 
 
