@@ -1,5 +1,5 @@
 [Activities][LastVirtualDesktop]
-be924cdb-b275-4dbd-bca6-283d79b9d7fc=e2eb8364-1ab5-49e8-b3a0-66f34edb259e
+be924cdb-b275-4dbd-bca6-283d79b9d7fc=41b0d4a3-f74b-403e-8d18-3545cd3e6358
 
 [Activities.LastVirtualDesktop]
 be924cdb-b275-4dbd-bca6-283d79b9d7fc=f24e2cda-564a-49f9-943d-63fb3a8a8d17
@@ -243,4 +243,4 @@ Scale=2
 [org.kde.kdecoration2]
 ButtonsOnLeft=SF
 library=org.kde.kwin.aurorae
-theme=__aurorae__svg__Sweet-Dark-transparent
+theme=__aurorae__svg__Sweet-Dark
