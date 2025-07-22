@@ -9,6 +9,18 @@
       };
     };
 
+     workspace = {
+      #windowDecorations.library = "org.kde.kwin.aurorae";
+      #windowDecorations.theme = "__aurorae__svg__Sweet-Dark-transparent";
+      lookAndFeel = "stylix";
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 32;
+      };
+      iconTheme = "Candy-Icons";
+    };
+
+
 
     panels = [
       # Windows-like panel at the bottom
