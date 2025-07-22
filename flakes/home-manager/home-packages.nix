@@ -104,6 +104,7 @@
     #For KDE Theming
     kdePackages.qtstyleplugin-kvantum
     catppuccin-kvantum
+    utterly-round-plasma-style
 
     #For Tmux themes
     tmuxPlugins.tokyo-night-tmux
