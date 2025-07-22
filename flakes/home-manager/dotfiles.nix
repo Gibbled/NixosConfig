@@ -24,6 +24,7 @@ home.file.".config/nvim/lua/ranjit/remap.lua".source = ./dotfiles/nvim/lua/ranji
 home.file.".config/alacritty/alacritty.toml".source = ./dotfiles/alacritty/alacritty.toml;
 home.file.".ssh/authorized_keys".source = ./dotfiles/ssh/authorized_keys;
 
+home.file.".config/kwinrc".source = ./dotfiles/plasma/kwinrc;
 
 
 }
