@@ -8,6 +8,7 @@ imports = [
 ./ddclient.nix
 ./smartd.nix
 ./packages.nix
+./wireguard.nix
 ];
 
 }
