@@ -24,6 +24,7 @@ imports = [
 ./sops.nix
 ./yubikey.nix
 ./stylix.nix
+./tmux.nix
 ];
 
 }

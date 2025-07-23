@@ -22,6 +22,12 @@
   #ccacheStdenv
   #ccacheWrapper
   tmux
+  #tmuxPlugins.vim-tmux-navigator
+  #tmuxPlugins.tmux-fzf
+  #tmuxPlugins.tokyo-night-tmux
+  #tmuxPlugins.tmux-powerline
+  #tmuxPlugins.yank
+
   stow
   git
   gh
