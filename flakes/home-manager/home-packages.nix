@@ -123,6 +123,8 @@
     keepassxc
     git-credential-keepassxc
 
+    bibata-cursors
+
 
 
   ];
