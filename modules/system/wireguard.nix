@@ -12,7 +12,8 @@
     wants = [ "graphical.target" ];
       };
     #server_ip = "cloud.homeunix.org";
-    server_ip = "gragnet.dyndns.org";
+    #server_ip = "gragnet.dyndns.org";
+    server_ip = "24.70.37.81";
   in {
     wg0 = {
       # IP address of this machine in the *tunnel network*
