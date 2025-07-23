@@ -9,6 +9,7 @@ imports = [
 ./smartd.nix
 ./packages.nix
 ./wireguard.nix
+./sops.nix
 ];
 
 }
