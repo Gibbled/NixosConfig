@@ -21,7 +21,6 @@ imports = [
 ./tor-browser.nix
 ./virt-manager.nix
 ./wireshark.nix
-./wireguard.nix
 ./sops.nix
 ./yubikey.nix
 ./stylix.nix
