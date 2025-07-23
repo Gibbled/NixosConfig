@@ -12,6 +12,10 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.kernel.sysctl."kernel.dmesg_restrict" = 0;
+  boot.kernelParams = [ "CONFIG_SECURITY_DMESG_RESTRICT=n" "microcode.amd_sha_check=off" ];
+
+
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5225079d-5a23-4d66-8e0a-ea4ad0505573";
