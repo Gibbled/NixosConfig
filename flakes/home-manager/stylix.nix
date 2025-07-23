@@ -8,6 +8,7 @@ targets.firefox.profileNames = [ "New-Main" ];
 targets.firefox.firefoxGnomeTheme.enable = true;
 targets.neovim.enable = false;
 targets.kde.enable = false;
+targets.blender.enable = true;
 
 };
 

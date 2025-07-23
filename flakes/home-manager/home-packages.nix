@@ -120,6 +120,9 @@
     
     kdePackages.marble
 
+    keepassxc
+    git-credential-keepassxc
+
 
 
   ];
