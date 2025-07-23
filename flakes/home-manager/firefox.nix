@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   lock-false = {
     Value = false;
@@ -49,8 +49,8 @@ in {
         "browser.ml.chat.shortcuts.longPress" = "fuck you Mozilla";
 	"browser.ml.chat.enabled" = lock-false;
 	"browser.ml.chat.sidebar" = lock-false;
-	"browser.ml.enable" = lock-false;
-	"browser.ml.modelHubRootUrl" = "fuck you Mozilla";
+	"browser.ml.enable" = lib.mkForce false;
+	"browser.ml.modelHubRootUrl" = lib.mkForce "Gibbledy Gook";
       };
 
       ExtensionSettings = {

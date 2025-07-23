@@ -428,7 +428,7 @@
       "plasma-org.kde.plasma.desktop-appletsrc"."Containments.24"."plugin" = "org.kde.plasma.folder";
       "plasma-org.kde.plasma.desktop-appletsrc"."Containments.24"."wallpaperplugin" = "org.kde.image";
       "plasma-org.kde.plasma.desktop-appletsrc"."ScreenMapping"."itemsOnDisabledScreens" = "";
-      "plasmarc"."Theme"."name" = "Utterly-Round";
+      #"plasmarc"."Theme"."name" = "Utterly-Round";
       "plasmarc"."Wallpapers"."usersWallpapers" = "";
     };
   };
