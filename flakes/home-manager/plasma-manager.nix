@@ -2,6 +2,8 @@
   programs.plasma = {
     enable = true;
     
+    overrideConfig = true;
+    
     fonts = {
       general = {
         family = "Hack";
@@ -29,7 +31,10 @@
       # Windows-like panel at the bottom
       {
         location = "bottom";
+	alignment = "center";
 	lengthMode = "fit";
+	floating = true;
+	hiding = "autohide";
         widgets = [
           # We can configure the widgets by adding the name and config
           # attributes. For example to add the the kickoff widget and set the
@@ -102,7 +107,6 @@
             };
           }
         ];
-        hiding = "autohide";
       }
     ];
 
@@ -130,6 +134,7 @@
        command = "firefox";
      };
 
+
     shortcuts = {
       #"services.virt-manager.desktop"."_launch" = "Ctrl+Alt+W";
       #"services.blender.desktop"."_launch" = "Ctrl+Alt+E";
@@ -153,6 +158,7 @@
       "kwin"."Switch to Desktop 8" = "Ctrl+F8";
       "kwin"."Walk Through Windows" = "Alt+Tab";
       "kwin"."Window Close" = "Alt+F4";
+      "kwin"."Window Maximize" = "Ctrl+Alt+I";
       "kwin"."Window Quick Tile Top" = "Ctrl+Alt+K";
       "kwin"."Window Quick Tile Top Left" = "Ctrl+Alt+U";
       "kwin"."Window Quick Tile Top Right" = "Ctrl+Alt+O";

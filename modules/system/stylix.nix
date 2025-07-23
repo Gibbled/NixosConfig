@@ -4,9 +4,9 @@
 
   stylix = {
   enable = true;
-  #autoEnable = false;
+  autoEnable = false;
   #targets.neovim.enable = false;
-  targets.plymouth.enable = false;
+  #targets.plymouth.enable = false;
   #targets.blender.enable = true;
   base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml"; 
   #cursor.package = pkgs.bibata-cursors;
