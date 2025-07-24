@@ -86,4 +86,12 @@ nixpkgs.config.qt5 = {
       name = "Utterly Nord Plasma";
     };
 };
+
+systemd.sleep.extraConfig = ''
+  AllowSuspend=no
+  AllowHibernation=no
+  AllowHybridSleep=no
+  AllowSuspendThenHibernate=no
+'';
+
 }
