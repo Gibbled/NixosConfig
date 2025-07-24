@@ -110,30 +110,62 @@
       }
     ];
 
-     hotkeys.commands."alacritty" = {
+     hotkeys.commands = {
+       "alacritty" = {
          name = "Launch Alacritty";
          key = "Ctrl+Alt+T";
          command = "alacritty";
         };
 
-     hotkeys.commands."blender" = {
-       name = "Launch Blender";
-       key = "Ctrl+Alt+E";
-       command = "blender";
-     };
+       "blender" = {
+         name = "Launch Blender";
+         key = "Ctrl+Alt+E";
+         command = "blender";
+       };
+  
+       "Virt-Manager" = {
+         name = "Launch Virtual Machine Manager";
+         key = "Ctrl+Alt+W";
+         command = "virt-manager";
+       };
 
-     hotkeys.commands."Virt-Manager" = {
-       name = "Launch Virtual Machine Manager";
-       key = "Ctrl+Alt+W";
-       command = "virt-manager";
-     };
+       "firefox" = {
+         name = "Launch Firefox";
+         key = "Ctrl+Alt+R";
+         command = "firefox";
+       };
+      };
 
-     hotkeys.commands."firefox" = {
-       name = "Launch Firefox";
-       key = "Ctrl+Alt+R";
-       command = "firefox";
-     };
 
+      powerdevil = {
+        AC.autoSuspend.action = "nothing";
+        #AC.autoSuspend.idleTimeout = 600000 ;
+	AC.dimDisplay.enable = false;
+	AC.powerButtonAction = "turnOffScreen";
+	AC.powerProfile = "performance";
+	AC.turnOffDisplay.idleTimeout = "never";
+	AC.whenLaptopLidClosed = "turnOffScreen";
+	
+        battery.autoSuspend.action = "nothing";
+        #battery.autoSuspend.idleTimeout = 600000;
+	battery.dimDisplay.enable = false;
+	battery.powerButtonAction = "turnOffScreen";
+	battery.powerProfile = "performance";
+	battery.turnOffDisplay.idleTimeout = "never";
+	battery.whenLaptopLidClosed = "turnOffScreen";
+
+        lowBattery.autoSuspend.action = "nothing";
+        #lowBattery.autoSuspend.idleTimeout = 600000;
+	lowBattery.dimDisplay.enable = false;
+	lowBattery.powerButtonAction = "turnOffScreen";
+	lowBattery.powerProfile = "performance";
+	lowBattery.turnOffDisplay.idleTimeout = "never";
+	lowBattery.whenLaptopLidClosed = "turnOffScreen";
+
+	batteryLevels.criticalAction = "shutDown";
+        batteryLevels.criticalLevel = 20;
+
+      };
 
     shortcuts = {
       #"services.virt-manager.desktop"."_launch" = "Ctrl+Alt+W";
@@ -431,6 +463,7 @@
       "plasma-org.kde.plasma.desktop-appletsrc"."ScreenMapping"."itemsOnDisabledScreens" = "";
       #"plasmarc"."Theme"."name" = "Utterly-Round";
       "plasmarc"."Wallpapers"."usersWallpapers" = "";
+
     };
   };
 }
