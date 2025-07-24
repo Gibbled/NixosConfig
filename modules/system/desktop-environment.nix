@@ -17,12 +17,6 @@
   theme = "sddm-astronaut-theme";
   };
 
-  #services.displayManager.sddm.wayland.enable = true;
-  #services.displayManager.sddm.settings.General.DisplayServer = "wayland";
-  #services.displayManager.sddm.settings.Theme.ThemeDir = "/run/current-system/sw/share/sddm/themes";
-  #services.displayManager.sddm.enable = true;
-  #services.displayManager.sddm.theme = "sddm-astronaut-theme";
-
   services.desktopManager.plasma6.enable = true;
 
   #This should make gtk apps look less shitty
@@ -36,11 +30,11 @@
   kate
 ];
 
-  # environment.sessionVariables = {
-   # QT_STYLE_OVERRIDE = "Utterly-Round";
-    #QT_GLOBAL_THEME_OVERRIDE = "Kvantum";
-    #QT_WINDOW_DECORATIONS_OVERRIDE = "Sweet-Dark-transparent";
-#  };
+   environment.sessionVariables = {
+    QT_STYLE_OVERRIDE = "Utterly-Round";
+    QT_GLOBAL_THEME_OVERRIDE = "Kvantum";
+    QT_WINDOW_DECORATIONS_OVERRIDE = "Sweet-Dark-transparent";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
