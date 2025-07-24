@@ -23,6 +23,16 @@ home.file.".config/nvim/lua/ranjit/remap.lua".source = ./dotfiles/nvim/lua/ranji
 home.file.".config/alacritty/alacritty.toml".source = ./dotfiles/alacritty/alacritty.toml;
 #home.file.".ssh/authorized_keys".source = ./dotfiles/ssh/authorized_keys;
 
+home.file.".config/tmux/plugins/tmux-fzf".source = ./dotfiles/tmux/plugins/tmux-fzf;
+home.file.".config/tmux/plugins/tmux-powerline".source = ./dotfiles/tmux/plugins/tmux-powerline;
+home.file.".config/tmux/plugins/tmux-yank".source = ./dotfiles/tmux/plugins/tmux-yank;
+home.file.".config/tmux/plugins/tmux-sensible".source = ./dotfiles/tmux/plugins/tmux-sensible;
+home.file.".config/tmux/plugins/tokyo-night-tmux".source = ./dotfiles/tmux/plugins/tokyo-night-tmux;
+home.file.".config/tmux/plugins/tpm".source = ./dotfiles/tmux/plugins/tpm;
+home.file.".config/tmux/plugins/vim-tmux-navigator".source = ./dotfiles/tmux/plugins/vim-tmux-navigator;
+home.file.".config/tmux/tmux.conf".source = ./dotfiles/tmux/tmux.conf;
+
+
 
 
 }
