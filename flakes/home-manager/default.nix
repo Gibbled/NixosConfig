@@ -15,7 +15,7 @@ imports = [
 ./nvim.nix
 ./dotfiles.nix
 ./stylix.nix
-./fonts.nix
+#./fonts.nix
 ];
 
 
