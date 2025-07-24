@@ -168,6 +168,7 @@
       "mediacontrol"."previousmedia" = "Media Previous";
       "mediacontrol"."stopmedia" = "Media Stop";
       "plasmashell"."show dashboard" = "Ctrl+F12";
+      #"ksmserver"."Lock Session" = ["Ctrl+Shift+L" "Screensaver,Ctrl+Shift+L" "Screensaver,Lock Session"];
     };
     configFile = {
       "baloofilerc"."Basic Settings"."Indexing-Enabled" = false;

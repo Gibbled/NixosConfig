@@ -13,6 +13,8 @@ let
     Status = "locked";
   };
 in {
+  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = lock-true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   programs.firefox = {
     enable = true;
 
@@ -33,21 +35,7 @@ in {
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
       };
 
-      ExtensionSettings = {
-        "uBlock0@raymondhill.net" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-          installation_mode = "force_installed";
-        };
-	"sponsorBlocker@ajay.app" = {
-          install_url = "https://addons/mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
-	  installation_mode = "force_installed";
-	};
-        "jid1-MnnxcxisBPnSXQ@jetpack" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
-          installation_mode = "force_installed";
-        };
       };
     };
-  };
 }
 

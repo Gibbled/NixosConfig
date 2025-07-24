@@ -6,12 +6,12 @@
   enable = true;
   autoEnable = false;
   #targets.neovim.enable = false;
-  #targets.plymouth.enable = false;
-  #targets.blender.enable = true;
+  targets.plymouth.enable = false;
+  targets.console.enable = true;
+  targets.chromium.enable = true;
+  targets.font-packages.enable = true;
+  targets.fontconfig.enable = true;
   base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml"; 
-  #cursor.package = pkgs.bibata-cursors;
-  #cursor.name = "Bibata-Modern-Ice";
-  #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml"; 
   fonts = {
     serif = {
       package = pkgs.aleo-fonts;

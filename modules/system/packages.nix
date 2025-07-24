@@ -69,19 +69,11 @@
   gpsbabel
   sddm-astronaut
   kdePackages.qtmultimedia
+  kdePackages.plasma-browser-integration
+  kdePackages.xdg-desktop-portal-kde
   ];
-
-  
-
-  
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-
-          #    nixpkgs.config.permittedInsecurePackages = [
-          #      "olm-3.2.16"
-          #    ];
-
 
 }

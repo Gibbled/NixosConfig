@@ -26,6 +26,7 @@ in {
 
       Preferences = {
         # Privacy settings
+        "extensions.autoDisableScopes" = 0;
         "extensions.pocket.enabled" = lock-false;
         "browser.newtabpage.pinned" = lock-empty-string;
         "browser.topsites.contile.enabled" = lock-false;
@@ -51,6 +52,7 @@ in {
 	"browser.ml.chat.sidebar" = lock-false;
 	"browser.ml.enable" = lib.mkForce false;
 	"browser.ml.modelHubRootUrl" = lib.mkForce "Gibbledy Gook";
+	"browser.nativeMessagingHosts.packages" = [ pkgs.kdePackages.plasma-browser-integration pkgs.tridactyl-native ];
       };
 
       ExtensionSettings = {
@@ -90,6 +92,19 @@ in {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefoxColor/latest.xpi";
           installation_mode = "force_installed";
         };
+	"remove-login-with-google@RcCookie" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/remove-login-with-google/latest.xpi";
+          installation_mode = "force_installed";
+	};
+	"plasma-browser-integration@kde.org" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-broweser-integration/latest.xpi";
+          installation_mode = "force_installed";
+	};
+	"adb@mozilla.org" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/Firefox-DevTools-ADB-Extension/latest.xpi";
+          installation_mode = "force_installed";
+
+	};
       };
     };
 };
