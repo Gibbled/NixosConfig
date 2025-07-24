@@ -8,5 +8,8 @@ fonts.packages = with pkgs; [
   nerd-fonts.cousine
   nerd-fonts.blex-mono
   open-sans
+  noto-fonts-color-emoji
+  noto-fonts-emoji
+  hack-font
 ];
 }

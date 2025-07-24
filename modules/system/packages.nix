@@ -15,27 +15,17 @@
   fwupd
   luajitPackages.luarocks-nix
   #texliveFull
-  hack-font
-  noto-fonts-color-emoji
   openssh
   #ccache
   #ccacheStdenv
   #ccacheWrapper
   tmux
-  #tmuxPlugins.vim-tmux-navigator
-  #tmuxPlugins.tmux-fzf
-  #tmuxPlugins.tokyo-night-tmux
-  #tmuxPlugins.tmux-powerline
-  #tmuxPlugins.yank
-
   stow
   git
   gh
   lua
   ripgrep
   fd
-  #neofetch
-  #nitch
   fastfetch
   tree-sitter
   jq
@@ -53,13 +43,10 @@
   killall
   alejandra
   privoxy	
-  #firefox-bin
   bc
   wireshark
-
   wireguard-tools
   wg-netmanager
-
   sops
   ssh-to-age
   age
@@ -71,33 +58,15 @@
   piv-agent
   yubico-piv-tool
   pam_u2f
-
-
   smartmontools
-
   inetutils
   espeak
-
-
-  #for secureboot
-  niv
-  sbctl
-
-
-  #Don't have Python installed
   python3
-
   vimPlugins.mini-base16
   vimPlugins.base16-nvim
-
-
-  #for stylix
   pkgs.bibata-cursors
-
-
   gpsbabel-gui
   gpsbabel
-
   sddm-astronaut
   kdePackages.qtmultimedia
   ];
