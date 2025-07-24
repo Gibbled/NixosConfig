@@ -10,14 +10,13 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
   
   services.displayManager.sddm = {
-
   wayland.enable = true;
   settings.General.DisplayServer = "wayland";
   settings.Theme.ThemeDir = "/run/current-system/sw/share/sddm/themes";
   enable = true;
   theme = "sddm-astronaut-theme";
-
   };
+
   #services.displayManager.sddm.wayland.enable = true;
   #services.displayManager.sddm.settings.General.DisplayServer = "wayland";
   #services.displayManager.sddm.settings.Theme.ThemeDir = "/run/current-system/sw/share/sddm/themes";
