@@ -1,4 +1,4 @@
-{ config, pkgs, sops-nix, ... }:
+{ config, inputs, pkgs, sops-nix, ... }:
 
 {
 
@@ -16,6 +16,7 @@
       generateKey = true;
 
     };
+
 
   };
 
