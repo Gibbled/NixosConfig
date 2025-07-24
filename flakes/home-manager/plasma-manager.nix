@@ -12,7 +12,7 @@
     };
 
      workspace = {
-      lookAndFeel = "stylix";
+      #lookAndFeel = "stylix";
       cursor = {
         theme = "Bibata-Modern-Ice";
         size = 32;
@@ -138,34 +138,34 @@
 
 
       powerdevil = {
-        AC.autoSuspend.action = "nothing";
-        #AC.autoSuspend.idleTimeout = 600000 ;
-	AC.dimDisplay.enable = false;
-	AC.powerButtonAction = "turnOffScreen";
-	AC.powerProfile = "performance";
-	AC.turnOffDisplay.idleTimeout = "never";
-	AC.whenLaptopLidClosed = "turnOffScreen";
+        "AC"."autoSuspend"."action" = "nothing";
+	"AC"."dimDisplay"."enable" = false;
+	"AC"."powerButtonAction" = "turnOffScreen";
+	"AC"."powerProfile" = "performance";
+	"AC"."turnOffDisplay"."idleTimeout" = "never";
+	"AC"."whenLaptopLidClosed" = "turnOffScreen";
 	
-        battery.autoSuspend.action = "nothing";
-        #battery.autoSuspend.idleTimeout = 600000;
-	battery.dimDisplay.enable = false;
-	battery.powerButtonAction = "turnOffScreen";
-	battery.powerProfile = "performance";
-	battery.turnOffDisplay.idleTimeout = "never";
-	battery.whenLaptopLidClosed = "turnOffScreen";
+        "battery"."autoSuspend"."action" = "nothing";
+	"battery"."dimDisplay"."enable" = false;
+	"battery"."powerButtonAction" = "turnOffScreen";
+	"battery"."powerProfile" = "performance";
+	"battery"."turnOffDisplay"."idleTimeout" = "never";
+	"battery"."whenLaptopLidClosed" = "turnOffScreen";
 
-        lowBattery.autoSuspend.action = "nothing";
-        #lowBattery.autoSuspend.idleTimeout = 600000;
-	lowBattery.dimDisplay.enable = false;
-	lowBattery.powerButtonAction = "turnOffScreen";
-	lowBattery.powerProfile = "performance";
-	lowBattery.turnOffDisplay.idleTimeout = "never";
-	lowBattery.whenLaptopLidClosed = "turnOffScreen";
+        "lowBattery"."autoSuspend"."action" = "nothing";
+	"lowBattery"."dimDisplay"."enable" = false;
+	"lowBattery"."powerButtonAction" = "turnOffScreen";
+	"lowBattery"."powerProfile" = "performance";
+	"lowBattery"."turnOffDisplay"."idleTimeout" = "never";
+	"lowBattery"."whenLaptopLidClosed" = "turnOffScreen";
 
-	batteryLevels.criticalAction = "shutDown";
-        batteryLevels.criticalLevel = 20;
+	"batteryLevels"."criticalAction" = "shutDown";
+        "batteryLevels"."criticalLevel" = 20;
+        };
 
-      };
+        resetFiles = [
+
+	];
 
     shortcuts = {
       #"services.virt-manager.desktop"."_launch" = "Ctrl+Alt+W";
