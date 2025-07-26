@@ -79,5 +79,6 @@ fonts.packages = with pkgs; [
   open-sans
   noto-fonts-color-emoji
   noto-fonts-emoji
+  font-awesome
   ];
 }

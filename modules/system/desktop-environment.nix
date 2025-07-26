@@ -19,6 +19,19 @@
 
   services.desktopManager.plasma6.enable = true;
 
+
+  #Lets have a look at hyprland
+  programs.hyprland.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
+  ];
+
+
+
+
+  ######End of Hyprland Config#####
+  #################################
   #This should make gtk apps look less shitty
   programs.dconf.enable = true;
 

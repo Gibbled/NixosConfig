@@ -25,6 +25,12 @@ home.file.".ssh/authorized_keys".source = ./dotfiles/ssh/authorized_keys;
 home.file.".config/tmux/tmux.conf".source = ./dotfiles/tmux/tmux.conf;
 #home.file.".config/tmux/plugins/tpm".source = ./dotfiles/tmux/plugins/tpm;
 
+## Hyprland ##
+
+home.file.".config/hypr/hyprland.conf".source = ./dotfiles/hyprland/config/hyprland.conf;
+home.file.".config/hypr/start.sh".source = ./dotfiles/hyprland/config/start.sh;
+
+##############
 
 
 }

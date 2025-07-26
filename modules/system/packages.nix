@@ -71,6 +71,17 @@
   kdePackages.qtmultimedia
   kdePackages.plasma-browser-integration
   kdePackages.xdg-desktop-portal-kde
+
+  #Hyprland
+  waybar
+  dunst
+  libnotify
+  swww
+  rofi-wayland
+  (waybar.overrideAttrs ( oldAttrs: {
+     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+     })
+     )
   ];
 
   # Allow unfree packages
