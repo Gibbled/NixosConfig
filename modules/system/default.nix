@@ -23,7 +23,7 @@ imports = [
 ./wireshark.nix
 ./sops.nix
 ./yubikey.nix
-./stylix.nix
+#./stylix.nix
 ./tmux.nix
 ./fonts.nix
 ];

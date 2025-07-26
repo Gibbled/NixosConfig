@@ -14,8 +14,8 @@ imports = [
 ./home-packages.nix
 ./nvim.nix
 ./dotfiles.nix
-./stylix.nix
-#./fonts.nix
+#./stylix.nix
+./fonts.nix
 ];
 
 

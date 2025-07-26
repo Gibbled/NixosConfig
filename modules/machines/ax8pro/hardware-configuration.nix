@@ -13,7 +13,8 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.kernel.sysctl."kernel.dmesg_restrict" = 0;
-  boot.kernelParams = [ "CONFIG_SECURITY_DMESG_RESTRICT=n" "microcode.amd_sha_check=off" ];
+  #boot.kernelParams = [ "CONFIG_SECURITY_DMESG_RESTRICT=n" "microcode.amd_sha_check=off" ];
+  boot.kernelParams = [ ];
 
 
 

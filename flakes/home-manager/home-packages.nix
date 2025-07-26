@@ -76,7 +76,7 @@
 
     ardour
     qjackctl
-    orca-slicer
+    #orca-slicer
     ollama
 
     tor-browser
