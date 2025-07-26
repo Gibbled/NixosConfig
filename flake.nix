@@ -19,16 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #plasma-manager = {
-      #url = "github:nix-community/plasma-manager";
-      #inputs.nixpkgs.follows = "nixpkgs";
-      #inputs.home-manager.follows = "home-manager";
-    #};
-#
-    #stylix = {
-      #url = "github:danth/stylix";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    #};
 
   };
 
@@ -38,24 +28,24 @@
         userName = "ranjit";
       };
       systemOptions = { 
-        system = "x86_64-linux";
 	
       };
      
     in
 
     {
+    system.stateVersion = "24.05"; # Did you read the comment? Yep!
+
     nixosConfigurations = {
       xybr = nixpkgs.lib.nixosSystem {
 
         system = "x86_64-linux";
 
+
         modules = [
           ./configuration.nix
 	  ./modules/system
-	  ./modules/machines/ax8pro/hardware.nix
-	  ./modules/machines/ax8pro/hardware-configuration.nix
-	  ./modules/machines/ax8pro/host-config
+	  ./modules/machines/ax8pro
 	  ./modules/users/ranjit.nix
 	  sops-nix.nixosModules.sops
 
@@ -100,5 +90,9 @@
         ];
       };
     };
+
     };
+
+
+
 }
