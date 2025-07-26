@@ -5,7 +5,7 @@
 
 imports = [
 ./home.nix
-./plasma-manager.nix
+#./plasma-manager.nix
 ./firefox.nix
 ./sops.nix
 ./git.nix

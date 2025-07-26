@@ -101,9 +101,9 @@
     calibre
 
     #For KDE Theming
-    kdePackages.qtstyleplugin-kvantum
-    catppuccin-kvantum
-    utterly-round-plasma-style
+    #kdePackages.qtstyleplugin-kvantum
+    #catppuccin-kvantum
+    #utterly-round-plasma-style
 
     #For Tmux themes
     tmuxPlugins.tokyo-night-tmux
@@ -122,7 +122,7 @@
     keepassxc
     git-credential-keepassxc
 
-    bibata-cursors
+    #bibata-cursors
 
 
 
