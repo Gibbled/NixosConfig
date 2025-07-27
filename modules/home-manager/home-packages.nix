@@ -122,12 +122,12 @@
     keepassxc
     git-credential-keepassxc
 
-    #bibata-cursors
-
+    virt-manager
 
 
   ];
 
+starship-program.enable = true;
 
 
 }

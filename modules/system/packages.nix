@@ -35,7 +35,6 @@
   alacritty
   pass
   nodejs
-  virt-manager-qt
   qemu
   docker
   docker-compose

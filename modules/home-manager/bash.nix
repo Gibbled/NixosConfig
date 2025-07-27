@@ -12,6 +12,7 @@
       clear && `which fastfetch`
       export GDK_DPI_SCALE="2"
       export NIXPKGS_ALLOW_UNFREE=1
+      eval `(starship init bash)`
       '';
 
       shellAliases = {
