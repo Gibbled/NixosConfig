@@ -128,6 +128,7 @@
   ];
 
 starship-program.enable = true;
+rofi-program.enable = true;
 
 
 }
