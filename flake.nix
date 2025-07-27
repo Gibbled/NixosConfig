@@ -88,7 +88,7 @@
 	    home-manager.sharedModules = [ 
             sops-nix.homeManagerModules.sops
 	      ];
-            home-manager.users.ranjit = import ./flakes/home-manager;
+            home-manager.users.ranjit = import ./modules/home-manager;
           }
         ];
       };
