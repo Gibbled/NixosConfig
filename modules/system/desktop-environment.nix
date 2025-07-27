@@ -79,7 +79,9 @@
   # services.xserver.libinput.enable = true;
 
 #Allow X programs to work in Wayland
-programs.xwayland.enable = true;
+programs.xwayland = {
+  enable = true;
+  };
 
 #Allow the wheel group to not use a password for sudo
 #security.sudo.wheelNeedsPassword = false;

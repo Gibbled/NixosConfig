@@ -4,7 +4,9 @@
 
     settings = {
 
-    monitor = ",preferred,auto,0.75";
+    #monitor = ",preferred,auto,0.75";
+    monitor = ",highres,auto,0.75# unscale XWaylandxwayland {force_zero_scaling = true}# toolkit-specific scaleenv = GDK_SCALE,2env = XCURSOR_SIZE,32";
+
 
     "$terminal" = "alacritty";
     "$fileManager" = "dolphin";
@@ -12,6 +14,7 @@
     "$browser" = "firefox";
     "$blender" = "blender";
     "$virt-manager" = "virt-manager";
+    "$locker" = "hyprlock";
 
     "$mainMod" = "CTRL_ALT";
     bind = [
@@ -30,6 +33,7 @@
         "$mainMod, J, movefocus, u"
         "$mainMod, K, movefocus, d"
         "$mainMod, L, movefocus, r"
+	"SHIFT_ALT, L, exec, $locker"
         "CTRL, F5, workspace, 1"
         "CTRL, F6, workspace, 2"
         "CTRL, F7, workspace, 3"

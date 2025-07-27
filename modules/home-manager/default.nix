@@ -15,6 +15,9 @@ imports = [
 ./dotfiles.nix
 ./fonts.nix
 ./hyprland.nix
+./rofi.nix
+./waybar.nix
+./hyprlock.nix
 ];
 
 

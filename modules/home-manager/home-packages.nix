@@ -123,12 +123,14 @@
     git-credential-keepassxc
 
     virt-manager
-
+    rofi-emoji-wayland
+    rofi-network-manager
 
   ];
 
 starship-program.enable = true;
 rofi-program.enable = true;
+hyprlock-program.enable = true;
 
 
 }
