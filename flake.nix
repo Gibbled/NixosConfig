@@ -77,7 +77,7 @@
         modules = [
           ./configuration.nix
 	  ./modules/system
-	  ./modules/machines/T430/hardware.nix
+	  ./modules/machines/T430
 	  ./modules/users/ranjit.nix
 	  sops-nix.nixosModules.sops
 
