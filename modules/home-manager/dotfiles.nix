@@ -23,12 +23,11 @@ home.file.".config/nvim/lua/ranjit/remap.lua".source = ./dotfiles/nvim/lua/ranji
 home.file.".config/alacritty/alacritty.toml".source = ./dotfiles/alacritty/alacritty.toml;
 home.file.".ssh/authorized_keys".source = ./dotfiles/ssh/authorized_keys;
 home.file.".config/tmux/tmux.conf".source = ./dotfiles/tmux/tmux.conf;
-#home.file.".config/tmux/plugins/tpm".source = ./dotfiles/tmux/plugins/tpm;
 
 ## Hyprland ##
 
-home.file.".config/hypr/hyprland.conf".source = ./dotfiles/hyprland/config/hyprland.conf;
-home.file.".config/hypr/start.sh".source = ./dotfiles/hyprland/config/start.sh;
+#home.file.".config/hypr/hyprland.conf".source = ./dotfiles/hyprland/config/hyprland.conf;
+#home.file.".config/hypr/start.sh".source = ./dotfiles/hyprland/config/start.sh;
 home.file.".config/waybar/config.jsonc".source = ./dotfiles/hyprland/config/waybar/config.jsonc;
 home.file.".config/waybar/style.css".source = ./dotfiles/hyprland/config/waybar/style.css;
 

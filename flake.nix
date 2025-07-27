@@ -20,6 +20,13 @@
     };
 
 
+    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland-plugins = {
+      #url = "github:hyprwm/hyprland-plugins";
+      #inputs.hyprland.follows = "hyprland"; # Prevents version mismatch.
+    #};
+
+
   };
 
    outputs = inputs @ { nixpkgs, home-manager,sops-nix, ... }:
@@ -40,6 +47,7 @@
       xybr = nixpkgs.lib.nixosSystem {
 
         system = "x86_64-linux";
+	specialArgs = { inherit inputs; };
 
 
         modules = [
@@ -64,6 +72,7 @@
       stinkpad = nixpkgs.lib.nixosSystem {
 
         system = "x86_64-linux";
+	specialArgs = { inherit inputs; };
 
         modules = [
           ./configuration.nix
