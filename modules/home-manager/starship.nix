@@ -35,21 +35,7 @@ config = lib.mkIf config.starship-program.enable {
       };
     };
 
-
-
-
-
-
-
-
-
-
-
-
 };
-
-
-
-
 }
+
 
