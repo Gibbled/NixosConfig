@@ -56,8 +56,6 @@
 	    home-manager.sharedModules = [ 
             sops-nix.homeManagerModules.sops
 	      ];
-	    home-manager.backupFileExtension = "backup";
-            #home-manager.users.ranjit = import ./flakes/home-manager;
             home-manager.users.ranjit = import ./modules/home-manager;
           }
         ];
@@ -71,8 +69,6 @@
           ./configuration.nix
 	  ./modules/system
 	  ./modules/machines/T430/hardware.nix
-	  ./modules/machines/T430/hardware-configuration.nix
-	  ./modules/machines/T430/host-config
 	  ./modules/users/ranjit.nix
 	  sops-nix.nixosModules.sops
 
@@ -83,10 +79,8 @@
 	    home-manager.sharedModules = [ 
             sops-nix.homeManagerModules.sops
 	      ];
-	    home-manager.backupFileExtension = "backup";
             home-manager.users.ranjit = import ./flakes/home-manager;
-
-         }
+          }
         ];
       };
     };

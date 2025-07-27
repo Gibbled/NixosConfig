@@ -29,6 +29,9 @@ home.file.".config/tmux/tmux.conf".source = ./dotfiles/tmux/tmux.conf;
 
 home.file.".config/hypr/hyprland.conf".source = ./dotfiles/hyprland/config/hyprland.conf;
 home.file.".config/hypr/start.sh".source = ./dotfiles/hyprland/config/start.sh;
+home.file.".config/waybar/config.jsonc".source = ./dotfiles/hyprland/config/waybar/config.jsonc;
+home.file.".config/waybar/style.css".source = ./dotfiles/hyprland/config/waybar/style.css;
+
 
 ##############
 

@@ -1,7 +1,7 @@
 {config, pkgs, lib, systemSettings, userSettings, ... }:
 {
 
-  users.mutableUsers = false;
+  users.mutableUsers = true;
   users.users.ranjit = {
 
   isNormalUser = true;
