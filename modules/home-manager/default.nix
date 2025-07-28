@@ -19,6 +19,7 @@ imports = [
 ./waybar.nix
 ./hyprlock.nix
 ./tmux.nix
+./keepassxc.nix
 ];
 
 
