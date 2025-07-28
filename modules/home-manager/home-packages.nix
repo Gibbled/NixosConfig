@@ -106,7 +106,7 @@
     #utterly-round-plasma-style
 
     #For Tmux themes
-    tmuxPlugins.tokyo-night-tmux
+    #tmuxPlugins.tokyo-night-tmux
 
     #For Arduino
     arduino
@@ -131,6 +131,7 @@
 starship-program.enable = true;
 rofi-program.enable = true;
 hyprlock-program.enable = true;
+tmux-program.enable = true;
 
 
 }

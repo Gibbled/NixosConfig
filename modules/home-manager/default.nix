@@ -18,6 +18,7 @@ imports = [
 ./rofi.nix
 ./waybar.nix
 ./hyprlock.nix
+./tmux.nix
 ];
 
 
