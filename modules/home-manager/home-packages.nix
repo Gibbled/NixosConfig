@@ -69,7 +69,6 @@
     kdePackages.kdenlive
     zotero
     yt-dlp
-    #gimp
     gimp3-with-plugins
     inkscape
     meshlab
@@ -77,36 +76,21 @@
     ardour
     qjackctl
     #orca-slicer
-    ollama
 
     tor-browser
     chromium
-    librewolf-bin
     signal-desktop-bin
-    session-desktop
     zapzap
-    #whatsie
-    #nheko
-    #neochat
 
     plover.dev
     vial
     via
-    #qmk
+    qmk
     qmk-udev-rules
     qmk_hid
     keymapviz
-    #streamcontroller
 
     calibre
-
-    #For KDE Theming
-    #kdePackages.qtstyleplugin-kvantum
-    #catppuccin-kvantum
-    #utterly-round-plasma-style
-
-    #For Tmux themes
-    #tmuxPlugins.tokyo-night-tmux
 
     #For Arduino
     arduino
