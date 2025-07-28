@@ -5,7 +5,7 @@
     settings = {
 
     #monitor = ",preferred,auto,0.75";
-    monitor = ",highres,auto,0.75# unscale XWaylandxwayland {force_zero_scaling = true}# toolkit-specific scaleenv = GDK_SCALE,2env = XCURSOR_SIZE,32";
+    monitor = ",highres,auto,1# unscale XWaylandxwayland {force_zero_scaling = true}# toolkit-specific scaleenv = GDK_SCALE,2env = XCURSOR_SIZE,32";
 
 
     "$terminal" = "alacritty";
@@ -191,6 +191,7 @@
        "nm-applet --indicator &" 
        "waybar & dunst"
        "keepassxc"
+       "systemctl --user start hyprpolkitagent"
       ];
      
      

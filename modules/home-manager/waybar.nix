@@ -15,7 +15,7 @@
 	 layer = "top";
          modules-left =  "[\"hyprland/workspaces\", \"mpd\", \"hyprland/mode\"],";
          modules-center = "[],";
-         modules-right =  "[\"network\", \"pulseaudio\", \"temperature\", \"cpu\", \"memory\",   \"clock\"],";
+         modules-right =  "[\"network\", \"pipewire\", \"temperature\", \"cpu\", \"memory\",   \"clock\"],";
          mpd = {
                  tooltip =  "false,";
                  format =  "\"{stateIcon} {artist} - {album} - {title} ({elapsedTime:%  M:%S}/{totalTime:%M:%S})\",";
@@ -26,7 +26,7 @@
                  paused = "\"\"";
                  };
                 };
-          pulseaudio = {
+          pipewire = {
                   tooltip =  "false,";
                   scroll-step =  "5,";
                   format = "\"{icon} {volume}%\",";
@@ -80,7 +80,7 @@
 	            background: transparent;
             }
 
-            window#waybar.alacritty #window,
+            window#waybar.Alacritty #window,
             window#waybar.Firefox #window,
             window#waybar.Navigator #window,
             window#waybar.PCSX2 #window {
