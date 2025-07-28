@@ -51,10 +51,10 @@
 	};
 	   style = ''
             * {
-	            border: none;
-	            border-radius: 0;
+	            border: normal;
+	            border-radius: 3;
 	            font-family: Nerd Font Hack;
-	            font-size: 14px;
+	            font-size: 18px;
 	            min-height: 24px;
             }
             
@@ -80,7 +80,7 @@
 	            background: transparent;
             }
 
-            window#waybar.termite #window,
+            window#waybar.alacritty #window,
             window#waybar.Firefox #window,
             window#waybar.Navigator #window,
             window#waybar.PCSX2 #window {

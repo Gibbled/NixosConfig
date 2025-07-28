@@ -2,7 +2,11 @@
 
 {
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    networkmanager.wifi.backend = "wpa_supplicant";
+    };
+
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.

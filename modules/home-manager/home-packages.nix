@@ -75,6 +75,7 @@
 
     ardour
     qjackctl
+    pavucontrol
     #orca-slicer
 
     tor-browser
