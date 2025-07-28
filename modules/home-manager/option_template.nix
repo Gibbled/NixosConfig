@@ -4,21 +4,21 @@ let
   prog = "the program name";
   optname = "${prog}-program";
   message = "add your message here";
-  pkgname = "the name of the package eg pkgs.rofi-wayland";
+  pkgname = the name of the package eg pkgs.rofi-wayland without quotes;
   
 in
 {
   options = {
-    ${optname}.enable = lib.mkEnableOption "${message}";
+    "${optname}".enable = lib.mkEnableOption "${message}";
   };
 
 
-  config = lib.mkIf config.${optname}.enable {
+  config = lib.mkIf config."${prog}".enable {
 
 
-      programs.${optname} = {
+      programs.${prog} = {
         enable = true;
- 	package = "${pkgname}";
+ 	package = pkgname;
 	
         };
 
