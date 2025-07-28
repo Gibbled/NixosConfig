@@ -12,7 +12,7 @@
 
   home.stateVersion = "23.11";
 
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
 
 
 wayland.windowManager.hyprland = {

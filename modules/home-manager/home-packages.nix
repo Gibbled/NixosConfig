@@ -110,6 +110,7 @@
     virt-manager
     rofi-emoji-wayland
     rofi-network-manager
+    hyprpolkitagent
 
   ];
 

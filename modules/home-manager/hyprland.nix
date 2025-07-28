@@ -189,7 +189,8 @@
 
       exec-once = [
        "nm-applet --indicator &" 
-       "waybar & keepassxc & dunst"
+       "waybar & dunst"
+       "keepassxc"
       ];
      
      
