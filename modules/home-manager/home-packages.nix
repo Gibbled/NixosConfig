@@ -132,6 +132,7 @@ starship-program.enable = true;
 rofi-program.enable = true;
 hyprlock-program.enable = true;
 tmux-program.enable = true;
+neovim-program.enable = true;
 
 
 }
