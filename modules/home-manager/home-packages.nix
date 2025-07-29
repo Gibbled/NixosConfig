@@ -111,6 +111,7 @@
     rofi-emoji-wayland
     rofi-network-manager
     hyprpolkitagent
+    waybar
 
   ];
 
@@ -120,6 +121,7 @@ hyprlock-program.enable = true;
 tmux-program.enable = true;
 neovim-program.enable = true;
 keepassxc-program.enable = true;
+waybar-program.enable = true;
 
 
 }
