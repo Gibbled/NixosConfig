@@ -70,6 +70,7 @@
   kdePackages.qtmultimedia
   kdePackages.plasma-browser-integration
   kdePackages.xdg-desktop-portal-kde
+  utterly-round-plasma-style
 
   #Hyprland
   waybar
@@ -77,6 +78,8 @@
   libnotify
   swww
   rofi-wayland
+  hyprlock
+  xfce.thunar
   (waybar.overrideAttrs ( oldAttrs: {
      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
      })
