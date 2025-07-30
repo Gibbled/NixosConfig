@@ -38,20 +38,20 @@ in {
 	"network.proxy.http_port" = 8118;
 	"network.proxy.type" = 1;
 	"network.proxy.share_proxy_settings" = true;
-        "browser.ml.chat.prompt.prefix" = "fuck you Mozilla";
-        "browser.ml.chat.prompts.0" = "fuck you Mozilla";
-        "browser.ml.chat.prompts.1" = "fuck you Mozilla";
-        "browser.ml.chat.prompts.2" = "fuck you Mozilla";
-        "browser.ml.chat.prompts.3" = "fuck you Mozilla";
-        "browser.ml.chat.prompts.4" = "fuck you Mozilla";
-        "browser.ml.chat.provider" = "fuck you Mozilla";
-        "browser.ml.chat.shortcuts" = "fuck you Mozilla";
-        "browser.ml.chat.shortcuts.custom" = "fuck you Mozilla";
-        "browser.ml.chat.shortcuts.longPress" = "fuck you Mozilla";
+        "browser.ml.chat.prompt.prefix" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.prompts.0" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.prompts.1" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.prompts.2" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.prompts.3" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.prompts.4" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.provider" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.shortcuts" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.shortcuts.custom" = "XXXXXXXXXXXXXXXX";
+        "browser.ml.chat.shortcuts.longPress" = "XXXXXXXXXXXXXXXX";
 	"browser.ml.chat.enabled" = lock-false;
 	"browser.ml.chat.sidebar" = lock-false;
 	"browser.ml.enable" = lib.mkForce false;
-	"browser.ml.modelHubRootUrl" = lib.mkForce "Gibbledy Gook";
+	"browser.ml.modelHubRootUrl" = lib.mkForce "https://goatse.cx";
 	"browser.nativeMessagingHosts.packages" = [ pkgs.kdePackages.plasma-browser-integration pkgs.tridactyl-native ];
       };
 
@@ -136,10 +136,26 @@ in {
             background = "0x${base00}";
             foreground = "0x${base06}";
           };
-
-
-
 	######
+
+        userChrome = ''
+  	  /* Show active colors on main menu bar */
+          #TabsToolbar,
+            #navigator-toolbox {
+	      background: -moz-accent-color !important;
+              color: white;
+            }
+            #TabsToolbar:-moz-window-inactive,
+            #navigator-toolbox:-moz-window-inactive {
+            background: unset !important;
+            color: unset;
+            }
+	      :root {
+                --tab-selected-bgcolor: #FFFFFF !important;
+            }
+	'';
+
+        
       };
     };
 };
