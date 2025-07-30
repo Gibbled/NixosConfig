@@ -3,7 +3,7 @@
 {
   options = {
     hyprlock-program.enable =
-    lib.mkEnableOption "enables waybar for the shell";
+    lib.mkEnableOption "enables hyprloc	 for the shell";
   };
 
   config = lib.mkIf config.hyprlock-program.enable {

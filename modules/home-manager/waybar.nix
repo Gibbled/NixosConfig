@@ -1,413 +1,377 @@
-{ config, pkgs, lib, ... }:
-
 {
-  options = {
-    waybar-program.enable =
-    lib.mkEnableOption "enables waybar for the shell";
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+
+let
+  inherit (lib)
+    all
+    filterAttrs
+    hasAttr
+    isStorePath
+    literalExpression
+    optional
+    optionalAttrs
+    types
+    ;
+  inherit (lib.options) mkEnableOption mkOption;
+  inherit (lib.modules) mkIf mkMerge;
+
+  cfg = config.programs.waybar;
+
+  jsonFormat = pkgs.formats.json { };
+
+  mkMargin =
+    name:
+    mkOption {
+      type = types.nullOr types.int;
+      default = null;
+      example = 10;
+      description = "Margin value without unit.";
+    };
+
+  waybarBarConfig =
+    with types;
+    submodule {
+      freeformType = jsonFormat.type;
+
+      options = {
+        layer = mkOption {
+          type = nullOr (enum [
+            "top"
+            "bottom"
+            "overlay"
+          ]);
+          default = null;
+          description = ''
+            Decide if the bar is displayed in front (`"top"`)
+            of the windows or behind (`"bottom"`).
+          '';
+          example = "top";
+        };
+
+        output = mkOption {
+          type = nullOr (either str (listOf str));
+          default = null;
+          example = literalExpression ''
+            [ "DP-1" "!DP-2" "!DP-3" ]
+          '';
+          description = ''
+            Specifies on which screen this bar will be displayed.
+            Exclamation mark(!) can be used to exclude specific output.
+          '';
+        };
+
+        position = mkOption {
+          type = nullOr (enum [
+            "top"
+            "bottom"
+            "left"
+            "right"
+          ]);
+          default = null;
+          example = "right";
+          description = "Bar position relative to the output.";
+        };
+
+        height = mkOption {
+          type = nullOr ints.unsigned;
+          default = null;
+          example = 5;
+          description = "Height to be used by the bar if possible. Leave blank for a dynamic value.";
+        };
+
+        width = mkOption {
+          type = nullOr ints.unsigned;
+          default = null;
+          example = 5;
+          description = "Width to be used by the bar if possible. Leave blank for a dynamic value.";
+        };
+
+        modules-left = mkOption {
+          type = nullOr (listOf str);
+          default = null;
+          description = "Modules that will be displayed on the left.";
+          example = literalExpression ''
+            [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ]
+          '';
+        };
+
+        modules-center = mkOption {
+          type = nullOr (listOf str);
+          default = null;
+          description = "Modules that will be displayed in the center.";
+          example = literalExpression ''
+            [ "hyprland/window" ]
+          '';
+        };
+
+        modules-right = mkOption {
+          type = nullOr (listOf str);
+          default = null;
+          description = "Modules that will be displayed on the right.";
+          example = literalExpression ''
+            [ "mpd" "custom/mymodule#with-css-id" "temperature" ]
+          '';
+        };
+
+        modules = mkOption {
+          type = jsonFormat.type;
+          visible = false;
+          default = null;
+          description = "Modules configuration.";
+          example = literalExpression ''
+            {
+              "hyprland/window" = {
+                max-length = 50;
+              };
+              "clock" = {
+                format-alt = "{:%a, %d. %b  %H:%M}";
+              };
+            }
+          '';
+        };
+
+        margin = mkOption {
+          type = nullOr str;
+          default = null;
+          description = "Margins value using the CSS format without units.";
+          example = "20 5";
+        };
+
+        margin-left = mkMargin "left";
+        margin-right = mkMargin "right";
+        margin-bottom = mkMargin "bottom";
+        margin-top = mkMargin "top";
+
+        name = mkOption {
+          type = nullOr str;
+          default = null;
+          description = "Optional name added as a CSS class, for styling multiple waybars.";
+          example = "waybar-1";
+        };
+
+        gtk-layer-shell = mkOption {
+          type = nullOr bool;
+          default = null;
+          example = false;
+          description = "Option to disable the use of gtk-layer-shell for popups.";
+        };
+      };
+    };
+in
+{
+  meta.maintainers = with lib.maintainers; [
+    berbiche
+    khaneliman
+  ];
+
+  options.programs.waybar = with lib.types; {
+    enable = mkEnableOption "Waybar";
+
+    package = mkOption {
+      type = package;
+      default = pkgs.waybar;
+      defaultText = literalExpression "pkgs.waybar";
+      description = ''
+        Waybar package to use. Set to `null` to use the default package.
+      '';
+    };
+
+    settings = mkOption {
+      type = either (listOf waybarBarConfig) (attrsOf waybarBarConfig);
+      default = [ ];
+      description = ''
+        Configuration for Waybar, see <https://github.com/Alexays/Waybar/wiki/Configuration>
+        for supported values.
+      '';
+      example = literalExpression ''
+        {
+          mainBar = {
+            layer = "top";
+            position = "top";
+            height = 30;
+            output = [
+              "eDP-1"
+              "HDMI-A-1"
+            ];
+            modules-left = [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ];
+            modules-center = [ "hyprland/window" "custom/hello-from-waybar" ];
+            modules-right = [ "mpd" "custom/mymodule#with-css-id" "temperature" ];
+
+            "hyprland/workspaces" = {
+              disable-scroll = true;
+              all-outputs = true;
+            };
+            "custom/hello-from-waybar" = {
+              format = "hello {}";
+              max-length = 40;
+              interval = "once";
+              exec = pkgs.writeShellScript "hello-from-waybar" '''
+                echo "from within waybar"
+              ''';
+            };
+          };
+        }
+      '';
+    };
+
+    systemd = {
+      enable = mkEnableOption "Waybar systemd integration";
+
+      enableDebug = mkEnableOption "debug logging";
+
+      enableInspect = mkOption {
+        type = bool;
+        default = false;
+        example = true;
+        description = ''
+          Inspect objects and find their CSS classes, experiment with live CSS styles, and lookup the current value of CSS properties.
+
+          See <https://developer.gnome.org/documentation/tools/inspector.html>
+        '';
+      };
+
+      target = mkOption {
+        type = str;
+        default = config.wayland.systemd.target;
+        defaultText = literalExpression "config.wayland.systemd.target";
+        example = "hyprland-session.target";
+        description = ''
+          The systemd target that will automatically start the Waybar service.
+
+          When setting this value to `"hyprland-session.target"`,
+          make sure to also enable {option}`wayland.windowManager.hyprland.systemd.enable`,
+          otherwise the service may never be started.
+        '';
+      };
+    };
+
+    style = mkOption {
+      type = nullOr (either path lines);
+      default = null;
+      description = ''
+        CSS style of the bar.
+
+        See <https://github.com/Alexays/Waybar/wiki/Configuration>
+        for the documentation.
+
+        If the value is set to a path literal, then the path will be used as the css file.
+      '';
+      example = ''
+        * {
+          border: none;
+          border-radius: 0;
+          font-family: Source Code Pro;
+        }
+        window#waybar {
+          background: #16191C;
+          color: #AAB2BF;
+        }
+        #workspaces button {
+          padding: 0 5px;
+        }
+      '';
+    };
   };
 
-  config = lib.mkIf config.waybar-program.enable {
+  config =
+    let
+      # Removes nulls because Waybar ignores them.
+      # This is not recursive.
+      removeTopLevelNulls = filterAttrs (_: v: v != null);
 
-      programs.waybar = {
-        enable = true;
+      # Makes the actual valid configuration Waybar accepts
+      # (strips our custom settings before converting to JSON)
+      makeConfiguration =
+        configuration:
+        let
+          # The "modules" option is not valid in the JSON
+          # as its descendants have to live at the top-level
+          settingsWithoutModules = removeAttrs configuration [ "modules" ];
+          settingsModules = optionalAttrs (configuration.modules != null) configuration.modules;
+        in
+        removeTopLevelNulls (settingsWithoutModules // settingsModules);
 
-	settings = ''
-	"["
-        "{"
-        "\"layer\": \"top\","
-        "\"position\": \"top\","
-        "\"height\": 24,"
-        "\"spacing\": 5,"
-        "\"modules-left\": ["
-        "\"custom/launcher\","
-        "\"hyprland/window\","
-        "\"custom/texttwo\","
-        "\"custom/textthree\","
-        "\"custom/textfour\","
-        "\"custom/textfive\""
-    "],"
-    "\"modules-center\": ["
-      "\"hyprland/window\""
-    "],"
-    "\"modules-right\": ["
-      "\"mpd\","
-      "\"idle_inhibitor\","
-      "\"temperature\","
-      "\"cpu\","
-      "\"memory\","
-      "\"network\","
-      "\"pulseaudio\","
-      "\"backlight\","
-      "\"keyboard-state\","
-      "\"battery\","
-      "\"battery#bat2\","
-      "\"tray\","
-      "\"clock\""
-    "],"
-    "\"hyprland/window\": {"
-      "\"format\": \"{class}\","
-      "\"max-length\": 20,"
-      "\"rewrite\": {"
-        "\"\^(?!.*\\\\S).*\": \"Finder\""
-      "}"
-    "},"
-    "\"custom/launcher\": {"
-      "\"format\": \"🔍\","
-      "\"on-click\": \"rofi --show drun\","
-      "\"tooltip\": false"
-    "},"
-    "\"custom/texttwo\": {"
-      "\"exec\": \"echo 'File'\","
-      "\"\\\"interval\": 60,\""
-      "\"return-type\": \"plain\","
-      "\"on-click\": \"nautilus\""
-    "},"
-    "\"custom/textthree\": {"
-      "\"exec\": \"echo 'Edit'\","
-      "\"interval\": 60,"
-      "\"return-type\": \"plain\","
-      "\"on-click\": \"gimp\""
-    "},"
-    "\"custom/textfour\": {"
-      "\"exec\": \"echo 'View'\","
-      "\"interval\": 60,"
-      "\"return-type\": \"plain\""
-    "},"
-    "\"custom/textfive\": {"
-      "\"exec\": \"echo 'Help'\","
-      "\"interval\": 60,"
-      "\"return-type\": \"plain\","
-      "\"on-click\": \"gio open https://github.com/kamlendras/waybar/issues/new\""
-    "},"
-    "\"keyboard-state\": {"
-      "\"numlock\": true,"
-      "\"capslock\": true,"
-      "\"format\": \"{name} {icon}\","
-      "\"format-icons\": {"
-        "\"locked\": \"\","
-        "\"unlocked\": \"\""
-      "}"
-    "},"
-    "\"hyprland/mode\": {"
-      "\"format\": \"<span style=\\\"italic\\\">{}</span>\""
-    "},"
-    "\"hyprland/scratchpad\": {"
-      "\"format\": \"{icon} {count}\","
-      "\"show-empty\": false,"
-      "\"format-icons\": ["
-        "\"\","
-        "\"\","
-      "],"
-      "\"tooltip\": true,"
-      "\"tooltip-format\": \"{app}: {title}\""
-    "},"
-    "\"mpd\": {"
-      "\"format\": \"  {title} - {artist} {stateIcon} [{elapsedTime:%M:%S}/{totalTime:%M:%S}] {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}[{songPosition}/{queueLength}] [{volume}%]\","
-      "\"format-disconnected\": \" Disconnected\","
-      "\"format-stopped\": \" {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped\","
-      "\"\"unknown-tag\": \"N/A\",\""
-      "\"interval\": 2,"
-      "\"consume-icons\": {"
-        "\"on\": \" \""
-      "},"
-      "\"random-icons\": {"
-        "\"on\": \" \""
-      "},"
-      "\"repeat-icons\": {"
-        "\"on\": \" \""
-      "},"
-      "\"single-icons\": {"
-        "\"on\": \"1 \""
-      "},"
-      "\"state-icons\": {"
-        "\"paused\": \"\","
-        "\"playing\": \"\""
-      "},"
-      "\"tooltip-format\": \"MPD (connected)\","
-      "\"tooltip-format-disconnected\": \"MPD (disconnected)\","
-      "\"on-click\": \"mpc toggle\","
-      "\"on-click-right\": \"foot -a ncmpcpp ncmpcpp\","
-      "\"on-scroll-up\": \"mpc volume +2\","
-      "\"on-scroll-down\": \"mpc volume -2\""
-    "},"
-    "\"idle_inhibitor\": {"
-      "\"format\": \"{icon}\","
-      "\"format-icons\": {"
-        "\"activated\": \"\","
-        "\"deactivated\": \"\""
-      "}"
-    "},"
-    "\"tray\": {"
-      "\"spacing\": 10"
-    "},"
-    "\"clock\": {"
-      "\"format\": \"{:%A %B %d %H:%M %p}\","
-      "\"tooltip-format\": \"<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>\""
-    "},"
-    "\"cpu\": {"
-      "\"format\": \"  {usage}%\""
-    "},"
-    "\"memory\": {"
-      "\"format\": \" {}%\""
-    "},"
-    "\"temperature\": {"
-      "\"thermal-zone\": 2,"
-      "\"hwmon-path\": \"/sys/class/hwmon/hwmon2/temp1_input\","
-      "\"critical-threshold\": 80,"
-      "\"format-critical\": \"{icon} {temperatureC}°C\","
-      "\"format\": \"{icon} {temperatureC}°C\","
-      "\"format-icons\": ["
-        "\"\","
-        "\"\","
-        "\"\""
-      "]"
-    "},"
-    "\"backlight\": {"
-      "\"format\": \"{icon} {percent}%\","
-      "\"format-icons\": ["
-        "\"\","
-        "\"\","
-        "\"\","
-        "\"\","
-        "\"\","
-        "\"\","
-        "\"\","
-        "\"\","
-        "\"\""
-      "]"
-    "},"
-    "\"battery\": {"
-      "\"states\": {"
-        "\"warning\": 30,"
-        "\"critical\": 15"
-      "},"
-      "\"format\": \"{icon} {capacity}%\","
-      "\"format-charging\": \" {capacity}%\","
-      "\"format-plugged\": \" {capacity}%\","
-      "\"format-alt\": \"{icon} {time}\","
-      "\"format-icons\": ["
-        "\"\","
-        "\"\","
-        "\"\","
-        "\"\","
-        "\"\""
-      "]"
-    "},"
-    "\"battery#bat2\": {"
-    "\"bat\": \"BAT2\""
-    "},"
-    "\"network\": {"
-      "\"format-wifi\": \"{essid} ({signalStrength}%) \","
-      "\"format-ethernet\": \" {ifname}\","
-      "\"tooltip-format\": \" {ifname} via {gwaddr}\","
-      "\"format-linked\": \" {ifname} (No IP)\","
-      "\"format-disconnected\": \"Disconnected ⚠ {ifname}\","
-      "\"format-alt\": \" {ifname}: {ipaddr}/{cidr}\""
-    "},"
-    "\"pulseaudio\": {"
-      "\"scroll-step\": 5,"
-      "\"format\": \"{icon}  {volume}% {format_source}\","
-      "\"format-bluetooth\": \" {icon} {volume}% {format_source}\","
-      "\"format-bluetooth-muted\": \"  {icon} {format_source}\","
-      "\"format-muted\": \"  {format_source}\","
-      "\"format-source\": \" {volume}%\","
-      "\"format-source-muted\": \"\","
-      "\"format-icons\": {"
-        "\"default\": ["
-          "\"\","
-          "\"\","
-          "\"\""
-        "]"
-      "},"
-      "\"on-click\": \"pavucontrol\","
-      "\"on-click-right\": \"foot -a pw-top pw-top\""
-    "}"
-  "},"
-  "{"
-    "\"layer\": \"top\","
-    "\"position\": \"bottom\","
-    "\"height\": 41,"
-    "\"width\": 2,"
-    "\"modules-left\": ["
-      "\"custom/os_button\""
-    "],"
-    "\"modules-center\": ["
-      "\"hyprland/mode\","
-      "\"wlr/taskbar\""
-    "],"
-    "\"margin\": \"4\","
-    "\"spacing\": \"5\","
-    "\"hyprland/window\": {"
-      "\"max-length\": 50"
-    "},"
-    "\"custom/os_button\": {"
-      "\"format\": \"🔍\","
-      "\"on-click\": \"rofi --show drun\","
-      "\"tooltip\": false"
-    "},"
-    "\"wlr/taskbar\": {"
-      "\"format\": \"{icon}\","
-      "\"icon-size\": 36,"
-      "\"spacing\": 3,"
-      "\"on-click-middle\": \"close\","
-      "\"tooltip-format\": \"{title}\","
-      "\"ignore-list\": [],"
-      "\"on-click\": \"activate\""
-    "}"
-    "}"
-    "]"
-    '';
+      # Allow using attrs for settings instead of a list in order to more easily override
+      settings = if builtins.isAttrs cfg.settings then lib.attrValues cfg.settings else cfg.settings;
 
-	   style = ''
-             * {
-               font-size: 16px;
-               min-height: 0;
-               border-radius: 1rem;
-               padding: 0.1rem;
-             }
-             
-             window#waybar {
-               background: rgba(255, 255, 255, 0.5);
-               color: rgb(0, 0, 0);
-             }
-             
-             tooltip {
-               background: #000000;
-             }
-             tooltip label {
-               color: white;
-             }
-             
-             #workspaces button {
-               padding: 0 5px;
-               background: transparent;
-               color: white;
-               border-bottom: 3px solid transparent;
-             }
-             
-             #workspaces button.focused {
-               background: #64727d;
-               border-bottom: 3px solid white;
-             }
-             
-             #mode,
-             #clock,
-             #battery {
-               padding: 0 10px;
-             }
-             
-             #mode {
-               background: #64727d;
-               border-bottom: 3px solid white;
-             }
-             
-             #clock,
-             #battery,
-             #cpu,
-             #memory,
-             #disk,
-             #temperature,
-             #backlight,
-             #network,
-             #pulseaudio,
-             #wireplumber,
-             #custom-media,
-             #tray,
-             #mode,
-             #idle_inhibitor,
-             #scratchpad,
-             #mpd {
-               margin: 2px;
-               padding-left: 4px;
-               padding-right: 4px;
-               color: #000000;
-             }
-             
-             .modules-left > widget:first-child > #workspaces {
-               margin-left: 0;
-             }
-             
-             .modules-right > widget:last-child > #workspaces {
-               margin-right: 0;
-             }
-             
-             #clock {
-               font-size: 14px;
-             }
-             
-             #battery icon {
-               color: red;
-             }
-             
-             #battery.charging,
-             #battery.plugged {
-               color: #ffffff;
-               background-color: #26a65b;
-             }
-             
-             @keyframes blink {
-               to {
-                 background-color: #ffffff;
-                 color: #000000;
-               }
-             }
-             
-             #battery.warning:not(.charging) {
-               background-color: #f53c3c;
-               color: #ffffff;
-               animation-name: blink;
-               animation-duration: 0.5s;
-               animation-timing-function: linear;
-               animation-iteration-count: infinite;
-               animation-direction: alternate;
-             }
-             
-             #battery.critical:not(.charging) {
-               background-color: #f53c3c;
-               color: #ffffff;
-               animation-name: blink;
-               animation-duration: 0.5s;
-               animation-timing-function: linear;
-               animation-iteration-count: infinite;
-               animation-direction: alternate;
-             }
-             
-             label:focus {
-               background-color: #000000;
-             }
-             
-             #network.disconnected {
-               background-color: #f53c3c;
-             }
-             
-             #temperature.critical {
-               background-color: #eb4d4b;
-             }
-             
-             #idle_inhibitor.activated {
-               background-color: #ecf0f1;
-               color: #2d3436;
-             }
-             
-             #tray > .passive {
-               -gtk-icon-effect: dim;
-             }
-             
-             #tray > .needs-attention {
-               -gtk-icon-effect: highlight;
-               background-color: #eb4d4b;
-             }
-             
-             #custom-os_button {
-               font-size: 32px;
-               transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-             }
-             #custom-os_button:hover {
-               background: white;
-               color: black;
-             }
-             '';
-	     };
-	     };
-             
+      # The clean list of configurations
+      finalConfiguration = map makeConfiguration settings;
+
+      configSource = jsonFormat.generate "waybar-config.json" finalConfiguration;
+
+    in
+    mkIf cfg.enable (mkMerge [
+      {
+        assertions = [
+          (lib.hm.assertions.assertPlatform "programs.waybar" pkgs lib.platforms.linux)
+          ({
+            assertion =
+              if lib.versionAtLeast config.home.stateVersion "22.05" then
+                all (x: !hasAttr "modules" x || x.modules == null) settings
+              else
+                true;
+            message = ''
+              The `programs.waybar.settings.[].modules` option has been removed.
+              It is now possible to declare modules in the configuration without nesting them under the `modules` option.
+            '';
+          })
+        ];
+
+        home.packages = [ cfg.package ];
+
+        xdg.configFile."waybar/config" = mkIf (settings != [ ]) {
+          source = configSource;
+          onChange = ''
+            ${pkgs.procps}/bin/pkill -u $USER -USR2 waybar || true
+          '';
+        };
+
+        xdg.configFile."waybar/style.css" = mkIf (cfg.style != null) {
+          source =
+            if builtins.isPath cfg.style || isStorePath cfg.style then
+              cfg.style
+            else
+              pkgs.writeText "waybar/style.css" cfg.style;
+          onChange = ''
+            ${pkgs.procps}/bin/pkill -u $USER -USR2 waybar || true
+          '';
+        };
+      }
+
+      (mkIf cfg.systemd.enable {
+        systemd.user.services.waybar = {
+          Unit = {
+            Description = "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
+            Documentation = "https://github.com/Alexays/Waybar/wiki";
+            PartOf = [
+              cfg.systemd.target
+              "tray.target"
+            ];
+            After = [ cfg.systemd.target ];
+            ConditionEnvironment = "WAYLAND_DISPLAY";
+            X-Restart-Triggers =
+              optional (settings != [ ]) "${config.xdg.configFile."waybar/config".source}"
+              ++ optional (cfg.style != null) "${config.xdg.configFile."waybar/style.css".source}";
+          };
+
+          Service = {
+            Environment = optional cfg.systemd.enableInspect "GTK_DEBUG=interactive";
+            ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
+            ExecStart = "${cfg.package}/bin/waybar${lib.optionalString cfg.systemd.enableDebug " -l debug"}";
+            KillMode = "mixed";
+            Restart = "on-failure";
+          };
+
+          Install.WantedBy = [
+            cfg.systemd.target
+            "tray.target"
+          ];
+        };
+      })
+    ]);
 }
+

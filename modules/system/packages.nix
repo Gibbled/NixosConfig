@@ -80,10 +80,6 @@
   rofi-wayland
   hyprlock
   xfce.thunar
-  (waybar.overrideAttrs ( oldAttrs: {
-     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-     })
-     )
   ];
 
   # Allow unfree packages
