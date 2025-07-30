@@ -16,7 +16,6 @@ imports = [
 ./fonts.nix
 ./hyprland.nix
 ./rofi.nix
-#./waybar.nix
 ./hyprlock.nix
 ./tmux.nix
 ./keepassxc.nix

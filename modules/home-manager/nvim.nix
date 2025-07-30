@@ -44,6 +44,7 @@ in
 	  noice-nvim
 	  nvim-notify
 	  alpha-nvim
+	  stay-centered-nvim
       ];
        extraLuaConfig = ''
 
@@ -65,6 +66,9 @@ in
 
 	 --Fugitive Git
 	 vim.keymap.set("n", "<Leader>gs", vim.cmd.Git)
+
+	 --Stay Centered
+	 vim.keymap.set({ 'n', 'v' }, '<leader>ss', require('stay-centered').toggle, { desc = 'Toggle stay-centered.nvim' })
 
          --harpoon
          vim.keymap.set('n','<leader>hh',require('harpoon.mark').add_file)
@@ -354,7 +358,8 @@ in
             },
           })
 
-
+          --Relative line numbering
+	  vim.wo.relativenumber = true
 
 
 

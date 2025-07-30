@@ -79,7 +79,7 @@
   swww
   rofi-wayland
   hyprlock
-  xfce.thunar
+  pulseaudio
   ];
 
   # Allow unfree packages
