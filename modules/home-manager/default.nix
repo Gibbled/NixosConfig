@@ -20,6 +20,8 @@ imports = [
 ./hyprlock.nix
 ./tmux.nix
 ./keepassxc.nix
+./nix-colors.nix
+./alacritty.nix
 ];
 
 

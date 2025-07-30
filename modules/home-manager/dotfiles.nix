@@ -20,7 +20,7 @@ home.file.".config/kitty/current-theme.conf".source = ./dotfiles/kitty/current-t
 #home.file.".config/nvim/lua/ranjit/init.lua".source = ./dotfiles/nvim/lua/ranjit/init.lua;
 #home.file.".config/nvim/lua/ranjit/packer.lua".source = ./dotfiles/nvim/lua/ranjit/packer.lua;
 #home.file.".config/nvim/lua/ranjit/remap.lua".source = ./dotfiles/nvim/lua/ranjit/remap.lua;
-home.file.".config/alacritty/alacritty.toml".source = ./dotfiles/alacritty/alacritty.toml;
+#home.file.".config/alacritty/alacritty.toml".source = ./dotfiles/alacritty/alacritty.toml;
 home.file.".ssh/authorized_keys".source = ./dotfiles/ssh/authorized_keys;
 
 

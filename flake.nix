@@ -26,19 +26,13 @@
       inputs.hyprland.follows = "hyprland"; # Prevents version mismatch.
     };
 
+    nix-colors.url = "github:misterio77/nix-colors";
+    nix-colors-adapters.url = "gitlab:vfosnar/nix-colors-adapters";
+
 
   };
 
    outputs = inputs @ { nixpkgs, home-manager,sops-nix, ... }:
-    let
-      userOptions = {
-        userName = "ranjit";
-      };
-      systemOptions = { 
-	
-      };
-     
-    in
 
     {
     system.stateVersion = "24.05"; # Did you read the comment? Yep!
@@ -61,6 +55,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+	    home-manager.extraSpecialArgs = { inherit inputs; };
 	    home-manager.sharedModules = [ 
             sops-nix.homeManagerModules.sops
 	      ];

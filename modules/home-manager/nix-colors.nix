@@ -1,23 +1,19 @@
-{ pkgs, config, home-manager, nix-colors, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  
   imports = [
-    nix-colors.homeManagerModules.default
+    inputs.nix-colors.homeManagerModules.default
+    inputs.nix-colors-adapters.homeManagerModules.default
   ];
 
-colorScheme = nix-colors.colorSchemes.tokyo-night-dark;
-
-
-  programs = {
-
-    kitty = {
-
-      enable=true;
-      settings = {
-        foreground = "#${config.colorScheme.palette.base05}";
-        background = "#${config.colorScheme.palette.base00}";
+  #colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-terminal-storm;
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
+  nixColorsAdapters = {
+    kvantum.enable = false;
+    firefox = {
+      enable = true;
+      profiles = [ "New-Main" ];
       };
-    };
-  };
+    rofi.enable = true;
+   };
 }

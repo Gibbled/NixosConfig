@@ -1,6 +1,7 @@
 { config, pkgs,  ... }:
 
 {
+
   home.username = "ranjit";
   home.homeDirectory = "/home/ranjit";
   imports = [

@@ -12,7 +12,7 @@
 
       programs.rofi = {
         enable = true;
-	theme = "material";
+	#theme = "material";
         font = "Nerd Fonts Hack 18";
 	package = pkgs.rofi-wayland;
 	location = "top-right";
