@@ -149,11 +149,17 @@ in
 	 lsp_zero.on_attach(function(client, bufnr)
   	 lsp_zero.default_keymaps({buffer = bufnr})
 	 end)
+	 vim.lsp.enable('basedpyright')
+	 vim.lsp.enable('nixfmt')
+	 vim.lsp.enable('qmlls')
+	 vim.lsp.enable('alejandra')
+	 vim.lsp.enable('lua-language-server')
+	 vim.lsp.enable('bash-language-server')
+	 vim.lsp.enable('docker-compose-language-server')
 	 require("mason").setup()
 	 require("mason-lspconfig").setup({
   	 -- Replace the language servers listed here
   	 -- with the ones you want to install
-  	 ensure_installed = {'lua_ls'},
   	 handlers = {
     	 lsp_zero.default_setup,
   	 }

@@ -1,5 +1,13 @@
-{inputs, pkgs, ...}: {
-  wayland.windowManager.hyprland = {
+{inputs, pkgs, nix-colors, config, ...}: 
+
+  let 
+   imports = [
+    "nix-colors.homeManagerModules.default"
+  ];
+  in
+
+{
+  wayland.windowManager.hyprland =  {
     enable = true;
 
     settings = {
@@ -81,13 +89,15 @@
    
       general = {
         "gaps_in" = "5";
-        "gaps_out" = "20";
-        "border_size" = "2";
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
-        "resize_on_border" = "false";
+        "gaps_out" = "5";
+        "border_size" = "3";
+        #"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.active_border" = "rgb(${config.colorScheme.palette.base0A}) rgb(${config.colorScheme.palette.base09}) 45deg";
+        "col.inactive_border" = "rgb(${config.colorScheme.palette.base05})";
         "allow_tearing" = "false";
         "layout" = "dwindle";
+        "resize_on_border" = "true";
+	"extend_border_grab_area" = "true";
       };
 
       decoration = {

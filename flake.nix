@@ -30,6 +30,12 @@
     nix-colors-adapters.url = "gitlab:vfosnar/nix-colors-adapters";
 
 
+     quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
   };
 
    outputs = inputs @ { nixpkgs, home-manager,sops-nix, ... }:
