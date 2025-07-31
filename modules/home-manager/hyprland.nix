@@ -23,6 +23,7 @@
     "$blender" = "blender";
     "$virt-manager" = "virt-manager";
     "$locker" = "hyprlock";
+    "$wallpaper" = "waypaper";
 
     "$mainMod" = "CTRL_ALT";
     bind = [
@@ -35,6 +36,7 @@
         "$mainMod, D, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, RETURN, exec, $menu"
+        "$mainMod, O, exec, $wallpaper --random"
         "$mainMod, P, pseudo, "
         "$mainMod, J, togglesplit, "
         "$mainMod, H, movefocus, l"
@@ -203,6 +205,8 @@
        "waybar & dunst"
        "keepassxc"
        "systemctl --user start hyprpolkitagent"
+       "waypaper --random"
+       "exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE \"$HYPRLAND_INSTANCE_SIGNATURE\""
       ];
      
      

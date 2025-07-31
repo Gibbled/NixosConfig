@@ -112,6 +112,9 @@
     rofi-network-manager
     hyprpolkitagent
     waybar
+    waypaper
+    hyprpaper
+    swww
 
   ];
 

@@ -26,6 +26,8 @@ imports = [
 #./stylix.nix
 #./tmux.nix
 ./fonts.nix
+./scripts.nix
+./timers.nix
 ];
 
 }
