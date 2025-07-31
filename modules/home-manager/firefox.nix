@@ -105,6 +105,11 @@ in {
           installation_mode = "force_installed";
 
 	};
+
+	"zotero@chnm.gmu.edu" = {
+          install_url = "https://www.zotero.org/download/connector/dl?browser=firefox&version=5.0.176";
+          installation_mode = "force_installed";
+	};
 	};
 	######
         colors = with config.colorScheme.palette; {

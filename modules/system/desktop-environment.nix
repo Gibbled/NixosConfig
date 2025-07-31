@@ -5,6 +5,9 @@
   networking = {
     networkmanager.enable = true;
     networkmanager.wifi.backend = "wpa_supplicant";
+    networkmanager.insertNameservers = [
+      "8.8.8.8"
+    ];
     };
 
 
