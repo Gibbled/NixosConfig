@@ -21,6 +21,7 @@ imports = [
 ./keepassxc.nix
 ./nix-colors.nix
 ./alacritty.nix
+./hyprpaper.nix
 ];
 
 

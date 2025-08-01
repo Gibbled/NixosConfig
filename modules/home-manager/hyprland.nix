@@ -205,7 +205,7 @@
        "waybar & dunst"
        "keepassxc"
        "systemctl --user start hyprpolkitagent"
-       "waypaper --random"
+       "${pkgs.swww}/bin/swww-daemon"
        "exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE \"$HYPRLAND_INSTANCE_SIGNATURE\""
       ];
      

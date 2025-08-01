@@ -121,6 +121,7 @@
 starship-program.enable = true;
 rofi-program.enable = true;
 hyprlock-program.enable = true;
+hyprpaper-service.enable = true;
 tmux-program.enable = true;
 neovim-program.enable = true;
 keepassxc-program.enable = true;

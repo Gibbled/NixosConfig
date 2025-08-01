@@ -2,8 +2,7 @@
 
 {
   options = {
-    rofi-program.enable =
-    lib.mkEnableOption "enables rofi for the shell";
+    rofi-program.enable = lib.mkEnableOption "enables rofi for the shell";
   };
 
 
@@ -12,15 +11,15 @@
 
       programs.rofi = {
         enable = true;
-	#theme = "material";
         font = "Nerd Fonts Hack 18";
 	package = pkgs.rofi-wayland;
 	location = "top-right";
 	plugins = [
-	  pkgs.rofi-emoji
+	  pkgs.rofi-emoji-wayland
 	  pkgs.rofi-systemd
 	  pkgs.rofi-menugen
 	  pkgs.rofi-network-manager
+	  pkgs.pinentry-rofi
 	  ];
 	modes = [
 	 "window"
