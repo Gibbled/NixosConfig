@@ -1,4 +1,4 @@
-{inputs, pkgs, nix-colors, config, ...}: 
+{inputs, pkgs, nix-colors, config, hostname, ...}: 
 
   let 
    imports = [
@@ -13,7 +13,14 @@
     settings = {
 
     #monitor = ",preferred,auto,0.75";
-    monitor = ",highres,auto,1# unscale XWaylandxwayland {force_zero_scaling = true}# toolkit-specific scaleenv = GDK_SCALE,2env = XCURSOR_SIZE,32";
+    #monitor = ",highres,auto,1# unscale XWaylandxwayland {force_zero_scaling = true}# toolkit-specific scaleenv = GDK_SCALE,2env = XCURSOR_SIZE,32";
+    monitor = [
+    ##ax8
+	  "desc:Nreal Air 0x66666600,1920x1080@120,0x3840,1"
+	  "desc:Samsung Electric Company U28E570 HTPK700431,3840x2160@30,0x0,2"
+    ##stinkpad
+          "desc:Chimei Innolux Corporation 0x1471,1366x768@60,0x0,1"
+];
 
 
     "$terminal" = "alacritty";
