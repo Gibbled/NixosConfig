@@ -23,6 +23,7 @@ imports = [
 ./alacritty.nix
 ./hyprpaper.nix
 ./hyprlock.nix
+./waybar.nix
 ];
 
 

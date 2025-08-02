@@ -209,7 +209,7 @@
 
       exec-once = [
        "nm-applet --indicator &" 
-       "waybar & dunst"
+       "dunst"
        "keepassxc"
        "systemctl --user start hyprpolkitagent"
        "${pkgs.swww}/bin/swww-daemon"

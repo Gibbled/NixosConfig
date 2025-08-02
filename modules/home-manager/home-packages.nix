@@ -125,7 +125,7 @@ hyprpaper-service.enable = true;
 tmux-program.enable = true;
 neovim-program.enable = true;
 keepassxc-program.enable = true;
-#waybar-program.enable = true;
+#programs.waybar.enable = true;
 
 
 }
