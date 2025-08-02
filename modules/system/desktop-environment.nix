@@ -91,6 +91,8 @@ programs.xwayland = {
 #security.sudo.wheelNeedsPassword = false;
 #Yubikeys working now, so switch password back on.
 security.sudo.wheelNeedsPassword = true;
+##For hyprlock to be able to unlock as well as lock
+security.pam.services.hyprlock = {};
 
 
 environment.systemPackages = with pkgs;

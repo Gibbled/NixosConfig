@@ -22,6 +22,7 @@ imports = [
 ./nix-colors.nix
 ./alacritty.nix
 ./hyprpaper.nix
+./hyprlock.nix
 ];
 
 
