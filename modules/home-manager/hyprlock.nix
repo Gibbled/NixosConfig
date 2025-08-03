@@ -73,7 +73,7 @@ in
             monitor = 
             text = cmd[update:1000] echo "$(date +"%-I:%M")"
             color = rgba(242, 243, 244, 0.75)
-            font_size = 95
+            font_size = 50
             font_family = Hack Mono
             position = 0, 400
             halign = center
