@@ -16,6 +16,7 @@ in {
   programs.firefox = {
     enable = true;
     profiles.New-Main.extensions.force = true;
+    enableGnomeExtensions = true;
 
     policies = {
       DisableTelemetry = lib.mkForce true;
@@ -103,9 +104,12 @@ in {
 	"adb@mozilla.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/Firefox-DevTools-ADB-Extension/latest.xpi";
           installation_mode = "force_installed";
-
 	};
 
+	"gdpr@cavi.au.dk" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/Consent-O-Matic/latest.xpi";
+          installation_mode = "force_installed";
+	};
 	"zotero@chnm.gmu.edu" = {
           install_url = "https://www.zotero.org/download/connector/dl?browser=firefox&version=5.0.176";
           installation_mode = "force_installed";
@@ -148,7 +152,7 @@ in {
           #TabsToolbar,
             #navigator-toolbox {
 	      background: -moz-accent-color !important;
-              color: white;
+              color: black;
             }
             #TabsToolbar:-moz-window-inactive,
             #navigator-toolbox:-moz-window-inactive {

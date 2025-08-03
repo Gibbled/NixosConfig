@@ -24,6 +24,7 @@ imports = [
 ./hyprpaper.nix
 ./hyprlock.nix
 ./waybar.nix
+./btop.nix
 ];
 
 

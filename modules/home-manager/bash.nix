@@ -6,6 +6,7 @@
       enable = true;
       enableCompletion = true;
       bashrcExtra = ''
+      set -o vi
       PATH="$HOME/.local/bin:$PATH:$HOME/bin"
       export LESS="-X"
       PAGER=less LESS=R

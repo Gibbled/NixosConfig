@@ -25,6 +25,7 @@
   };
 
   services.desktopManager.plasma6.enable = true;
+  services.gnome.gnome-browser-connector.enable = true;
 
 
   #Lets have a look at hyprland
