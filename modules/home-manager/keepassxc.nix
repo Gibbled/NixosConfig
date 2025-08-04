@@ -20,7 +20,6 @@ in
         enable = true;
  	package = pkgname;
         settings = {
-          Browser.Enabled = true;
 
           GUI = {
             AdvancedSettings = true;
@@ -28,6 +27,11 @@ in
             CompactMode = true;
             HidePasswords = true;
           };
+
+	  Browser = {
+            Enabled = true;
+	    UpdateBinaryPath=false;
+	  };
 
           SSHAgent.Enabled = true;
           };
