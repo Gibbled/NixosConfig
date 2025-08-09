@@ -27,6 +27,7 @@
       grr = "ssh -i /home/ranjit/.ssh/id_ringu_ecdsa -p 2525 'ranjit@gragnet.dyndns.org'";
       bootclean = "sudo nixos-rebuild boot"; 
       fullclean = "cleanup&&bootclean";
+      df = "dysk";
 
       };
     };

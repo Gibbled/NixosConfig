@@ -116,6 +116,11 @@
     hyprpaper
     swww
 
+    nwg-look
+
+    #RSS
+    #yarr	
+
   ];
 
 starship-program.enable = true;

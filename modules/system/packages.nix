@@ -21,6 +21,7 @@
   #ccacheWrapper
   tmux
   stow
+  dysk
   git
   gh
   lua
