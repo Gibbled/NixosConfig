@@ -56,7 +56,7 @@
     luajitPackages.luarocks-nix
     rustup
     kicad
-    #darktable
+    darktable
     freecad
     openscad
 
@@ -76,7 +76,8 @@
     ardour
     qjackctl
     pavucontrol
-    #orca-slicer
+    
+    orca-slicer
 
     tor-browser
     chromium
