@@ -15,5 +15,6 @@
       profiles = [ "New-Main" ];
       };
     rofi.enable = true;
+    alacritty.enable = true;
    };
 }
