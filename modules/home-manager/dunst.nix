@@ -31,36 +31,39 @@ in
         icon_position = "left";
         line_height = 0;
         markup = "full";
-        padding = 8;
+        padding = 4;
         separator_color = "frame";
         separator_height = 2;
-        transparency = 60;
+        transparency = "100";
         word_wrap = true;
 	corner_radius = 20;
 	corners = "all";
 	origin = "top-right";
-	offset = "(10,40)";
+	offset = "(10,10)";
       };
 
       urgency_low = {
-        background = "${config.colorScheme.palette.base0C}";
-        foreground = "${config.colorScheme.palette.base01}";
-        frame_color = "${config.colorScheme.palette.base02}";
+        background = "#${config.colorScheme.palette.base0C}";
+        foreground = "#${config.colorScheme.palette.base01}";
+        frame_color = "#${config.colorScheme.palette.base02}";
         timeout = 10;
+        transparency = 60;
       };
 
       urgency_normal = {
-        background = "${config.colorScheme.palette.base0A}";
-        foreground = "${config.colorScheme.palette.base01}";
-        frame_color = "${config.colorScheme.palette.base02}";
+        background = "#${config.colorScheme.palette.base0A}";
+        foreground = "#${config.colorScheme.palette.base01}";
+        frame_color = "#${config.colorScheme.palette.base02}";
         timeout = 15;
+        transparency = 60;
       };
 
       urgency_critical = {
-        background = "${config.colorScheme.palette.base0B}";
-        foreground = "${config.colorScheme.palette.base01}";
-        frame_color = "${config.colorScheme.palette.base02}";
+        background = "#${config.colorScheme.palette.base0E}";
+        foreground = "#${config.colorScheme.palette.base01}";
+        frame_color = "#${config.colorScheme.palette.base02}";
         timeout = 0;
+        transparency = "60";
       };
       };
 
