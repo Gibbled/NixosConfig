@@ -25,6 +25,7 @@ imports = [
 ./hyprlock.nix
 ./waybar.nix
 ./btop.nix
+./dunst.nix
 ];
 
 
