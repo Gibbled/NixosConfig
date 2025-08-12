@@ -119,12 +119,12 @@ in {
         colors = with config.colorScheme.palette; {
           bright = {
             black = "0x${base00}";
-            blue = "0x${base0D}";
-            cyan = "0x${base0C}";
-            green = "0x${base0B}";
+            blue = "0x${base04}";
+            cyan = "0x${base02}";
+            green = "0x${base06}";
             magenta = "0x${base0E}";
             red = "0x${base08}";
-            white = "0x${base06}";
+            white = "0x${base07}";
             yellow = "0x${base09}";
           };
           cursor = {
@@ -149,13 +149,13 @@ in {
 
         userChrome = ''
   	  /* Show active colors on main menu bar */
-          #TabsToolbar,
-            #navigator-toolbox {
+          TabsToolbar,
+            navigator-toolbox {
 	      background: -moz-accent-color !important;
               color: black;
             }
-            #TabsToolbar:-moz-window-inactive,
-            #navigator-toolbox:-moz-window-inactive {
+            TabsToolbar:-moz-window-inactive,
+            navigator-toolbox:-moz-window-inactive {
             background: unset !important;
             color: unset;
             }

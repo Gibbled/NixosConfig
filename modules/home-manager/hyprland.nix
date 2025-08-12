@@ -1,37 +1,38 @@
-{inputs, pkgs, nix-colors, config, hostname, ...}: 
-
-  let 
-   imports = [
+{
+  inputs,
+  pkgs,
+  nix-colors,
+  config,
+  hostname,
+  ...
+}: let
+  imports = [
     "nix-colors.homeManagerModules.default"
   ];
-  in
-
-{
-  wayland.windowManager.hyprland =  {
+in {
+  wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {
+      monitor = [
+        ##ax8
+        "desc:Nreal Air 0x66666600,1920x1080@120,0x2160,1"
+        "desc:Samsung Electric Company U28E570 HTPK700431,3840x2160@30,0x0,2"
+        ##stinkpad
+        "desc:Chimei Innolux Corporation 0x1471,1366x768@60,0x0,1"
+      ];
 
-    monitor = [
-    ##ax8
-	  "desc:Nreal Air 0x66666600,1920x1080@120,0x2160,1"
-	  "desc:Samsung Electric Company U28E570 HTPK700431,3840x2160@30,0x0,2"
-    ##stinkpad
-          "desc:Chimei Innolux Corporation 0x1471,1366x768@60,0x0,1"
-];
+      "$terminal" = "alacritty";
+      "$fileManager" = "dolphin";
+      "$menu" = "rofi -show drun";
+      "$browser" = "firefox";
+      "$blender" = "blender";
+      "$virt-manager" = "virt-manager";
+      "$locker" = "hyprlock";
+      "$wallpaper" = "waypaper";
 
-
-    "$terminal" = "alacritty";
-    "$fileManager" = "dolphin";
-    "$menu" = "rofi -show drun";
-    "$browser" = "firefox";
-    "$blender" = "blender";
-    "$virt-manager" = "virt-manager";
-    "$locker" = "hyprlock";
-    "$wallpaper" = "waypaper";
-
-    "$mainMod" = "CTRL_ALT";
-    bind = [
+      "$mainMod" = "CTRL_ALT";
+      bind = [
         "$mainMod, C, killactive,"
         "$mainMod, R, exec, $browser"
         "$mainMod, T, exec, $terminal"
@@ -48,7 +49,7 @@
         "$mainMod, J, movefocus, u"
         "$mainMod, K, movefocus, d"
         "$mainMod, L, movefocus, r"
-	"SHIFT_ALT, L, exec, $locker"
+        "SHIFT_ALT, L, exec, $locker"
         "CTRL, F5, workspace, 1"
         "CTRL, F6, workspace, 2"
         "CTRL, F7, workspace, 3"
@@ -92,55 +93,52 @@
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
-	];
-   
+      ];
+
       general = {
         "gaps_in" = "5";
         "gaps_out" = "5";
         "border_size" = "3";
         #"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.active_border" = "rgb(${config.colorScheme.palette.base0A}) rgb(${config.colorScheme.palette.base09}) 45deg";
+        "col.active_border" = "rgb(${config.colorScheme.palette.base0B}) rgb(${config.colorScheme.palette.base0E}) 30deg";
         "col.inactive_border" = "rgb(${config.colorScheme.palette.base05})";
         "allow_tearing" = "false";
         "layout" = "dwindle";
         "resize_on_border" = "true";
-	"extend_border_grab_area" = "true";
+        "extend_border_grab_area" = "true";
       };
 
       decoration = {
         "rounding" = "10";
-	"rounding_power" = "2";
-	"active_opacity" = "1.0";
-	"inactive_opacity" = "1.0";
-	"dim_inactive" = "true";
+        "rounding_power" = "2";
+        "active_opacity" = "1.0";
+        "inactive_opacity" = "1.0";
+        "dim_inactive" = "true";
 
-	  shadow = {
-	    "enabled" = "true";
-	    "range" = "4";
-	    "render_power" = "3";
-	    "color" = "3";
-	  };
+        shadow = {
+          "enabled" = "true";
+          "range" = "4";
+          "render_power" = "3";
+          "color" = "3";
+        };
 
-
-
-      blur = {
-        enabled = "true";
-	size = "3";
-	passes = "1";
-	vibrancy = "0.1696";
-      };
-
+        blur = {
+          enabled = "true";
+          size = "3";
+          passes = "1";
+          vibrancy = "0.1696";
+        };
       };
 
       animations = {
         bezier = [
-	  "easeOutQuint,0.23,1,0.32,1"
+          "easeOutQuint,0.23,1,0.32,1"
           "easeInOutCubic,0.65,0.05,0.36,1"
           "linear,0,0,1,1"
           "almostLinear,0.5,0.5,0.75,1.0"
           "quick,0.15,0,0.1,1"
-	  ];
-	animation = [
+        ];
+        animation = [
           "global, 1, 10, default"
           "border, 1, 5.39, easeOutQuint"
           "windows, 1, 4.79, easeOutQuint"
@@ -157,23 +155,22 @@
           "workspaces, 1, 1.94, almostLinear, fade"
           "workspacesIn, 1, 1.21, almostLinear, fade"
           "workspacesOut, 1, 1.94, almostLinear, fade"
-	];
+        ];
       };
 
-        dwindle = {
-          pseudotile = "true";
-          preserve_split = "true";
+      dwindle = {
+        pseudotile = "true";
+        preserve_split = "true";
       };
 
-        master = {
-          new_status = "master";
+      master = {
+        new_status = "master";
       };
 
-        misc = {
-          force_default_wallpaper = "-1";
-          disable_hyprland_logo = "false";
+      misc = {
+        force_default_wallpaper = "-1";
+        disable_hyprland_logo = "false";
       };
-
 
       input = {
         kb_layout = "us";
@@ -198,31 +195,25 @@
         sensitivity = "-0.5";
       };
 
-
       windowrule = [
         "float,class:^(alacritty)$,title:^(alacritty)$"
-	"suppressevent maximize, class:.*"
-	"nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "suppressevent maximize, class:.*"
+        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
 
       exec-once = [
-       "nm-applet --indicator &" 
-       "dunst"
-       "keepassxc"
-       "systemctl --user start hyprpolkitagent"
-       "${pkgs.swww}/bin/swww-daemon"
-       "exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE \"$HYPRLAND_INSTANCE_SIGNATURE\""
+        "nm-applet --indicator &"
+        "dunst"
+        "keepassxc"
+        "systemctl --user start hyprpolkitagent"
+        "${pkgs.swww}/bin/swww-daemon"
+        "exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE \"$HYPRLAND_INSTANCE_SIGNATURE\""
       ];
-     
-     
-       env = [
-         "XCURSOR_SIZE,24"
-         "HYPRCURSOR_SIZE,24"
-       ];
 
-
-
+      env = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+      ];
     };
-
   };
 }
