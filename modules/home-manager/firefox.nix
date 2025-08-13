@@ -69,10 +69,6 @@ in {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
           installation_mode = "force_installed";
         };
-        "{884679b9-5d6b-48b2-90a7-15ae26ce568a}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/watch-on-odysee/latest.xpi";
-          installation_mode = "force_installed";
-        };
         "idcac-pub@guus.ninja" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
           installation_mode = "force_installed";
@@ -116,34 +112,34 @@ in {
 	};
 	};
 	######
-        colors = with config.colorScheme.palette; {
+        colors =  {
           bright = {
-            black = "0x${base00}";
-            blue = "0x${base04}";
-            cyan = "0x${base02}";
-            green = "0x${base06}";
-            magenta = "0x${base0E}";
-            red = "0x${base08}";
-            white = "0x${base07}";
-            yellow = "0x${base09}";
+            black = "0x${config.colorScheme.palette.base00}";
+            blue = "0x${config.colorScheme.palette.base04}";
+            cyan = "0x${config.colorScheme.palette.base02}";
+            green = "0x${config.colorScheme.palette.base06}";
+            magenta = "0x${config.colorScheme.palette.base0E}";
+            red = "0x${config.colorScheme.palette.base08}";
+            white = "0x${config.colorScheme.palette.base07}";
+            yellow = "0x${config.colorScheme.palette.base09}";
           };
           cursor = {
-            cursor = "0x${base06}";
-            text = "0x${base06}";
+            cursor = "0x${config.colorScheme.palette.base06}";
+            text = "0x${config.colorScheme.palette.base06}";
           };
           normal = {
-            black = "0x${base00}";
-            blue = "0x${base0D}";
-            cyan = "0x${base0C}";
-            green = "0x${base0B}";
-            magenta = "0x${base0E}";
-            red = "0x${base08}";
-            white = "0x${base06}";
-            yellow = "0x${base0A}";
+            black = "0x${config.colorScheme.palette.base00}";
+            blue = "0x${config.colorScheme.palette.base0D}";
+            cyan = "0x${config.colorScheme.palette.base0C}";
+            green = "0x${config.colorScheme.palette.base0B}";
+            magenta = "0x${config.colorScheme.palette.base0E}";
+            red = "0x${config.colorScheme.palette.base08}";
+            white = "0x${config.colorScheme.palette.base06}";
+            yellow = "0x${config.colorScheme.palette.base0A}";
           };
           primary = {
-            background = "0x${base00}";
-            foreground = "0x${base06}";
+            background = "0x${config.colorScheme.palette.base00}";
+            foreground = "0x${config.colorScheme.palette.base06}";
           };
 	######
 
@@ -157,7 +153,7 @@ in {
             TabsToolbar:-moz-window-inactive,
             navigator-toolbox:-moz-window-inactive {
             background: unset !important;
-            color: unset;
+            color: blue;
             }
 	      :root {
                 --tab-selected-bgcolor: #FFFFFF !important;

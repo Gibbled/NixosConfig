@@ -1,13 +1,62 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nix-colors, ... }:
 
 {
   programs.btop = {
       enable = true;
       package = pkgs.btop-rocm;
-      #package = pkgs.btop;
+      themes = {
+          nix-colors-theme = ''
+            theme[main_bg]="#${config.colorScheme.palette.base01}ff"
+            theme[main_fg]="#${config.colorScheme.palette.base02}"
+            theme[title]="#${config.colorScheme.palette.base02}"
+            theme[hi_fg]="#${config.colorScheme.palette.base03}"
+            theme[selected_bg]="#${config.colorScheme.palette.base07}"
+            theme[selected_fg]="#${config.colorScheme.palette.base02}"
+            theme[inactive_fg]="#${config.colorScheme.palette.base0D}"
+            theme[graph_text]="#${config.colorScheme.palette.base02}"
+            theme[meter_bg]="#${config.colorScheme.palette.base0D}"
+            theme[proc_misc]="#${config.colorScheme.palette.base0A}"
+            theme[cpu_box]="#${config.colorScheme.palette.base0A}"
+            theme[mem_box]="#${config.colorScheme.palette.base05}"
+            theme[net_box]="#${config.colorScheme.palette.base0E}"
+            theme[proc_box]="#${config.colorScheme.palette.base09}"
+            theme[div_line]="#${config.colorScheme.palette.base0D}"
+            theme[temp_start]="#${config.colorScheme.palette.base0A}"
+            theme[temp_mid]="#${config.colorScheme.palette.base07}"
+            theme[temp_end]="#${config.colorScheme.palette.base06}"
+            theme[cpu_start]="#${config.colorScheme.palette.base0A}"
+            theme[cpu_mid]="#${config.colorScheme.palette.base09}"
+            theme[cpu_end]="#${config.colorScheme.palette.base05}"
+            theme[free_start]="#${config.colorScheme.palette.base00}"
+            theme[free_mid]="#${config.colorScheme.palette.base07}"
+            theme[free_end]="#${config.colorScheme.palette.base06}"
+            theme[cached_start]="#${config.colorScheme.palette.base03}"
+            theme[cached_mid]="#${config.colorScheme.palette.base09}"
+            theme[cached_end]="#${config.colorScheme.palette.base05}"
+            theme[available_start]="#${config.colorScheme.palette.base07}"
+            theme[available_mid]="#${config.colorScheme.palette.base08}"
+            theme[available_end]="#${config.colorScheme.palette.base0C}"
+            theme[used_start]="#${config.colorScheme.palette.base0B}"
+            theme[used_mid]="#${config.colorScheme.palette.base05}"
+            theme[used_end]="#${config.colorScheme.palette.base0B}"
+            theme[download_start]="#${config.colorScheme.palette.base0A}"
+            theme[download_mid]="#${config.colorScheme.palette.base05}"
+            theme[download_end]="#${config.colorScheme.palette.base09}"
+            theme[upload_start]="#${config.colorScheme.palette.base08}"
+            theme[upload_mid]="#${config.colorScheme.palette.base07}"
+            theme[upload_end]="#${config.colorScheme.palette.base06}"
+            theme[process_start]="#${config.colorScheme.palette.base05}"
+            theme[process_mid]="#${config.colorScheme.palette.base04}"
+            theme[process_end]="#${config.colorScheme.palette.base03}"
+          '';
+        }; 
+
+
+
+
       settings = {
 
-        color_theme = "tokyo-storm";
+        color_theme = "nix-colors-theme";
         theme_background = "False";
         truecolor = "True";
         force_tty = "False";
