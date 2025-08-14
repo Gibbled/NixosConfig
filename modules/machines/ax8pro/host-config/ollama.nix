@@ -8,9 +8,9 @@ services.ollama = {
 enable = true;
 acceleration = "rocm";
 environmentVariables = {
-  HCC_AMDGPU_TARGET = "gfx1103";
+  HCC_AMDGPU_TARGET = "gfx1102";
 };
-rocmOverrideGfx = "11.0.3";
+rocmOverrideGfx = "11.0.2";
 
 };
 

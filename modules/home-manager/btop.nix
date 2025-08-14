@@ -10,13 +10,13 @@
     themes = {
       nix-colors-theme = ''
         theme[main_bg]="#${config.colorScheme.palette.base05}7A"
-        theme[main_fg]="#${config.colorScheme.palette.base00}"
-        theme[title]="#${config.colorScheme.palette.base02}"
+        theme[main_fg]="#${config.colorScheme.palette.base03}"
+        theme[title]="#${config.colorScheme.palette.base04}"
         theme[hi_fg]="#${config.colorScheme.palette.base06}"
         theme[selected_bg]="#${config.colorScheme.palette.base07}"
         theme[selected_fg]="#${config.colorScheme.palette.base02}"
         theme[inactive_fg]="#${config.colorScheme.palette.base0D}"
-        theme[graph_text]="#${config.colorScheme.palette.base02}"
+        theme[graph_text]="#${config.colorScheme.palette.base03}"
         theme[meter_bg]="#${config.colorScheme.palette.base0D}"
         theme[proc_misc]="#${config.colorScheme.palette.base0A}"
         theme[cpu_box]="#${config.colorScheme.palette.base0A}"
