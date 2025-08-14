@@ -19,7 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -29,77 +28,70 @@
     nix-colors.url = "github:misterio77/nix-colors";
     nix-colors-adapters.url = "gitlab:vfosnar/nix-colors-adapters";
 
-
-     quickshell = {
+    quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-      swww.url = "github:LGFae/swww";
-
-
+    swww.url = "github:LGFae/swww";
   };
 
-   outputs = inputs @ { nixpkgs, home-manager,sops-nix, ... }:
-
-    {
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    sops-nix,
+    ...
+  }: {
     system.stateVersion = "24.05"; # Did you read the comment? Yep!
 
     nixosConfigurations = {
       xybr = nixpkgs.lib.nixosSystem {
-
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
-
+        specialArgs = {inherit inputs;};
 
         modules = [
           ./configuration.nix
-	  ./modules/system
-	  ./modules/machines/ax8pro
-	  ./modules/users/ranjit.nix
-	  sops-nix.nixosModules.sops
+          ./modules/system
+          ./modules/machines/ax8pro
+          ./modules/users/ranjit.nix
+          sops-nix.nixosModules.sops
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-	    home-manager.extraSpecialArgs = { inherit inputs; };
-	    home-manager.sharedModules = [ 
-            sops-nix.homeManagerModules.sops
-	      ];
+            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.sharedModules = [
+              sops-nix.homeManagerModules.sops
+            ];
             home-manager.users.ranjit = import ./modules/home-manager;
           }
         ];
       };
 
       stinkpad = nixpkgs.lib.nixosSystem {
-
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
 
         modules = [
           ./configuration.nix
-	  ./modules/system
-	  ./modules/machines/T430
-	  ./modules/users/ranjit.nix
-	  sops-nix.nixosModules.sops
+          ./modules/system
+          ./modules/machines/T430
+          ./modules/users/ranjit.nix
+          sops-nix.nixosModules.sops
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-	    home-manager.extraSpecialArgs = { inherit inputs; };
-	    home-manager.sharedModules = [ 
-            sops-nix.homeManagerModules.sops
-	      ];
+            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.sharedModules = [
+              sops-nix.homeManagerModules.sops
+            ];
             home-manager.users.ranjit = import ./modules/home-manager;
           }
         ];
       };
     };
-
-    };
-
-
-
+  };
 }

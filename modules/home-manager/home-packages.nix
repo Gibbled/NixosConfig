@@ -121,6 +121,7 @@
 
     #RSS
     #yarr	
+    gucharmap
 
   ];
 
