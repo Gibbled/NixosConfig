@@ -7,8 +7,8 @@
   ];
 
   #colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-  #colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
-  colorScheme = inputs.nix-colors.colorSchemes.tokyo-city-dark;
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-dark;
+  #colorScheme = inputs.nix-colors.colorSchemes.tokyo-city-dark;
   #nixColorsAdapters = {
     #kvantum.enable = false;
     #firefox = {

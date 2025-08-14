@@ -9,7 +9,7 @@
     enable = true;
     #theme = "tokyo_night_enhanced";
     settings = {
-      window.opacity = lib.mkForce 0.8;
+      window.opacity = lib.mkForce 0.5;
       colors = {
         primary = {
         background = "#${config.colorScheme.palette.base02}";

@@ -7,9 +7,9 @@
       themes = {
           nix-colors-theme = ''
             theme[main_bg]="#${config.colorScheme.palette.base01}ff"
-            theme[main_fg]="#${config.colorScheme.palette.base02}"
+            theme[main_fg]="#${config.colorScheme.palette.base05}"
             theme[title]="#${config.colorScheme.palette.base02}"
-            theme[hi_fg]="#${config.colorScheme.palette.base03}"
+            theme[hi_fg]="#${config.colorScheme.palette.base06}"
             theme[selected_bg]="#${config.colorScheme.palette.base07}"
             theme[selected_fg]="#${config.colorScheme.palette.base02}"
             theme[inactive_fg]="#${config.colorScheme.palette.base0D}"

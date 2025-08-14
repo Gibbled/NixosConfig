@@ -19,18 +19,18 @@ config = lib.mkIf config.starship-program.enable {
         aws.disabled = true;
         gcloud.disabled = true;
         line_break.disabled = false;
-	cmd_duration.style = "bold #f1fa8c";
-	directory.style = "bold #50fa7b";
-	hostname.style = "bold #ff5555";
-	git_branch.style = "bold #ff79c6";
-	git_status.style = "bold #ff5555";
+	cmd_duration.style = "bold #${config.colorScheme.palette.base08}";
+	directory.style = "bold #${config.colorScheme.palette.base0A}";
+	hostname.style = "bold #${config.colorScheme.palette.base0C}";
+	git_branch.style = "bold #${config.colorScheme.palette.base09}";
+	git_status.style = "bold #${config.colorScheme.palette.base0C}";
 	username = {
           format = "[$user]($style) on";
-	  style_user = "bold #bd93f9";
+	  style_user = "bold #${config.colorScheme.palette.base07}";
 	};
 	character = {
-          success_symbol = "[>](bold #f8f8f2)";
-	  error_symbol = "[>](bold #ff5555)";
+          success_symbol = "[>](bold #${config.colorScheme.palette.base05})";
+	  error_symbol = "[>](bold #${config.colorScheme.palette.base0C})";
 	};
       };
     };
