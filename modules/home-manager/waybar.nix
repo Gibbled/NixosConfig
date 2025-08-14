@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  nix-colors,
   ...
 }: {
   wayland.windowManager.hyprland.systemd.enable = true;
@@ -16,7 +17,7 @@
              border: none;
              font-family: Font Awesome, Hack, Arial, sans-serif;
              font-size: 13px;
-             color: #${config.colorScheme.palette.base0C};
+             color: #${config.colorScheme.palette.base0B};
              border-radius: 20px;
          }
 
