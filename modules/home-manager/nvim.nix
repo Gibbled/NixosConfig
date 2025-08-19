@@ -98,6 +98,10 @@ in {
                --Lualine
                require('lualine').setup()
 
+	       --Ollama
+	       require('gen').command = '/run/current-system/sw/bin/ollama run gemma3 $prompt'
+	       
+
                --Alpha
                local alpha = require('alpha')
                local status_ok, alpha = pcall(require, "alpha")
