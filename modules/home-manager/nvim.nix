@@ -112,16 +112,30 @@ in {
                       local dashboard = require("alpha.themes.dashboard")
                       dashboard.section.header.val = {
 
-                          [[          ▀████▀▄▄              ▄█ ]],
-                          [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
-                          [[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
-                          [[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
-                          [[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
-                          [[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
-                          [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
-                          [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
-                          [[   █   █  █      ▄▄           ▄▀   ]],
-
+[[                                         .                                              ]],
+[[                                         M                                              ]],
+[[                                        dM                                              ]],
+[[                                        MMr                                             ]],
+[[                                       4MMML                  .                         ]],
+[[                                       MMMMM.                xf                         ]],
+[[                       .              "MMMMM               .MM-                         ]],
+[[                        Mh..          +MMMMMM            .MMMM                          ]],
+[[                        .MMM.         .MMMMML.          MMMMMh                          ]],
+[[                         )MMMh.        MMMMMM         MMMMMMM                           ]],
+[[                          3MMMMx.     'MMMMMMf      xnMMMMMM"                           ]],
+[[                          '*MMMMM      MMMMMM.     nMMMMMMP"                            ]],
+[[                            *MMMMMx    "MMMMM\    .MMMMMMM=                             ]],
+[[                             *MMMMMh   "MMMMM"   JMMMMMMP                               ]],
+[[                               MMMMMM   3MMMM.  dMMMMMM            .                    ]],
+[[                                MMMMMM  "MMMM  .MMMMM(        .nnMP"                    ]],
+[[                    =..          *MMMMx  MMM"  dMMMM"    .nnMMMMM*                      ]],
+[[                      "MMn...     'MMMMr 'MM   MMM"   .nMMMMMMM*"                       ]],
+[[                       "4MMMMnn..   *MMM  MM  MMP"  .dMMMMMMM""                         ]],
+[[                         ^MMMMMMMMx.  *ML "M .M*  .MMMMMM**"                            ]],
+[[                            *PMMMMMMhn. *x > M  .MMMM**""                               ]],
+[[                               ""**MMMMhx/.h/ .=*"                                      ]],
+[[                                        .3P"%....                                       ]],
+[[                                      nP"     "*MMnx                                    ]],
                       }
 
                        dashboard.section.buttons.val = {
@@ -129,7 +143,7 @@ in {
                          dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
                          dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
                          dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-                         dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.vim<CR>"),
+                         dashboard.button("c", "  Configuration", ":e ~/etc/nixos/modules/home-manager/nvim.nix<CR>"),
                          dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
                       }
 
