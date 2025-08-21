@@ -26,7 +26,6 @@ imports = [
 ./waybar.nix
 ./btop.nix
 ./dunst.nix
-./msty.nix
 ];
 
 
