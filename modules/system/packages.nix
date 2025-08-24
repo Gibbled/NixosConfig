@@ -32,7 +32,6 @@
   jq
   pandoc
   zotero
-  kitty
   alacritty
   pass
   nodejs

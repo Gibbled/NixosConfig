@@ -56,7 +56,7 @@
     luajitPackages.luarocks-nix
     rustup
     kicad
-    darktable
+    #darktable
     freecad
     openscad
 

@@ -4,7 +4,7 @@
 
 imports = [
 
-./ollama.nix
+#./ollama.nix
 ./ddclient.nix
 ./smartd.nix
 ./packages.nix
