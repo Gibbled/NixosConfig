@@ -45,6 +45,7 @@ in {
         nvim-notify
 	vimwiki
 	vimwiki-markdown
+	nvim-rg
       ];
 
       extraLuaConfig = ''
