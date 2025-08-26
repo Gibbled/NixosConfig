@@ -119,8 +119,6 @@
 
     nwg-look
 
-    #RSS
-    #yarr	
     gucharmap
 
   ];
@@ -133,7 +131,6 @@ tmux-program.enable = true;
 neovim-program.enable = true;
 keepassxc-program.enable = true;
 dunst-service.enable = true;
-#programs.waybar.enable = true;
 
 
 }

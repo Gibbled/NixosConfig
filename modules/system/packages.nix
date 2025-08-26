@@ -64,13 +64,13 @@
   vimPlugins.mini-base16
   vimPlugins.base16-nvim
   pkgs.bibata-cursors
-  gpsbabel-gui
-  gpsbabel
+  #gpsbabel-gui
+  #gpsbabel
   sddm-astronaut
   kdePackages.qtmultimedia
-  kdePackages.plasma-browser-integration
+  #kdePackages.plasma-browser-integration
   kdePackages.xdg-desktop-portal-kde
-  utterly-round-plasma-style
+  #utterly-round-plasma-style
 
   #Hyprland
   waybar
