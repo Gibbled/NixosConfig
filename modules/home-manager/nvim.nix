@@ -43,6 +43,8 @@ in {
         stay-centered-nvim
         noice-nvim
         nvim-notify
+	vimwiki
+	vimwiki-markdown
       ];
 
       extraLuaConfig = ''
@@ -53,6 +55,9 @@ in {
                       vim.keymap.set("v", "<Leader>gg", ':Gen<CR>')
                       vim.keymap.set("n", "<Leader>,", ':lua ColourMyPencils()<CR>')
                       vim.cmd('noremap <Leader>w :w<CR>')
+	       --VimWiki
+               vim.keymap.set("v", "<Leader>dd", ':VimWiki<CR>')
+
 
                --ZenMode
                vim.keymap.set("n", "<Leader>zz", ':ZenMode<CR>')
