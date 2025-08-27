@@ -56,9 +56,10 @@
   #Lets have a look at hyprland
   programs.hyprland.enable = true;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-gtk
-    pkgs.xdg-desktop-portal-hyprland
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+    kdePackages.xdg-desktop-portal-kde
   ];
 
   ######End of Hyprland Config#####

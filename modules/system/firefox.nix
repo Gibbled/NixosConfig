@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   lock-false = {
     Value = false;
     Status = "locked";
@@ -14,7 +17,12 @@ let
   };
 in {
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = lock-true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    kdePackages.xdg-desktop-portal-kde
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-termfilechooser
+  ];
   programs.firefox = {
     enable = true;
 
@@ -34,8 +42,6 @@ in {
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
       };
-
-      };
     };
+  };
 }
-

@@ -69,7 +69,7 @@
   sddm-astronaut
   kdePackages.qtmultimedia
   #kdePackages.plasma-browser-integration
-  kdePackages.xdg-desktop-portal-kde
+  #kdePackages.xdg-desktop-portal-kde
   #utterly-round-plasma-style
 
   #Hyprland

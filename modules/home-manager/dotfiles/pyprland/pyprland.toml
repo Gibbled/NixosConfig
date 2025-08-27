@@ -1,0 +1,25 @@
+[pyprland]
+plugins = [
+ "scratchpads",
+ "shift_monitors",
+ "toggle_special",
+]
+
+# using variables for demonstration purposes (not needed)
+[pyprland.variables]
+term_classed = "alacritty --class"
+passwordManager_classed = "keepassxc --class"
+
+[scratchpads.term]
+animation = "fromTop"
+command = "[term_classed] main-dropterm"
+class = "main-dropterm"
+size = "75% 60%"
+max_size = "1920px 100%"
+
+[scratchpads.password-manager]
+animation = "fromTop"
+command = "/etc/profiles/per-user/ranjit/bin/keepassxc"
+class = "org.keepassxc.KeePassXC" 
+size = "75% 60%"
+max_size = "1920px 100%"

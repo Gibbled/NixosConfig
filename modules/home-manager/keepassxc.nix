@@ -1,54 +1,37 @@
-{ config, pkgs, lib, ... }:
-
-let 
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   prog = "keepassxc";
   optname = "${prog}-program";
   message = "Enable keepassxc with config with keepassxc-program.enable = true;";
   pkgname = pkgs.keepassxc;
-  
-in
-{
+in {
   options = {
     "${optname}".enable = lib.mkEnableOption "${message}";
   };
 
-
   config = lib.mkIf config."${optname}".enable {
-
-
-      programs."${prog}" = with pkgs; {
-        enable = true;
- 	package = pkgname;
-        settings = {
-
-          GUI = {
-            AdvancedSettings = true;
-            ApplicationTheme = "dark";
-            CompactMode = true;
-            HidePasswords = true;
-          };
-
-	  Browser = {
-            Enabled = true;
-	    UpdateBinaryPath=false;
-	  };
-
-          SSHAgent.Enabled = true;
-          };
- 	
+    programs."${prog}" = with pkgs; {
+      enable = true;
+      package = pkgname;
+      settings = {
+        GUI = {
+          AdvancedSettings = true;
+          ApplicationTheme = "dark";
+          CompactMode = true;
+          HidePasswords = true;
         };
 
+        Browser = {
+          Enabled = true;
+          UpdateBinaryPath = false;
+        };
 
-
-
-
-};
+        SSHAgent.Enabled = true;
+      };
+    };
+  };
 }
-
-
-
-
-
-
-
-

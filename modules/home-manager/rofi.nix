@@ -53,11 +53,11 @@
         inherit (config.lib.formats.rasi) mkLiteral;
       in {
         "*" = {
-          background-color = mkLiteral "#${config.colorScheme.palette.base05}30";
+          background-color = mkLiteral "#${config.colorScheme.palette.base05}20";
           foreground-color = mkLiteral "#${config.colorScheme.palette.base0C}";
           border-color = mkLiteral "#${config.colorScheme.palette.base0C}";
           border-radius = 10;
-	  text-color = mkLiteral "@foreground-color";
+          text-color = mkLiteral "@foreground-color";
           width = 512;
         };
 

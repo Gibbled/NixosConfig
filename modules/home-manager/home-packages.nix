@@ -116,6 +116,7 @@
     waypaper
     hyprpaper
     swww
+    pyprland
 
     nwg-look
 

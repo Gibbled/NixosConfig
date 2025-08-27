@@ -30,6 +30,7 @@ in {
       "$virt-manager" = "virt-manager";
       "$locker" = "hyprlock";
       "$wallpaper" = "waypaper";
+      "$passwordManager" = "keepassxc";
 
       "$mainMod" = "CTRL_ALT";
       bind = [
@@ -49,6 +50,7 @@ in {
         "$mainMod, J, movefocus, u"
         "$mainMod, K, movefocus, d"
         "$mainMod, L, movefocus, r"
+        "$mainMod, Tab, focusmonitor, +1"
         "SHIFT_ALT, L, exec, $locker"
         "CTRL, F5, workspace, 1"
         "CTRL, F6, workspace, 2"
@@ -72,6 +74,11 @@ in {
         "$mainMod_SHIFT, 0, movetoworkspace, 10"
         "$mainMod, Q, togglespecialworkspace, magic"
         "$mainMod SHIFT, Q, movetoworkspace, special:magic"
+	##Pyprland
+        "$mainMod SHIFT, T, exec, pypr toggle term"
+        "$mainMod SHIFT, K, exec, pypr toggle password-manager"
+        "$mainMod SHIFT, N, exec, pypr togglespecialworkspace, minimized"
+
       ];
 
       bindm = [
@@ -201,11 +208,24 @@ in {
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
 
+
+      "$scratchpadsize" = "size 80% 85%";
+      "$scratchpad" = "class:^(scratchpad)$";
+
+      windowrulev2 = [
+      "float,$scratchpad"
+      "$scratchpadsize,$scratchpad"
+      "workspace special silent,$scratchpad"
+      "center,$scratchpad"
+
+      ];
+
       exec-once = [
         "nm-applet --indicator &"
         "dunst"
-        "keepassxc"
+        #"keepassxc"
         "systemctl --user start hyprpolkitagent"
+	"pypr"
         "${pkgs.swww}/bin/swww-daemon"
         "exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE \"$HYPRLAND_INSTANCE_SIGNATURE\""
       ];
