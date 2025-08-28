@@ -23,3 +23,24 @@ command = "/etc/profiles/per-user/ranjit/bin/keepassxc"
 class = "org.keepassxc.KeePassXC" 
 size = "75% 60%"
 max_size = "1920px 100%"
+
+[scratchpads.zapzap]
+animation = "fromTop"
+command = "/etc/profiles/per-user/ranjit/bin/zapzap --class"
+class = "ZapZap"
+size = "75% 60%"
+max_size = "1920px 100%"
+
+[scratchpads.signal]
+animation = "fromTop"
+command = "/etc/profiles/per-user/ranjit/bin/signal-desktop --class"
+class = "Signal"
+size = "75% 60%"
+max_size = "1920px 100%"
+
+[scratchpads.gucharmap]
+animation = "fromTop"
+command = "/etc/profiles/per-user/ranjit/bin/gucharmap "
+class = "gucharmap"
+size = "75% 60%"
+max_size = "1920px 100%"

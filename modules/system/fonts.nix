@@ -80,5 +80,7 @@ fonts.packages = with pkgs; [
   noto-fonts-color-emoji
   noto-fonts-emoji
   font-awesome
+  gubbi-font
+  lohit-fonts.kannada
   ];
 }

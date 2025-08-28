@@ -31,8 +31,12 @@ in {
       "$locker" = "hyprlock";
       "$wallpaper" = "waypaper";
       "$passwordManager" = "keepassxc";
+      "$zapzap" = "zapzap";
+      "$signal" = "signal-desktop";
+      "$gucharmap" = "gucharmap";
 
       "$mainMod" = "CTRL_ALT";
+      "$nxtMod" = "SHIFT_ALT";
       bind = [
         "$mainMod, C, killactive,"
         "$mainMod, R, exec, $browser"
@@ -51,7 +55,7 @@ in {
         "$mainMod, K, movefocus, d"
         "$mainMod, L, movefocus, r"
         "$mainMod, Tab, focusmonitor, +1"
-        "SHIFT_ALT, L, exec, $locker"
+        "$nxtMod, L, exec, $locker"
         "CTRL, F5, workspace, 1"
         "CTRL, F6, workspace, 2"
         "CTRL, F7, workspace, 3"
@@ -75,9 +79,12 @@ in {
         "$mainMod, Q, togglespecialworkspace, magic"
         "$mainMod SHIFT, Q, movetoworkspace, special:magic"
 	##Pyprland
-        "$mainMod SHIFT, T, exec, pypr toggle term"
-        "$mainMod SHIFT, K, exec, pypr toggle password-manager"
-        "$mainMod SHIFT, N, exec, pypr togglespecialworkspace, minimized"
+        "$nxtMod, T, exec, pypr toggle term"
+        "$nxtMod, K, exec, pypr toggle password-manager"
+        "$nxtMod, Z, exec, pypr toggle zapzap"
+        "$nxtMod, S, exec, pypr toggle signal"
+        "$nxtMod, N, exec, pypr togglespecialworkspace, minimized"
+        "$nxtMod, C, exec, pypr toggle gucharmap"
 
       ];
 
