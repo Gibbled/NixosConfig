@@ -44,3 +44,18 @@ command = "/etc/profiles/per-user/ranjit/bin/gucharmap "
 class = "gucharmap"
 size = "75% 60%"
 max_size = "1920px 100%"
+
+
+[scratchpads.youtube-music]
+animation = "fromTop"
+command = "/etc/profiles/per-user/ranjit/bin/youtube-music "
+class = "com.github.th_ch.youtube_music"
+size = "75% 60%"
+max_size = "1920px 100%"
+
+[scratchpads.pavucontrol]
+animation = "fromTop"
+command = "/etc/profiles/per-user/ranjit/bin/pavucontrol "
+class = "org.pulseaudio.pavucontrol"
+size = "75% 60%"
+max_size = "1920px 100%"

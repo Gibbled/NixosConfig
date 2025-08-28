@@ -85,6 +85,8 @@ in {
         "$nxtMod, S, exec, pypr toggle signal"
         "$nxtMod, N, exec, pypr togglespecialworkspace, minimized"
         "$nxtMod, C, exec, pypr toggle gucharmap"
+        "$nxtMod, Y, exec, pypr toggle youtube-music"
+        "$nxtMod, V, exec, pypr toggle pavucontrol"
 
       ];
 

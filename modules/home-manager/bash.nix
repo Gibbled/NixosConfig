@@ -28,6 +28,7 @@
       bootclean = "sudo nixos-rebuild boot"; 
       fullclean = "cleanup&&bootclean";
       df = "dysk";
+      classes = "hyprctl clients |grep class";
 
       };
     };
