@@ -29,7 +29,7 @@ in {
       "$blender" = "blender";
       "$virt-manager" = "virt-manager";
       "$locker" = "hyprlock";
-      "$wallpaper" = "waypaper";
+      "$wallpaper" = "change-wallpaper";
       "$passwordManager" = "keepassxc";
       "$zapzap" = "zapzap";
       "$signal" = "signal-desktop";
@@ -47,7 +47,7 @@ in {
         "$mainMod, D, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, RETURN, exec, $menu"
-        "$mainMod, O, exec, $wallpaper --random"
+        "$mainMod, O, exec, $wallpaper"
         "$mainMod, P, pseudo, "
         "$mainMod, J, togglesplit, "
         "$mainMod, H, movefocus, l"

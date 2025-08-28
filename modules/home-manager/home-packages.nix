@@ -84,7 +84,6 @@
     signal-desktop-bin
     zapzap
 
-    plover.dev
     vial
     via
     qmk
@@ -121,6 +120,7 @@
     nwg-look
 
     gucharmap
+
 
   ];
 
