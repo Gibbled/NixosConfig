@@ -17,7 +17,7 @@
       sunset = {
         calendar = "*-*-* 18:00:00";
         requests = [
-          ["temperature" "3500"]
+          ["temperature" "3000"]
         ];
       };
     };
