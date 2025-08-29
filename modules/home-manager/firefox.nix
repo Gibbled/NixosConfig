@@ -16,7 +16,7 @@ in {
   programs.firefox = {
     enable = true;
     profiles.New-Main.extensions.force = true;
-    enableGnomeExtensions = true;
+    #enableGnomeExtensions = true;
 
     policies = {
       DisableTelemetry = lib.mkForce true;
@@ -54,6 +54,7 @@ in {
 	"browser.ml.enable" = lib.mkForce false;
 	"browser.ml.modelHubRootUrl" = lib.mkForce "https://goatse.cx";
 	"browser.nativeMessagingHosts.packages" = [ pkgs.kdePackages.plasma-browser-integration pkgs.tridactyl-native ];
+	"browser.layout.css.devPixelsPerPx" = "1";
       };
 
       ExtensionSettings = {
