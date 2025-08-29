@@ -14,9 +14,9 @@
   config = lib.mkIf config.starship-program.enable {
     programs.starship = {
       enable = true;
+      enableInteractive = false;
       enableBashIntegration = true;
       settings = {
-        add_newline = true;
         format = lib.concatStrings [
           "[](#${config.colorScheme.palette.base0A})"
           "$hostname"
@@ -44,10 +44,11 @@
           "[](fg:#${config.colorScheme.palette.base0A} bg:#${config.colorScheme.palette.base0A})"
           "$time"
           "[](fg:#${config.colorScheme.palette.base0A})"
+	  "\n"
         ];
 
         # Disable the blank line at the start of the prompt
-
+        add_newline = true;
         # You can also replace your username with a neat symbol like   or disable this
         # and use the os module below
         username = {
