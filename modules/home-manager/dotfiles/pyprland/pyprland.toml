@@ -59,3 +59,10 @@ command = "/etc/profiles/per-user/ranjit/bin/pavucontrol "
 class = "org.pulseaudio.pavucontrol"
 size = "75% 60%"
 max_size = "1920px 100%"
+
+#[scratchpads.firefox]
+#animation = "fromTop"
+#command = "/etc/profiles/per-user/ranjit/bin/firefox --new-instance --browser --class"
+#class = "firefox"
+#size = "75% 60%"
+#max_size = "1920px 100%"
