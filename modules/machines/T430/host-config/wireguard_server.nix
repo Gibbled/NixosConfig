@@ -42,7 +42,7 @@
         # List of allowed peers.
         { 
           name = "xybr";
-          publicKey = "/etc/wireguard/keys/management-public";
+          publicKey = "/etc/wireguard/keys/public.txt";
           allowedIPs = [ "172.16.0.3/16" ];
         }
       ];
