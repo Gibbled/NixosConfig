@@ -15,7 +15,7 @@
     wg0 = {
       # Determines the IP address and subnet of the server's end of the tunnel interface.
       #ips = [ "10.100.0.1/24" ];
-      ips = [ "172.16.0.1/24" ];
+      ips = [ "172.16.0.1/16" ];
 
       # The port that WireGuard listens to. Must be accessible by the client.
       listenPort = 51820;
@@ -42,7 +42,7 @@
         # List of allowed peers.
         { 
           name = "xybr";
-          publicKey = "/etc/wireguard/keys/xybr-public.txt";
+          publicKey = "/etc/wireguard/keys/management-public";
           allowedIPs = [ "172.16.0.3/16" ];
         }
       ];
