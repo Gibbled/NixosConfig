@@ -6,12 +6,13 @@
   networking.networkmanager.dns = "systemd-resolved";
   services.resolved.enable = true;
   networking.wg-quick.interfaces = let
-  systemd.services.wg-quick-wg0 = {
+  systemd.services = { 
+    wg-quick-wg0 = {
     requires = [ "network-online.target" "NetworkManager.service" ];
     after = [ "graphical.target" ];
     wants = [ "graphical.target" ];
       };
-    server_ip = "gragnet.dyndns.org";
+      };
   in {
     wg0 = {
       # IP address of this machine in the *tunnel network*
@@ -29,11 +30,12 @@
       peers = [{
         publicKey = "hY8/uhiXJdGcQPw5Cj8sOtDoM+69pR0gZpYsO5SY0yQ=";
         allowedIPs = [ "10.1.1.0/8" ];
-        endpoint = "${server_ip}:51820";
+        endpoint = "gragnet.dyndns.org:51820";
         persistentKeepalive = 25;
       }];
     };
-  };
+    
+    };
 }
 
 
