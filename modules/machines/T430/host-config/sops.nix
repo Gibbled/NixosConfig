@@ -9,14 +9,14 @@ sops.secrets.ddclient_secret = {
 
 sops.secrets.wireguard-gragnet-public = {
      restartUnits = [ "wg-quick-wg0.service" ];
-     path = "/etc/wireguard/xybr-public.txt";
+     path = "/etc/wireguard/keys/xybr-public.txt";
 };
 sops.secrets.wireguard-stinkpadPrivate = {
      restartUnits = [ "wg-quick-wg0.service" ];
-     path = "/etc/wireguard/management-private.txt";
+     path = "/etc/wireguard/keys/management-private.txt";
 };
 sops.secrets.wireguard-stinkpadPublic = {
      restartUnits = [ "wg-quick-wg0.service" ];
-     path = "/etc/wireguard/management-public.txt";
+     path = "/etc/wireguard/keys/management-public.txt";
 };
 }

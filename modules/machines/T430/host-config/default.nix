@@ -7,6 +7,7 @@ imports = [
 ./packages.nix
 ./ddclient.nix
 ./sops.nix
+./wireguard_server.nix
 ];
 
 }
