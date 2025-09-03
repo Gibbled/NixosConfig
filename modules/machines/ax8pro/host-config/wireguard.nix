@@ -46,12 +46,12 @@
     wg1 = {
       # IP address of this machine in the *tunnel network*
       address = [
-	"172.16.0.3/16"
+	"172.16.0.3/8"
       ];
 
       # To match firewall allowedUDPPorts (without this wg
       # uses random port numbers).
-      listenPort = 51820;
+      #listenPort = 51820;
 
       # Path to the private key file.
       privateKeyFile = "/etc/wireguard/keys/privatekey";
