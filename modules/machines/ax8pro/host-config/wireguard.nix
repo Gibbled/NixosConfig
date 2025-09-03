@@ -36,7 +36,7 @@
       peers = [
         {
           publicKey = "hY8/uhiXJdGcQPw5Cj8sOtDoM+69pR0gZpYsO5SY0yQ=";
-          allowedIPs = ["10.1.1.0/8"];
+          allowedIPs = ["10.1.1.0/24"];
           endpoint = "gragnet.dyndns.org:51820";
           persistentKeepalive = 25;
         }
@@ -59,7 +59,7 @@
       peers = [
         {
 	  publicKey = "WMoKSh4bbWvMNBrJq1q8TNTT5fmtAub0sNjh5/Ppxkw=";
-          allowedIPs = ["10.100.0.0/8"];
+          allowedIPs = ["10.100.0.0/24"];
           endpoint = "zabbix.homeunix.com:51820";
           persistentKeepalive = 25;
         }
