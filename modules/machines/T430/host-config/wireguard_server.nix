@@ -1,6 +1,5 @@
 { pkgs, config, ... }:
 {
-  ...
 
   # enable NAT
   networking.nat.enable = true;
@@ -48,5 +47,4 @@
       ];
     };
   };
-  ...
 }
