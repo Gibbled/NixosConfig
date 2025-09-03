@@ -46,8 +46,7 @@
     wg1 = {
       # IP address of this machine in the *tunnel network*
       address = [
-        #"10.100.0.3/8"
-	"172.16.0.3/8"
+	"172.16.0.3/16"
       ];
 
       # To match firewall allowedUDPPorts (without this wg
