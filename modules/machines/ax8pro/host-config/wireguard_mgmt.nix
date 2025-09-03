@@ -6,19 +6,17 @@
   networking.networkmanager.dns = "systemd-resolved";
   services.resolved.enable = true;
   networking.wg-quick.interfaces = let
-  systemd.services.wg-quick-wg0 = {
+  systemd.services.wg-quick-wg1 = {
     requires = [ "network-online.target" "NetworkManager.service" ];
     after = [ "graphical.target" ];
     wants = [ "graphical.target" ];
       };
-    #server_ip = "cloud.homeunix.org";
-    server_ip = "gragnet.dyndns.org";
-    #server_ip = "24.70.37.81";
+    server_ip = "zabbix.homeunix.org";
   in {
-    wg0 = {
+    wg1 = {
       # IP address of this machine in the *tunnel network*
       address = [
-        "10.1.1.3/32"
+        "10.100.0.3/32"
       ];
 
       # To match firewall allowedUDPPorts (without this wg
@@ -30,7 +28,7 @@
 
       peers = [{
         publicKey = "hY8/uhiXJdGcQPw5Cj8sOtDoM+69pR0gZpYsO5SY0yQ=";
-        allowedIPs = [ "10.1.1.0/8" ];
+        allowedIPs = [ "10.100.0.0/8" ];
         endpoint = "${server_ip}:51820";
         persistentKeepalive = 25;
       }];
