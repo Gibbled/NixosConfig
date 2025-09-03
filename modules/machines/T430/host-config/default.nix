@@ -5,7 +5,7 @@
 imports = [
 ./smartd.nix
 ./packages.nix
-#./ddclient.nix
+./ddclient.nix
 ];
 
 }

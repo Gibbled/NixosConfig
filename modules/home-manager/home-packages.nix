@@ -55,7 +55,7 @@
     luajitPackages.jsregexp
     luajitPackages.luarocks-nix
     rustup
-    kicad
+    #kicad
     darktable
     freecad
     openscad
@@ -101,6 +101,7 @@
     youtube-music
     
     ffmpeg-full
+    v4l-utils
     
     kdePackages.marble
 
