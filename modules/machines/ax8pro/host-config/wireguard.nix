@@ -57,7 +57,7 @@
       privateKeyFile = "/etc/wireguard/keys/privatekey";
 
       peers = [
-        {
+      {
 	  publicKey = "WMoKSh4bbWvMNBrJq1q8TNTT5fmtAub0sNjh5/Ppxkw=";
           allowedIPs = ["172.16.0.0/16"];
           endpoint = "zabbix.homeunix.com:51820";
