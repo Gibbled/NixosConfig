@@ -30,6 +30,7 @@
       fullclean = "cleanup&&bootclean";
       df = "dysk";
       classes = "hyprctl clients |grep class";
+      frr = "ssh -p 2525 cloud.homeunix.org";
 
       };
     };
