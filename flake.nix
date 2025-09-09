@@ -26,7 +26,7 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
-    nix-colors-adapters.url = "gitlab:vfosnar/nix-colors-adapters";
+    #nix-colors-adapters.url = "gitlab:vfosnar/nix-colors-adapters";
 
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
@@ -34,12 +34,17 @@
     };
 
     swww.url = "github:LGFae/swww";
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
+    };
   };
 
   outputs = inputs @ {
     nixpkgs,
     home-manager,
     sops-nix,
+    split-monitor-workspaces,
     ...
   }: {
     system.stateVersion = "24.05"; # Did you read the comment? Yep!
