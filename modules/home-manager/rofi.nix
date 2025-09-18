@@ -12,10 +12,10 @@
     programs.rofi = {
       enable = true;
       font = "Nerd Fonts Hack 18";
-      package = pkgs.rofi-wayland;
+      package = pkgs.rofi;
       location = "center";
       plugins = [
-        pkgs.rofi-emoji-wayland
+        pkgs.rofi-emoji
         pkgs.rofi-systemd
         pkgs.rofi-menugen
         pkgs.rofi-network-manager

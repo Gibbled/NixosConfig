@@ -91,7 +91,7 @@
     qmk_hid
     keymapviz
 
-    calibre
+    #calibre
 
     #For Arduino
     arduino
@@ -109,7 +109,7 @@
     git-credential-keepassxc
 
     virt-manager
-    rofi-emoji-wayland
+    rofi-emoji
     rofi-network-manager
     hyprpolkitagent
     waybar

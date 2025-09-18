@@ -77,7 +77,7 @@
   dunst
   libnotify
   swww
-  rofi-wayland
+  #rofi-wayland
   hyprlock
   pulseaudio
   ];
