@@ -10,6 +10,7 @@ imports = [
 ./packages.nix
 ./wireguard.nix
 ./sops.nix
+./locale.nix
 ];
 
 }

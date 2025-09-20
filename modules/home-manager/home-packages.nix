@@ -91,7 +91,7 @@
     qmk_hid
     keymapviz
 
-    #calibre
+    calibre
 
     #For Arduino
     arduino

@@ -9,7 +9,7 @@ imports = [
 ./firewall.nix
 ./flakes.nix
 ./ldfix.nix
-./locale.nix
+#./locale.nix
 ./neovim.nix
 ./packages.nix
 ./privoxy.nix

@@ -8,6 +8,7 @@ imports = [
 ./ddclient.nix
 ./sops.nix
 ./wireguard_server.nix
+./locale.nix
 ];
 
 }

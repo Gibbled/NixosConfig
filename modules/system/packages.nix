@@ -80,6 +80,12 @@
   #rofi-wayland
   hyprlock
   pulseaudio
+
+
+  #timezone stuff
+  localtime
+  geoclue2
+
   ];
 
   # Allow unfree packages

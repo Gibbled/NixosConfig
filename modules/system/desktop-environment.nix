@@ -15,6 +15,20 @@
   };
 
   services = {
+    localtimed = {
+      enable = true;
+    };
+    geoclue2 = {
+      enable = true;
+    };
+    avahi = {
+      enable = true;
+      publish.enable = true;
+      publish.domain = true;
+      openFirewall = true;
+      ipv4 = true;
+      hostName = config.networking.hostName;
+    };
     gnome = {
       gnome-browser-connector.enable = true;
     };
