@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   # Enable networking
@@ -14,12 +15,16 @@
     };
   };
 
+  location.provider = "geoclue2";
+
   services = {
-    localtimed = {
+    automatic-timezoned = {
       enable = true;
     };
     geoclue2 = {
       enable = true;
+      enableDemoAgent = lib.mkForce true;
+      geoProviderUrl = "https://beacondb.net/v1/geolocate";
     };
     avahi = {
       enable = true;
@@ -28,6 +33,9 @@
       openFirewall = true;
       ipv4 = true;
       hostName = config.networking.hostName;
+    };
+    tzupdate = {
+      enable = true;
     };
     gnome = {
       gnome-browser-connector.enable = true;

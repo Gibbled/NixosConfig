@@ -186,7 +186,7 @@
           };
         };
         clock = {
-          timezone = "Europe/Brussels";
+          #timezone = "Europe/Brussels";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format-alt = "{:%Y-%m-%d}";
         };
