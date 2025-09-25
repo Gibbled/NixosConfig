@@ -26,10 +26,10 @@ in
           splash_offset = 2.0;
         
           preload =
-            [ "/home/ranjit/Downloads/Wallpaper-Bank/wallpapers/cat_pacman.png" ];
+            [ "/home/ranjit/Downloads/Wallpaper-Bank/wall.jpg" ];
         
           wallpaper = [
-            "DP-2,/home/ranjit/Wallpaper-Bank/wallpapers/Cartoon.png"
+            "DP-2,/home/ranjit/Wallpaper-Bank/wall.jpg"
           ];
         };
 
