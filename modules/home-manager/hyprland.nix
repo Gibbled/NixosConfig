@@ -14,6 +14,7 @@ in {
     enable = true;
 
     settings = {
+      ecosystem.no_update_news = true;
       monitor = [
         ##ax8
         "desc:Nreal Air 0x66666600,1920x1080@120,0x2160,1"
