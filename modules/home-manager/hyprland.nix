@@ -38,6 +38,7 @@ in {
 
       "$mainMod" = "CTRL_ALT";
       "$nxtMod" = "SHIFT_ALT";
+      "$fullMod" = "CTRL_ALT_SHIFT";
       bind = [
         "$mainMod, C, killactive,"
         "$mainMod, R, exec, $browser"
@@ -89,6 +90,9 @@ in {
         "$nxtMod, Y, exec, pypr toggle youtube-music"
         "$nxtMod, V, exec, pypr toggle pavucontrol"
         "$nxtMod, D, exec, pypr toggle dolphin"
+	##Window Management
+	"$fullMod, R, exec, hyprctl dispatch plugin:xtd:moveorexec \"firefox,firefox\""
+	"$fullMod, C, exec, hyprctl dispatch plugin:xtd:closeunfocused" 
 
       ];
 

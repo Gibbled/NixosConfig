@@ -55,6 +55,12 @@ in {
 	"browser.ml.modelHubRootUrl" = lib.mkForce "https://goatse.cx";
 	"browser.nativeMessagingHosts.packages" = [ pkgs.kdePackages.plasma-browser-integration pkgs.tridactyl-native ];
 	"browser.layout.css.devPixelsPerPx" = "1";
+	#For slow internet connection, force youtube to buffer the whole video.
+	"media.mediasource.enabled"=lib.mkForce false;
+	"media.mediasource.mp4.enabled"=lib.mkForce false;
+	"media.mediasource.experimental.enabled"=lib.mkForce false;
+	"media.mediasource.vp9.enabled"=lib.mkForce false;
+	"media.mediasource.webm.enabled"=lib.mkForce false;
       };
 
       ExtensionSettings = {

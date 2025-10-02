@@ -16,7 +16,7 @@ rocmOverrideGfx = "11.0.2";
 
    environment.systemPackages = with pkgs;  [
      python313Packages.rapidocr-onnxruntime
-     
+     oterm
    ];
 
 services.open-webui = {
