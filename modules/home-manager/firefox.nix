@@ -56,11 +56,12 @@ in {
 	"browser.nativeMessagingHosts.packages" = [ pkgs.kdePackages.plasma-browser-integration pkgs.tridactyl-native ];
 	"browser.layout.css.devPixelsPerPx" = "1";
 	#For slow internet connection, force youtube to buffer the whole video.
-	"media.mediasource.enabled"=lib.mkForce false;
-	"media.mediasource.mp4.enabled"=lib.mkForce false;
-	"media.mediasource.experimental.enabled"=lib.mkForce false;
-	"media.mediasource.vp9.enabled"=lib.mkForce false;
-	"media.mediasource.webm.enabled"=lib.mkForce false;
+	# This forces everything to 360p so not very useful
+	#"media.mediasource.enabled"=lib.mkForce false;
+	#"media.mediasource.mp4.enabled"=lib.mkForce false;
+	#"media.mediasource.experimental.enabled"=lib.mkForce false;
+	#"media.mediasource.vp9.enabled"=lib.mkForce false;
+	#"media.mediasource.webm.enabled"=lib.mkForce false;
       };
 
       ExtensionSettings = {
@@ -115,6 +116,10 @@ in {
 	};
 	"zotero@chnm.gmu.edu" = {
           install_url = "https://www.zotero.org/download/connector/dl?browser=firefox&version=5.0.176";
+          installation_mode = "force_installed";
+	};
+	"jordanlinkwarden@gmail.com" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/Linkwarden/latest.xpi";
           installation_mode = "force_installed";
 	};
 	};
