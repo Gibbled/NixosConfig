@@ -39,7 +39,7 @@
     iftop # network monitoring
     # system call monitoring
     strace # system call monitoring
-    ltrace # library call monitoring
+    #ltrace # library call monitoring
     lsof # list open files
     # system tools
     sysstat
@@ -71,7 +71,7 @@
     yt-dlp
     gimp3-with-plugins
     inkscape
-    meshlab
+    #meshlab
 
     ardour
     qjackctl
@@ -86,15 +86,15 @@
 
     vial
     via
-    qmk
-    qmk-udev-rules
-    qmk_hid
+    #qmk
+    #qmk-udev-rules
+    #qmk_hid
     keymapviz
 
     calibre
 
     #For Arduino
-    arduino
+    #arduino
 
     vlc
     mpv
@@ -123,6 +123,8 @@
     gucharmap
 
     chirp
+
+    linkwarden
 
 
   ];

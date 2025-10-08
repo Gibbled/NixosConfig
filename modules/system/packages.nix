@@ -67,7 +67,7 @@
   #gpsbabel-gui
   #gpsbabel
   sddm-astronaut
-  kdePackages.qtmultimedia
+  #kdePackages.qtmultimedia
   #kdePackages.plasma-browser-integration
   #kdePackages.xdg-desktop-portal-kde
   #utterly-round-plasma-style
