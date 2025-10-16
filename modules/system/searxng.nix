@@ -94,11 +94,11 @@ in {
         "qwant".disabled = false;
         "reddit".disabled = false;
 
-        "wikipedia" = {
-          engine = "wikipedia";
-          shortcut = "w";
-          base_url = "https://wikipedia.org/";
-        };
+        #"wikipedia" = {
+          #engine = "wikipedia";
+          #shortcut = "w";
+          #base_url = "https://wikipedia.org/";
+        #};
 
         "github" = {
           engine = "github";

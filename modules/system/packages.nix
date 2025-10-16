@@ -90,5 +90,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  virtualisation.waydroid.enable = true;
 
 }

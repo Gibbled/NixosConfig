@@ -404,7 +404,7 @@ in {
                          },
                          level = 2,
                          minimum_width = 50,
-                         render = "default",
+                         render = "compact",
                          stages = "slide",
                          time_formats = {
                            notification = "%T",

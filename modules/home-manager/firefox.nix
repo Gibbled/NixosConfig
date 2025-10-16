@@ -57,11 +57,11 @@ in {
 	"browser.layout.css.devPixelsPerPx" = "1";
 	#For slow internet connection, force youtube to buffer the whole video.
 	# This forces everything to 360p so not very useful
-	#"media.mediasource.enabled"=lib.mkForce false;
-	#"media.mediasource.mp4.enabled"=lib.mkForce false;
-	#"media.mediasource.experimental.enabled"=lib.mkForce false;
-	#"media.mediasource.vp9.enabled"=lib.mkForce false;
-	#"media.mediasource.webm.enabled"=lib.mkForce false;
+        "media.mediasource.enabled"=lib.mkForce true;
+	"media.mediasource.mp4.enabled"=lib.mkForce true;
+	"media.mediasource.experimental.enabled"=lib.mkForce true;
+	"media.mediasource.vp9.enabled"=lib.mkForce true;
+	"media.mediasource.webm.enabled"=lib.mkForce true;
       };
 
       ExtensionSettings = {

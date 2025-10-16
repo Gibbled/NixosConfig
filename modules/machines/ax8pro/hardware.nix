@@ -4,8 +4,8 @@
 
   # Bootloader.
   boot = {
-  #kernelPackages = pkgs.linuxPackages_latest;
-  kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  kernelPackages = pkgs.linuxPackages_latest;
+  #kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   loader.systemd-boot.enable = true;
   loader.efi.canTouchEfiVariables = true;
 
