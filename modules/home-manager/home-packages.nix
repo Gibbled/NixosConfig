@@ -126,6 +126,9 @@
 
     linkwarden
 
+    kdePackages.dolphin
+    kdePackages.dolphin-plugins
+
 
   ];
 
