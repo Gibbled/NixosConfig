@@ -3,8 +3,8 @@
 {
   programs.git = {
       enable = true;
-      userName = "Gibbled";
-      userEmail = "lucksack@gmail.com";
+      settings.user.name = "Gibbled";
+      settings.user.email = "lucksack@gmail.com";
     };
 
 
