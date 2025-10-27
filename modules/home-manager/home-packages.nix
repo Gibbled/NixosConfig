@@ -65,7 +65,7 @@
     obs-studio
     octaveFull
     nodejs
-    libreoffice
+    #libreoffice
     kdePackages.kdenlive
     zotero
     yt-dlp
