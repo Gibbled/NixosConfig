@@ -78,7 +78,6 @@ fonts.packages = with pkgs; [
   nerd-fonts.zed-mono
   open-sans
   noto-fonts-color-emoji
-  noto-fonts-emoji
   font-awesome
   gubbi-font
   lohit-fonts.kannada

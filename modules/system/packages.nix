@@ -71,6 +71,8 @@
   #kdePackages.plasma-browser-integration
   #kdePackages.xdg-desktop-portal-kde
   #utterly-round-plasma-style
+  ntopng
+  redis
 
   #Hyprland
   waybar

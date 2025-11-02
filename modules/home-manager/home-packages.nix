@@ -91,7 +91,7 @@
     #qmk_hid
     keymapviz
 
-    calibre
+    #calibre
 
     #For Arduino
     #arduino
@@ -128,6 +128,8 @@
 
     kdePackages.dolphin
     kdePackages.dolphin-plugins
+
+    runelite
 
 
   ];

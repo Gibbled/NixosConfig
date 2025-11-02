@@ -28,6 +28,7 @@ imports = [
 ./fonts.nix
 ./scripts.nix
 ./timers.nix
+./ntopng.nix
 ];
 
 }
