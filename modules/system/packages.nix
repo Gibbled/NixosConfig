@@ -94,4 +94,6 @@
   nixpkgs.config.allowUnfree = true;
   virtualisation.waydroid.enable = true;
 
+  #linkwarden-server.enable = true;
+
 }

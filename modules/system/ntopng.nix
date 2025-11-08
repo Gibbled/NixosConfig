@@ -6,7 +6,7 @@ services.ntopng = {
   enable = true;
 };
 
-services.redis = {
+services.redis.servers.redis = {
   enable = true;
 };
 
