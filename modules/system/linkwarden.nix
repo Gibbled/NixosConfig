@@ -40,11 +40,11 @@ in
 	secretFiles = "";
 	cacheLocation = "";
 	storageLocation = "";
-	environmentFile = "";
-	#databasePort = databasePort;
-	#databaseHost = databaseHost;
+	database.port = databasePort;
+	#database.host = databaseHost;
+	database.host = "/run/postgresql";
 	enableRegistration = true;
-	envFile = "";
+	environmentFile = "/run/secrets/linkwarden";
 	
         };
 
@@ -53,6 +53,7 @@ in
 	  port = databasePort;
 	  package = databasePackage;
 	  dataDir = databaseDir;
+
 	  
 
 	};

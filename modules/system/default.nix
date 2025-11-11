@@ -29,7 +29,7 @@ imports = [
 ./scripts.nix
 ./timers.nix
 ./ntopng.nix
-#./linkwarden.nix
+./linkwarden.nix
 ];
 
 }

@@ -53,7 +53,12 @@ in {
 	"browser.ml.chat.sidebar" = lock-false;
 	"browser.ml.enable" = lib.mkForce false;
 	"browser.ml.modelHubRootUrl" = lib.mkForce "https://goatse.cx";
-	"browser.nativeMessagingHosts.packages" = [ pkgs.kdePackages.plasma-browser-integration pkgs.tridactyl-native ];
+	"browser.ml.chat.menu" = lock-false;
+	"browser.ml.chat.page" = lock-false;
+	"browser.ml.chat.page.footerBadge" = lock-false;
+	"browser.ml.chat.page.menuBadge" = lock-false;
+	"sidebar.notification.badge.aichat" = lock-false;
+	"browser.nativeMessagingHosts.packages" = [ pkgs.tridactyl-native ];
 	"browser.layout.css.devPixelsPerPx" = "1";
 	#For slow internet connection, force youtube to buffer the whole video.
 	# This forces everything to 360p so not very useful
@@ -125,6 +130,10 @@ in {
         "toolkit.telemetry.user_characteristics_ping.opt-out" = true;
         "toolkit.telemetry.user_characteristics_ping.send-once" = lock-false;
         "toolkit.telemetry.user_characteristics_ping.uuid" = "";
+	"browser.search.region" = "EU";
+	"doh-rollout.doneFirstRun" = lock-false;
+	"doh-rollout.home-region" = "EU";
+
       };
 
       ExtensionSettings = {
