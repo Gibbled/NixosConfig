@@ -73,7 +73,7 @@
     inkscape
     #meshlab
 
-    ardour
+    #ardour
     qjackctl
     pavucontrol
     
@@ -129,7 +129,6 @@
     kdePackages.dolphin
     kdePackages.dolphin-plugins
 
-    runelite
 
 
   ];

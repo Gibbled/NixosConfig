@@ -16,7 +16,7 @@
          * {
              border: none;
              font-family: Font Awesome, Hack, Arial, sans-serif;
-             font-size: 13px;
+             font-size: 16px;
              color: #${config.colorScheme.palette.base0C};
              border-radius: 20px;
          }

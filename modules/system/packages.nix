@@ -87,13 +87,21 @@
   #timezone stuff
   localtime
   geoclue2
+  
 
+  # Postgresql for linkwarden
+  postgresql
+  prisma
+  monolith
+
+  # to get rid of a boot warning
+  nssmdns
   ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   virtualisation.waydroid.enable = true;
 
-  #linkwarden-server.enable = true;
+  linkwarden-server.enable = true;
 
 }

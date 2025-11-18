@@ -63,6 +63,9 @@ privateKey_xybr_id_rsa = {
            owner = config.users.users.ranjit.name;
         };
 
+linkwarden-secret = {
+	    owner = config.users.users.ranjit.name;
+};
 
 Samsung2 = {
     owner = config.users.users.ranjit.name;
@@ -72,6 +75,8 @@ Samsung2 = {
 github-gibbled = {
   owner = config.users.users.ranjit.name;
 };
+
+
 };
 };
 }
