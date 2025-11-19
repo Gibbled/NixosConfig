@@ -11,7 +11,7 @@
     settings = {
       font = {
         normal.family = "Hack";
-        size = 22;
+        size = 18;
 	};
       window.opacity = lib.mkForce 0.8;
       colors = {

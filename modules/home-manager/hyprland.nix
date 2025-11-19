@@ -82,9 +82,9 @@ in {
         "$mainMod SHIFT, Q, movetoworkspace, special:magic"
 	##Pyprland
         "$nxtMod, T, exec, pypr toggle term"
-        "$nxtMod, K, exec, pypr toggle passwordManager"
+        "$nxtMod, K, exec, pypr toggle password-manager"
         "$nxtMod, Z, exec, pypr toggle $zapzap"
-        "$nxtMod, S, exec, pypr toggle Signal"
+        "$nxtMod, S, exec, pypr toggle signal"
         "$nxtMod, N, exec, pypr togglespecialworkspace, minimized"
         "$nxtMod, C, exec, pypr toggle gucharmap"
         "$nxtMod, Y, exec, pypr toggle youtube-music"
