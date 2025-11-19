@@ -25,6 +25,8 @@
       inputs.hyprland.follows = "hyprland"; # Prevents version mismatch.
     };
 
+    pyprland.url = "github:hyprland-community/pyprland";
+
     nix-colors.url = "github:misterio77/nix-colors";
     #nix-colors-adapters.url = "gitlab:vfosnar/nix-colors-adapters";
 
