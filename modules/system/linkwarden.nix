@@ -26,45 +26,16 @@ in {
   };
 
   config = lib.mkIf config."${optname}".enable {
-    services = {
-      ${prog} = {
-        enable = true;
-        #package = pkgname;
-        port = port;
-        host = linkwardenHost;
-        database.user = databaseUser;
-        database.name = databaseName;
-        user = linkwardenUser;
-        group = linkwardenGroup;
-        openFirewall = true;
-        database.createLocally = true;
-        secretFiles.NEXTAUTH_SECRET = linkwardenSecretFile;
-        #cacheLocation = "";
-        #storageLocation = "";
-        database.port = databasePort;
-        database.host = databaseHost;
-        #database.host = "/run/postgresql";
-        enableRegistration = true;
-        # environmentFile = "/run/secrets/linkwarden";
-        environment = {
-          PAGINATION_TAKE_COUNT = "50";
-          NEXTAUTH_SECRET = "secretsecret";
-          NEXTAUTH_URL = "http://localhost:3000/api/v1/auth";
-          DATABASE_URL = "postgresql://linkwarden:linkwarden@localhost:5432/linkwarden";
-        };
-      };
-
-      postgresql = {
-        enable = true;
-        ensureDatabases = ["${databaseName}"];
-        settings.port = databasePort;
-        #package = "${databasePackage}";
-        dataDir = "${databaseDir}";
-        authentication = pkgs.lib.mkOverride 10 ''
-             #type database  DBuser  auth-method
-             local all       all     trust
-          '';
-      };
+  services.${prog} = {
+    enable = true;
+    storageLocation = "/storage/linkwarden";
+    enableRegistration = true;
+    host = "localhost";
+    port = 10248;
+    environment = {
+      NEXTAUTH_URL = "http://localhost:10248/api/v1/auth";
     };
+    secretFiles.NEXTAUTH_SECRET = config.sops.secrets.linkwarden-secret.path;
+  };
   };
 }

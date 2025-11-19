@@ -25,27 +25,27 @@
         background = "#${config.colorScheme.palette.base02}";
 	};
 
-        normal = {
-        black = "#${config.colorScheme.palette.base00}";
-        red = "#${config.colorScheme.palette.base03}";
-        green = "#${config.colorScheme.palette.base06}";
-        yellow = "#${config.colorScheme.palette.base05}";
-        blue = "#${config.colorScheme.palette.base07}";
-        magenta = "#${config.colorScheme.palette.base03}";
-        cyan = "#${config.colorScheme.palette.base06}";
-        white = "#${config.colorScheme.palette.base02}";
-	};
+        #normal = {
+        #black = "#${config.colorScheme.palette.base00}";
+        #red = "#${config.colorScheme.palette.base03}";
+        #green = "#${config.colorScheme.palette.base06}";
+        #yellow = "#${config.colorScheme.palette.base05}";
+        #blue = "#${config.colorScheme.palette.base07}";
+        #magenta = "#${config.colorScheme.palette.base03}";
+        #cyan = "#${config.colorScheme.palette.base06}";
+        #white = "#${config.colorScheme.palette.base02}";
+	#};
 
-        bright = {
-        black = "#${config.colorScheme.palette.base00}";
-        red = "#${config.colorScheme.palette.base06}";
-        green = "#${config.colorScheme.palette.base07}";
-        yellow = "#${config.colorScheme.palette.base08}";
-        blue = "#${config.colorScheme.palette.base09}";
-        magenta = "#${config.colorScheme.palette.base0A}";
-        cyan = "#${config.colorScheme.palette.base0B}";
-        white = "#${config.colorScheme.palette.base0C}";
-	};
+        #bright = {
+        #black = "#${config.colorScheme.palette.base00}";
+        #red = "#${config.colorScheme.palette.base06}";
+        #green = "#${config.colorScheme.palette.base07}";
+        #yellow = "#${config.colorScheme.palette.base08}";
+        #blue = "#${config.colorScheme.palette.base09}";
+        #magenta = "#${config.colorScheme.palette.base0A}";
+        #cyan = "#${config.colorScheme.palette.base0B}";
+        #white = "#${config.colorScheme.palette.base0C}";
+	#};
       };
     };
   };

@@ -129,6 +129,8 @@
     kdePackages.dolphin
     kdePackages.dolphin-plugins
 
+    alacritty
+
 
 
   ];

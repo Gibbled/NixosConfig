@@ -32,7 +32,6 @@
   jq
   pandoc
   zotero
-  alacritty
   pass
   nodejs
   qemu

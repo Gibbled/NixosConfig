@@ -64,7 +64,8 @@ privateKey_xybr_id_rsa = {
         };
 
 linkwarden-secret = {
-	    owner = config.users.users.ranjit.name;
+	    path = "/run/secrets/linkwarden-secret";
+	    owner = config.users.users.linkwarden.name;
 };
 
 Samsung2 = {
