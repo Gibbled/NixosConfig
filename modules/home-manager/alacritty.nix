@@ -9,6 +9,10 @@
     enable = true;
     #theme = "tokyo_night_enhanced";
     settings = {
+      font = {
+        normal.family = "Hack";
+        size = 22;
+	};
       window.opacity = lib.mkForce 0.8;
       colors = {
         primary = {

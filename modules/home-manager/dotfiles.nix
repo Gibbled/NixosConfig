@@ -10,6 +10,7 @@ home.file.".config/hypr/hyprlock-assets/galaxy.jpg".source = ./dotfiles/hyprland
 home.file.".config/hypr/hyprlock-assets/nixos.png".source = ./dotfiles/hyprland/config/hyprlock/Assets/nixos.png;
 home.file.".config/hypr/hyprlock-assets/Face.png".source = ./dotfiles/hyprland/config/hyprlock/Assets/Face.png;
 home.file.".config/hypr/pyprland.toml".source = ./dotfiles/pyprland/pyprland.toml;
+#home.file.".config/alacritty/alacritty.toml".source = ./dotfiles/alacritty/alacritty.toml;
 
 ##############
 

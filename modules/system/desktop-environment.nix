@@ -11,6 +11,7 @@
       wifi.backend = "wpa_supplicant";
       insertNameservers = [
         "8.8.8.8"
+	"1.1.1.1"
       ];
     };
   };
@@ -39,6 +40,7 @@
     };
     gnome = {
       gnome-browser-connector.enable = true;
+      at-spi2-core.enable = lib.mkForce false;
     };
     desktopManager = {
       plasma6.enable = true;
@@ -79,7 +81,7 @@
   programs.hyprland.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
+    #xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     kdePackages.xdg-desktop-portal-kde
   ];
@@ -96,13 +98,6 @@
     kate
   ];
 
-  #  environment.sessionVariables = {
-  #QT_STYLE_OVERRIDE = "Utterly-Round";
-  #QT_GLOBAL_THEME_OVERRIDE = "Kvantum";
-  #QT_WINDOW_DECORATIONS_OVERRIDE = "Sweet-Dark-transparent";
-  #};
-
-  # Configure keymap in X11
 
   #Allow X programs to work in Wayland
   programs.xwayland = {
@@ -120,17 +115,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    #libsForQt5.qtstyleplugin-kvantum
-    #libsForQt5.qt5ct
   ];
-  #nixpkgs.config.qt5 = {
-  #enable = false;
-  #platformTheme = "qt5ct";
-  #style = {
-  #package = pkgs.utterly-nord-plasma;
-  #name = "Utterly Nord Plasma";
-  #};
-  #};
 
   systemd.sleep.extraConfig = ''
     AllowSuspend=no

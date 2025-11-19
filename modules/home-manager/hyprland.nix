@@ -84,7 +84,7 @@ in {
         "$nxtMod, T, exec, pypr toggle term"
         "$nxtMod, K, exec, pypr toggle passwordManager"
         "$nxtMod, Z, exec, pypr toggle $zapzap"
-        "$nxtMod, S, exec, pypr toggle signal"
+        "$nxtMod, S, exec, pypr toggle Signal"
         "$nxtMod, N, exec, pypr togglespecialworkspace, minimized"
         "$nxtMod, C, exec, pypr toggle gucharmap"
         "$nxtMod, Y, exec, pypr toggle youtube-music"
