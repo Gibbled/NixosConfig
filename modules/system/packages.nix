@@ -89,7 +89,7 @@
   
 
   # Postgresql for linkwarden
-  postgresql
+  #postgresql
   prisma
   monolith
 
