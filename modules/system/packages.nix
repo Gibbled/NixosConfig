@@ -16,6 +16,7 @@
   luajitPackages.luarocks-nix
   #texliveFull
   openssh
+  openssl
   #ccache
   #ccacheStdenv
   #ccacheWrapper
