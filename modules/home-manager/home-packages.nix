@@ -130,6 +130,9 @@
     kdePackages.dolphin-plugins
 
     alacritty
+
+    easyeffects
+
   ];
 
   starship-program.enable = true;

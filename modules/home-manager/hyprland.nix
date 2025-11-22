@@ -90,6 +90,7 @@ in {
         "$nxtMod, Y, exec, pypr toggle youtube-music"
         "$nxtMod, V, exec, pypr toggle pavucontrol"
         "$nxtMod, D, exec, pypr toggle dolphin"
+        "$nxtMod, E, exec, pypr toggle easyeffects"
 	##Window Management
 	"$fullMod, R, exec, hyprctl dispatch plugin:xtd:moveorexec \"firefox,firefox\""
 	"$fullMod, C, exec, hyprctl dispatch plugin:xtd:closeunfocused" 

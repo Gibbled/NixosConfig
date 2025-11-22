@@ -73,3 +73,11 @@ command = "dolphin"
 class = "org.kde.dolphin"
 size = "75% 60%"
 max_size = "1920px 100%"
+
+
+[scratchpads.easyeffects]
+animation = "fromTop"
+command = "/etc/profiles/per-user/ranjit/bin/easyeffects"
+class = "easyeffects"
+size = "75% 60%"
+max_size = "1920px 75%"
