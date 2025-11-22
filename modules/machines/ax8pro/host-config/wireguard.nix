@@ -46,7 +46,7 @@
     wg1 = {
       # IP address of this machine in the *tunnel network*
       address = [
-	"172.16.0.3/8"
+        "172.16.0.3/8"
       ];
 
       # To match firewall allowedUDPPorts (without this wg
@@ -57,8 +57,8 @@
       privateKeyFile = "/etc/wireguard/keys/privatekey";
 
       peers = [
-      {
-	  publicKey = "WMoKSh4bbWvMNBrJq1q8TNTT5fmtAub0sNjh5/Ppxkw=";
+        {
+          publicKey = "WMoKSh4bbWvMNBrJq1q8TNTT5fmtAub0sNjh5/Ppxkw=";
           allowedIPs = ["172.16.0.0/16"];
           endpoint = "zabbix.homeunix.com:51820";
           persistentKeepalive = 25;

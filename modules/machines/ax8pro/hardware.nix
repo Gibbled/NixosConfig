@@ -1,14 +1,14 @@
-{ config, pkgs, ...}:
-
 {
-
+  config,
+  pkgs,
+  ...
+}: {
   # Bootloader.
   boot = {
-  kernelPackages = pkgs.linuxPackages_latest;
-  #kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  loader.systemd-boot.enable = true;
-  loader.efi.canTouchEfiVariables = true;
-
+    kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
 
     plymouth = {
       enable = false;
@@ -16,13 +16,13 @@
       themePackages = with pkgs; [
         # By default we would install all themes
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ 
-	  "rings" 
-	  "abstract_ring" 
-	  "cyanide"
-	  "glitch"
-	  "glowing"
-	  ];
+          selected_themes = [
+            "rings"
+            "abstract_ring"
+            "cyanide"
+            "glitch"
+            "glowing"
+          ];
         })
       ];
     };
@@ -41,15 +41,11 @@
     # It's still possible to open the bootloader list by pressing any key
     # It will just not appear on screen unless a key is pressed
     loader.timeout = 5;
-
   };
-
-
 
   networking.hostName = "xybr"; # Define your hostname.
   #All the AMDgpu stuff
-    systemd.tmpfiles.rules = 
-  let
+  systemd.tmpfiles.rules = let
     rocmEnv = pkgs.symlinkJoin {
       name = "rocm-combined";
       paths = with pkgs.rocmPackages; [
@@ -63,15 +59,13 @@
   ];
 
   environment.systemPackages = with pkgs; [
-  clinfo
-  lact
+    clinfo
+    lact
   ];
 
-  systemd.packages = with pkgs; [ lact ];
+  systemd.packages = with pkgs; [lact];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
   hardware.keyboard.qmk.enable = true;
   nix.settings.download-buffer-size = 524288000;
   hardware.graphics.enable = true;
-
-
 }

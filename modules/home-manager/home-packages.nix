@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
-
 {
-
-
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     # archives
     zip
@@ -17,12 +17,12 @@
     # networking tools
     mtr # A network diagnostic tool
     iperf3
-    dnsutils  # `dig` + `nslookup`
+    dnsutils # `dig` + `nslookup`
     ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
-    ipcalc  # it is a calculator for the IPv4/v6 addresses
+    ipcalc # it is a calculator for the IPv4/v6 addresses
     # misc
     file
     which
@@ -49,7 +49,7 @@
     usbutils # lsusb
     #Home-manager
     home-manager
-    
+
     wl-clipboard
     gcc
     luajitPackages.jsregexp
@@ -76,7 +76,7 @@
     #ardour
     qjackctl
     pavucontrol
-    
+
     orca-slicer
 
     tor-browser
@@ -99,10 +99,10 @@
     vlc
     mpv
     youtube-music
-    
+
     ffmpeg-full
     v4l-utils
-    
+
     kdePackages.marble
 
     keepassxc
@@ -130,20 +130,14 @@
     kdePackages.dolphin-plugins
 
     alacritty
-
-
-
   ];
 
-starship-program.enable = true;
-rofi-program.enable = true;
-hyprlock-program.enable = true;
-hyprpaper-service.enable = true;
-tmux-program.enable = true;
-neovim-program.enable = true;
-keepassxc-program.enable = true;
-dunst-service.enable = true;
-
-
+  starship-program.enable = true;
+  rofi-program.enable = true;
+  hyprlock-program.enable = true;
+  hyprpaper-service.enable = true;
+  tmux-program.enable = true;
+  neovim-program.enable = true;
+  keepassxc-program.enable = true;
+  dunst-service.enable = true;
 }
-

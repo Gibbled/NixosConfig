@@ -1,11 +1,10 @@
-{ config, pkgs, ... }:
-
 {
-
-services.tor = {
-  enable = true;
-  openFirewall = true;
-};
-
-
+  config,
+  pkgs,
+  ...
+}: {
+  services.tor = {
+    enable = true;
+    openFirewall = true;
+  };
 }

@@ -1,5 +1,9 @@
-{ config, pkgs, lib, ... }:
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   lock-false = {
     Value = false;
     Status = "locked";
@@ -20,8 +24,8 @@ in {
 
     policies = {
       DisableTelemetry = lib.mkForce true;
-      DisableFirefoxStudies = lib.mkForce  true;
-      DontCheckDefaultBrowser = lib.mkForce  true;
+      DisableFirefoxStudies = lib.mkForce true;
+      DontCheckDefaultBrowser = lib.mkForce true;
       DisablePocket = lib.mkForce true;
       SearchBar = "unified";
 
@@ -34,11 +38,11 @@ in {
         "browser.newtabpage.activity-stream.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-        "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = lock-false;	
-	"network.proxy.http" = "127.0.0.1";
-	"network.proxy.http_port" = 8118;
-	"network.proxy.type" = 1;
-	"network.proxy.share_proxy_settings" = true;
+        "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = lock-false;
+        "network.proxy.http" = "127.0.0.1";
+        "network.proxy.http_port" = 8118;
+        "network.proxy.type" = 1;
+        "network.proxy.share_proxy_settings" = true;
         "browser.ml.chat.prompt.prefix" = "XXXXXXXXXXXXXXXX";
         "browser.ml.chat.prompts.0" = "XXXXXXXXXXXXXXXX";
         "browser.ml.chat.prompts.1" = "XXXXXXXXXXXXXXXX";
@@ -49,27 +53,27 @@ in {
         "browser.ml.chat.shortcuts" = "XXXXXXXXXXXXXXXX";
         "browser.ml.chat.shortcuts.custom" = "XXXXXXXXXXXXXXXX";
         "browser.ml.chat.shortcuts.longPress" = "XXXXXXXXXXXXXXXX";
-	"browser.ml.chat.enabled" = lock-false;
-	"browser.ml.chat.sidebar" = lock-false;
-	"browser.ml.enable" = lib.mkForce false;
-	"browser.ml.modelHubRootUrl" = lib.mkForce "https://goatse.cx";
-	"browser.ml.chat.menu" = lock-false;
-	"browser.ml.chat.page" = lock-false;
-	"browser.ml.chat.page.footerBadge" = lock-false;
-	"browser.ml.chat.page.menuBadge" = lock-false;
-	"sidebar.notification.badge.aichat" = lock-false;
-	"browser.nativeMessagingHosts.packages" = [ pkgs.tridactyl-native ];
-	"browser.layout.css.devPixelsPerPx" = "1";
-	#For slow internet connection, force youtube to buffer the whole video.
-	# This forces everything to 360p so not very useful
+        "browser.ml.chat.enabled" = lock-false;
+        "browser.ml.chat.sidebar" = lock-false;
+        "browser.ml.enable" = lib.mkForce false;
+        "browser.ml.modelHubRootUrl" = lib.mkForce "https://goatse.cx";
+        "browser.ml.chat.menu" = lock-false;
+        "browser.ml.chat.page" = lock-false;
+        "browser.ml.chat.page.footerBadge" = lock-false;
+        "browser.ml.chat.page.menuBadge" = lock-false;
+        "sidebar.notification.badge.aichat" = lock-false;
+        "browser.nativeMessagingHosts.packages" = [pkgs.tridactyl-native];
+        "browser.layout.css.devPixelsPerPx" = "1";
+        #For slow internet connection, force youtube to buffer the whole video.
+        # This forces everything to 360p so not very useful
         "media.mediasource.enabled" = lib.mkForce true;
-	"media.mediasource.mp4.enabled" = lib.mkForce true;
-	"media.mediasource.experimental.enabled" = lib.mkForce true;
-	"media.mediasource.vp9.enabled" = lib.mkForce true;
-	"media.mediasource.webm.enabled" = lib.mkForce true;
-	"security.ssl.enable_ocsp_stapling" = lock-false;
-	"security.OCSP.enabled" = "0";
-	"security.OCSP.require" = lock-false;
+        "media.mediasource.mp4.enabled" = lib.mkForce true;
+        "media.mediasource.experimental.enabled" = lib.mkForce true;
+        "media.mediasource.vp9.enabled" = lib.mkForce true;
+        "media.mediasource.webm.enabled" = lib.mkForce true;
+        "security.ssl.enable_ocsp_stapling" = lock-false;
+        "security.OCSP.enabled" = "0";
+        "security.OCSP.require" = lock-false;
         "browser.newtabpage.activity-stream.feeds.telemetry" = lock-false;
         "browser.newtabpage.activity-stream.telemetry" = lock-false;
         "browser.newtabpage.activity-stream.telemetry.privatePing.enabled" = lock-false;
@@ -130,21 +134,20 @@ in {
         "toolkit.telemetry.user_characteristics_ping.opt-out" = true;
         "toolkit.telemetry.user_characteristics_ping.send-once" = lock-false;
         "toolkit.telemetry.user_characteristics_ping.uuid" = "";
-	"browser.search.region" = "EU";
-	"doh-rollout.doneFirstRun" = lock-false;
-	"doh-rollout.home-region" = "EU";
-
+        "browser.search.region" = "EU";
+        "doh-rollout.doneFirstRun" = lock-false;
+        "doh-rollout.home-region" = "EU";
       };
 
       ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
-       };
+        };
         "sponsorBlocker@ajay.app" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
           installation_mode = "force_installed";
-          };
+        };
         "jid1-MnnxcxisBPnSXQ@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
           installation_mode = "force_installed";
@@ -169,84 +172,81 @@ in {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefoxColor/latest.xpi";
           installation_mode = "force_installed";
         };
-	"remove-login-with-google@RcCookie" = {
+        "remove-login-with-google@RcCookie" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/remove-login-with-google/latest.xpi";
           installation_mode = "force_installed";
-	};
-	"plasma-browser-integration@kde.org" = {
+        };
+        "plasma-browser-integration@kde.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-broweser-integration/latest.xpi";
           installation_mode = "force_installed";
-	};
-	"adb@mozilla.org" = {
+        };
+        "adb@mozilla.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/Firefox-DevTools-ADB-Extension/latest.xpi";
           installation_mode = "force_installed";
-	};
+        };
 
-	"gdpr@cavi.au.dk" = {
+        "gdpr@cavi.au.dk" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/Consent-O-Matic/latest.xpi";
           installation_mode = "force_installed";
-	};
-	"zotero@chnm.gmu.edu" = {
+        };
+        "zotero@chnm.gmu.edu" = {
           install_url = "https://www.zotero.org/download/connector/dl?browser=firefox&version=5.0.176";
           installation_mode = "force_installed";
-	};
-	"jordanlinkwarden@gmail.com" = {
+        };
+        "jordanlinkwarden@gmail.com" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/Linkwarden/latest.xpi";
           installation_mode = "force_installed";
-	};
-	};
-	######
-        colors =  {
-          bright = {
-            black = "0x${config.colorScheme.palette.base00}";
-            blue = "0x${config.colorScheme.palette.base04}";
-            cyan = "0x${config.colorScheme.palette.base02}";
-            green = "0x${config.colorScheme.palette.base06}";
-            magenta = "0x${config.colorScheme.palette.base0E}";
-            red = "0x${config.colorScheme.palette.base08}";
-            white = "0x${config.colorScheme.palette.base07}";
-            yellow = "0x${config.colorScheme.palette.base09}";
-          };
-          cursor = {
-            cursor = "0x${config.colorScheme.palette.base06}";
-            text = "0x${config.colorScheme.palette.base06}";
-          };
-          normal = {
-            black = "0x${config.colorScheme.palette.base00}";
-            blue = "0x${config.colorScheme.palette.base0D}";
-            cyan = "0x${config.colorScheme.palette.base0C}";
-            green = "0x${config.colorScheme.palette.base0B}";
-            magenta = "0x${config.colorScheme.palette.base0E}";
-            red = "0x${config.colorScheme.palette.base08}";
-            white = "0x${config.colorScheme.palette.base06}";
-            yellow = "0x${config.colorScheme.palette.base0A}";
-          };
-          primary = {
-            background = "0x${config.colorScheme.palette.base00}";
-            foreground = "0x${config.colorScheme.palette.base06}";
-          };
-	######
+        };
+      };
+      ######
+      colors = {
+        bright = {
+          black = "0x${config.colorScheme.palette.base00}";
+          blue = "0x${config.colorScheme.palette.base04}";
+          cyan = "0x${config.colorScheme.palette.base02}";
+          green = "0x${config.colorScheme.palette.base06}";
+          magenta = "0x${config.colorScheme.palette.base0E}";
+          red = "0x${config.colorScheme.palette.base08}";
+          white = "0x${config.colorScheme.palette.base07}";
+          yellow = "0x${config.colorScheme.palette.base09}";
+        };
+        cursor = {
+          cursor = "0x${config.colorScheme.palette.base06}";
+          text = "0x${config.colorScheme.palette.base06}";
+        };
+        normal = {
+          black = "0x${config.colorScheme.palette.base00}";
+          blue = "0x${config.colorScheme.palette.base0D}";
+          cyan = "0x${config.colorScheme.palette.base0C}";
+          green = "0x${config.colorScheme.palette.base0B}";
+          magenta = "0x${config.colorScheme.palette.base0E}";
+          red = "0x${config.colorScheme.palette.base08}";
+          white = "0x${config.colorScheme.palette.base06}";
+          yellow = "0x${config.colorScheme.palette.base0A}";
+        };
+        primary = {
+          background = "0x${config.colorScheme.palette.base00}";
+          foreground = "0x${config.colorScheme.palette.base06}";
+        };
+        ######
 
         userChrome = ''
-  	  /* Show active colors on main menu bar */
-          TabsToolbar,
-            navigator-toolbox {
-	      background: -moz-accent-color !important;
-              color: black;
-            }
-            TabsToolbar:-moz-window-inactive,
-            navigator-toolbox:-moz-window-inactive {
-            background: unset !important;
-            color: blue;
-            }
-	      :root {
-                --tab-selected-bgcolor: #FFFFFF !important;
-            }
-	'';
-
-        
+          /* Show active colors on main menu bar */
+               TabsToolbar,
+                 navigator-toolbox {
+            background: -moz-accent-color !important;
+                   color: black;
+                 }
+                 TabsToolbar:-moz-window-inactive,
+                 navigator-toolbox:-moz-window-inactive {
+                 background: unset !important;
+                 color: blue;
+                 }
+            :root {
+                     --tab-selected-bgcolor: #FFFFFF !important;
+                 }
+        '';
       };
     };
-};
+  };
 }
-

@@ -1,17 +1,12 @@
-{ confi, pkgs , ... }:
-
 {
-
+  confi,
+  pkgs,
+  ...
+}: {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs;  [
-  btop-rocm
-  blender-hip
+  environment.systemPackages = with pkgs; [
+    btop-rocm
+    blender-hip
   ];
-
-  
-
-  
-
-
 }
