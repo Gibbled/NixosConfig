@@ -32,7 +32,7 @@ in {
         nvim-tree-lua
         ollama-nvim
         harpoon
-        lualine-nvim
+        #lualine-nvim
         lsp_extensions-nvim
         undotree
         render-markdown-nvim
