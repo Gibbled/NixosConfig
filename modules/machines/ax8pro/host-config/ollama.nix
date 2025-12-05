@@ -5,11 +5,12 @@
 }: {
   services.ollama = {
     enable = true;
-    acceleration = "rocm";
+    package = pkgs.ollama-rocm;
     environmentVariables = {
       HCC_AMDGPU_TARGET = "gfx1102";
     };
     rocmOverrideGfx = "11.0.2";
+    syncModels = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -18,8 +19,8 @@
   ];
 
   services.open-webui = {
-    #enable = true;
-    enable = false;
+    enable = true;
+    #enable = false;
 
     environment = {
       ANONYMIZED_TELEMETRY = "False";
