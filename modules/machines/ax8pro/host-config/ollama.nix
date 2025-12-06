@@ -10,6 +10,13 @@
       HCC_AMDGPU_TARGET = "gfx1102";
     };
     rocmOverrideGfx = "11.0.2";
+    loadModels = [
+      "dolphin3"
+      "gemma3"
+      "gemma3:4b"
+      "deepseek-r1:latest"
+      "deepseek-r1:1.5b"
+    ];
     syncModels = true;
   };
 
