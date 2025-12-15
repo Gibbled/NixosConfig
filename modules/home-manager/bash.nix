@@ -36,7 +36,7 @@
       l = "eza -l --icons --color";
       ls = "eza --icons --color";
       lt = "eza --tree  --icons --color";
-      lg = "eza --tree --git --icons  --color";
+      lg = "eza --tree --git --icons -l --color=always";
     };
   };
 }
