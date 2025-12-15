@@ -74,6 +74,7 @@
     #utterly-round-plasma-style
     ntopng
     redis
+    eza
 
     #Hyprland
     waybar

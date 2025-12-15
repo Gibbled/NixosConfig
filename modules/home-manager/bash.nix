@@ -32,6 +32,11 @@
       df = "dysk";
       classes = "hyprctl clients |grep class";
       frr = "ssh -p 2525 cloud.homeunix.org";
+      ll = "eza -l --icons --color";
+      l = "eza -l --icons --color";
+      ls = "eza --icons --color";
+      lt = "eza --tree  --icons --color";
+      lg = "eza --tree --git --icons  --color";
     };
   };
 }
