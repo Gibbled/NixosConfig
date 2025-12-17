@@ -71,9 +71,9 @@
     yt-dlp
     gimp3-with-plugins
     inkscape
-    #meshlab
+    meshlab
 
-    #ardour
+    ardour
     qjackctl
     pavucontrol
 
