@@ -21,9 +21,9 @@
     systemd.enable = true;
 
     plugins = [
-      pkgs.hyprlandPlugins.hyprsplit
+      #pkgs.hyprlandPlugins.hyprsplit
       pkgs.hyprlandPlugins.xtra-dispatchers
-      pkgs.hyprlandPlugins.hyprspace
+      #pkgs.hyprlandPlugins.hyprspace
       pkgs.hyprlandPlugins.hyprexpo
       pkgs.hyprlandPlugins.hypr-dynamic-cursors
     ];

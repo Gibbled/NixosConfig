@@ -1,5 +1,5 @@
 {
-  confi,
+  config,
   pkgs,
   ...
 }: {
@@ -7,6 +7,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     btop-rocm
-    blender-hip
+    #blender-hip
+    pkgsRocm.blender
   ];
 }

@@ -26,8 +26,8 @@
   ];
 
   services.open-webui = {
-    enable = true;
-    #enable = false;
+    #enable = true;
+    enable = false;
 
     environment = {
       ANONYMIZED_TELEMETRY = "False";

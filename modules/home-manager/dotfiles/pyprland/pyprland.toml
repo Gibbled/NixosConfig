@@ -33,7 +33,7 @@ max_size = "1920px 100%"
 
 [scratchpads.signal]
 animation = "fromTop"
-command = "/etc/profiles/per-user/ranjit/bin/signal-desktop --class"
+command = "[signal-desktop] signal-desktop "
 class = "signal-desktop"
 size = "75% 60%"
 max_size = "1920px 100%"
@@ -48,7 +48,7 @@ max_size = "1920px 100%"
 
 [scratchpads.youtube-music]
 animation = "fromTop"
-command = "/etc/profiles/per-user/ranjit/bin/youtube-music "
+command = "/etc/profiles/per-user/ranjit/bin/pear-desktop "
 class = "com.github.th_ch.youtube_music"
 size = "75% 60%"
 max_size = "1920px 100%"

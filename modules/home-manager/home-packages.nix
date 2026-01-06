@@ -98,7 +98,8 @@
 
     vlc
     mpv
-    youtube-music
+    #youtube-music
+    #pear-desktop
 
     ffmpeg-full
     v4l-utils
