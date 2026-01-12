@@ -12,16 +12,16 @@ end)
 lsp.preset('recommended')
 lsp.setup()
 
-require("lspconfig").nixd.setup({
-  cmd = { "nixd" },
-  settings = {
-    nixd = {
-      nixpkgs = {
-        expr = "import <nixpkgs> { }",
-      },
-      formatting = {
-        command = { "alejandra" }, -- or nixfmt or nixpkgs-fmt
-      },
+--require("lspconfig").nixd.setup({
+  --cmd = { "nixd" },
+  --settings = {
+    --nixd = {
+      --nixpkgs = {
+        --expr = "import <nixpkgs> { }",
+      --},
+      --formatting = {
+        --command = { "alejandra" }, -- or nixfmt or nixpkgs-fmt
+      --},
       -- options = {
       --   nixos = {
       --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
@@ -30,7 +30,7 @@ require("lspconfig").nixd.setup({
       --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").homeConfigurations.CONFIGNAME.options',
       --   },
       -- },
-    },
-  },
-})
+    --},
+  --},
+--})
 

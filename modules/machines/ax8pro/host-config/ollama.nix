@@ -22,12 +22,12 @@
 
   environment.systemPackages = with pkgs; [
     python313Packages.rapidocr-onnxruntime
-    oterm
+    #oterm
   ];
 
   services.open-webui = {
-    #enable = true;
-    enable = false;
+    enable = true;
+    #enable = false;
 
     environment = {
       ANONYMIZED_TELEMETRY = "False";

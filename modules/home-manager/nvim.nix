@@ -349,7 +349,8 @@ in {
                        lsp.preset('recommended')
                        lsp.setup()
 
-                       require("lspconfig").nixd.setup({
+                       --require("lspconfig").nixd.setup({
+                       vim.lsp.enable("lspconfig").nixd.setup({
                          cmd = { "nixd" },
                          settings = {
                            nixd = {
