@@ -22,7 +22,7 @@
 
   environment.systemPackages = with pkgs; [
     python313Packages.rapidocr-onnxruntime
-    #oterm
+    oterm
   ];
 
   services.open-webui = {
