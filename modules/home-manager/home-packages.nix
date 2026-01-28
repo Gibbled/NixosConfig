@@ -130,8 +130,6 @@
     kdePackages.dolphin
     kdePackages.dolphin-plugins
 
-    alacritty
-
     easyeffects
 
   ];

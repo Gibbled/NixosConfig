@@ -96,6 +96,12 @@
 
     # to get rid of a boot warning
     nssmdns
+
+    #Terminal Stuff
+    alacritty
+    browsh
+    xclip
+
   ];
 
   # Allow unfree packages
