@@ -46,9 +46,11 @@ in {
 	vimwiki
 	vimwiki-markdown
 	nvim-rg
+	packer-nvim
       ];
 
-      extraLuaConfig = ''
+      #extraLuaConfig = ''
+      initLua = ''
 
                       vim.g.mapleader = ","
                       vim.keymap.set("n", "<Leader>gg", ':Gen<CR>')

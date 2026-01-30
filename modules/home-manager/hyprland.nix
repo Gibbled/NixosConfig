@@ -218,23 +218,29 @@ in {
         sensitivity = "-0.5";
       };
 
-      #windowrule = [
-        #"float=true,class:^(alacritty)$,title:^(alacritty)$"
-        #"suppressevent maximize, class:.*"
-        #"nofocus=false,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-      #];
-
-
-      "$scratchpadsize" = "size 80% 85%";
-      "$scratchpad" = "class:^(scratchpad)$";
-
-      windowrulev2 = [
-      "float,$scratchpad"
-      "$scratchpadsize,$scratchpad"
-      "workspace special silent,$scratchpad"
-      "center,$scratchpad"
-
+      windowrule = [
+        "float on,match:class alacritty, border_size 10"
+        "suppress_event maximize, match:class .*"
+	"match:class firefox, opacity 0.9, border_size 1"
+        #"no_focus false,match: class^$,xwayland 1,floating 1,fullscreen 0,pinned 0"
       ];
+
+
+
+      #windowrule = [
+      #"match:class(alacritty), border_size 10"
+      #"float=true,class:^(alacritty)$,title:^(alacritty)$"
+      #"float on,class:^(alacritty)$,title:^(alacritty)$"
+      #"suppressevent maximize, class:.*"
+      #"nofocus=false,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      #"$scratchpadsize=size 80% 85%"
+      #"$scratchpad=class:^(scratchpad)$"
+      #"float,$scratchpad"
+      #"$scratchpadsize,$scratchpad"
+      #"workspace special silent,$scratchpad"
+      #"center,$scratchpad"
+
+      #];
 
       exec-once = [
         "nm-applet --indicator &"

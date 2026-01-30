@@ -15,8 +15,6 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     fzf # A command-line fuzzy finder
     # networking tools
-    mtr # A network diagnostic tool
-    iperf3
     dnsutils # `dig` + `nslookup`
     ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
@@ -66,7 +64,7 @@
     octaveFull
     nodejs
     #libreoffice
-    kdePackages.kdenlive
+    #kdePackages.kdenlive
     zotero
     yt-dlp
     gimp3-with-plugins
@@ -84,11 +82,11 @@
     signal-desktop-bin
     zapzap
 
-    vial
+    #vial
     via
-    #qmk
-    #qmk-udev-rules
-    #qmk_hid
+    qmk
+    qmk-udev-rules
+    qmk_hid
     keymapviz
 
     calibre
@@ -99,7 +97,7 @@
     vlc
     mpv
     #youtube-music
-    #pear-desktop
+    pear-desktop
 
     ffmpeg-full
     v4l-utils
@@ -131,6 +129,9 @@
     kdePackages.dolphin-plugins
 
     easyeffects
+
+    #Search wiki from command line
+    wikit
 
   ];
 
