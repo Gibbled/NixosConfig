@@ -219,10 +219,12 @@ in {
       };
 
       windowrule = [
-        "float on,match:class alacritty, border_size 10"
+        "float on,match:class alacritty, border_size 5"
         "suppress_event maximize, match:class .*"
-	"match:class firefox, opacity 0.9, border_size 1"
-        #"no_focus false,match: class^$,xwayland 1,floating 1,fullscreen 0,pinned 0"
+	"match:class firefox, opacity 0.9, border_size 5"
+        "no_focus off,match:class ^$, float on, fullscreen off, pin off"
+	"match:class mpv, no_dim on, no_shadow on"
+	"match:modal true, stay_focused on, float on"
       ];
 
 

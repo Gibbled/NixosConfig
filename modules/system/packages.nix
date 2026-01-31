@@ -102,6 +102,9 @@
     browsh
     xclip
 
+    #for rust, alejandra needs it
+    rustup
+
   ];
 
   # Allow unfree packages
