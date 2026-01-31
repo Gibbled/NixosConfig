@@ -16,6 +16,9 @@
       "gemma3:4b"
       "deepseek-r1:latest"
       "deepseek-r1:1.5b"
+      "mistral:latest"
+      "mistral:7b"
+      "qwen3"
     ];
     syncModels = true;
   };

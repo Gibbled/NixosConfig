@@ -46,18 +46,27 @@ in {
         vimwiki
         vimwiki-markdown
         nvim-rg
-        packer-nvim
+        #packer-nvim
       ];
 
-      #extraLuaConfig = ''
+      extraPackages = [
+        alejandra
+        rustup
+      ];
+
       initLua = ''
 
-                              vim.g.mapleader = ","
-                              vim.keymap.set("n", "<Leader>gg", ':Gen<CR>')
-                              vim.keymap.set("n", "<Leader>vv", ':NvimTreeToggle<CR>')
-                              vim.keymap.set("v", "<Leader>gg", ':Gen<CR>')
-                              vim.keymap.set("n", "<Leader>,", ':lua ColourMyPencils()<CR>')
-                              vim.cmd('noremap <Leader>w :w<CR>')
+                       vim.g.mapleader = ","
+                              --vim.keymap.set("n", "<Leader>gg", ':Gen<CR>')
+                       vim.keymap.set("n", "<Leader>vv", ':NvimTreeToggle<CR>')
+                              --vim.keymap.set("v", "<Leader>gg", ':Gen<CR>')
+                       vim.keymap.set("n", "<Leader>,", ':lua ColourMyPencils()<CR>')
+                       vim.cmd('noremap <Leader>w :w<CR>')
+
+		       --Ollama-nvim
+		       vim.keymap.set("v", "<Leader>gg", ":<c-u>lua require('ollama').prompt()<cr>")
+		       vim.keymap.set("n", "<Leader>gg", ":<c-u>lua require('ollama').prompt('model gemma3')<cr>")
+
         	       --VimWiki
                        vim.keymap.set("v", "<Leader>dd", ':VimWiki<CR>')
 
@@ -68,7 +77,7 @@ in {
                        --Twilight
                        vim.keymap.set("n", "<Leader>z,", ':Twilight<CR>')
 
-                              --Undotree
+                       --Undotree
                        vim.keymap.set("n", "<Leader>aa", ':UndotreeToggle<CR>')
 
                        --Fugitive Git
@@ -107,7 +116,7 @@ in {
                        require('lualine').setup()
 
         	       --Ollama
-        	       require('gen').command = '/run/current-system/sw/bin/ollama run gemma3 $prompt'
+        	       require('ollama').command = "/run/current-system/sw/bin/ollama run gemma3 $prompt"
 
 
                        --Alpha
@@ -353,7 +362,7 @@ in {
                                lsp.setup()
 
         		        --vim.lsp.enable("nixd")
-        		        vim.lsp.enable("lspconfig")
+        		        --vim.lsp.enable("lspconfig")
                                 --vim.lsp.enable('basedpyright')
                                 --vim.lsp.enable('nixfmt')
                                 --vim.lsp.enable('qmlls')
