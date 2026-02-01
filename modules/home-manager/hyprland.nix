@@ -10,7 +10,13 @@
     "nix-colors.homeManagerModules.default"
   ];
 in {
+
+  home.packages = with pkgs; [
+    hyprsunset
+    ];
+
   wayland.windowManager.hyprland = {
+
     enable = true;
 
     settings = {
@@ -33,7 +39,7 @@ in {
       "$wallpaper" = "change-wallpaper";
       "$passwordManager" = "keepassxc";
       "$zapzap" = "zapzap";
-      "$signal" = "signal-desktop";
+      "$signal" = "signal";
       "$gucharmap" = "gucharmap";
 
       "$mainMod" = "CTRL_ALT";
@@ -45,7 +51,7 @@ in {
         "$mainMod, T, exec, $terminal"
         "$mainMod, E, exec, $blender"
         "$mainMod, W, exec, $virt-manager"
-        "$mainMod, M, exit,"
+        "$mainMod, M, exec, hyprshutdown"
         "$mainMod, D, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, RETURN, exec, $menu"
@@ -85,7 +91,7 @@ in {
         "$nxtMod, K, exec, pypr toggle password-manager"
         "$nxtMod, Z, exec, pypr toggle $zapzap"
         "$nxtMod, S, exec, pypr toggle signal"
-        "$nxtMod, N, exec, pypr togglespecialworkspace, minimized"
+        "$nxtMod, N, exec, pypr toggle specialworkspace, minimized"
         "$nxtMod, C, exec, pypr toggle gucharmap"
         "$nxtMod, Y, exec, pypr toggle youtube-music"
         "$nxtMod, V, exec, pypr toggle pavucontrol"
@@ -224,7 +230,9 @@ in {
 	"match:class firefox, opacity 1.0, border_size 5"
         "no_focus off,match:class ^$, float on, fullscreen off, pin off"
 	"match:class mpv, no_dim on, no_shadow on, opacity 1.0"
-	"match:modal true, stay_focused on, float on"
+	"match:modal true, stay_focused on, float on, move 0 0"
+	"match:class signal, float on, center on, size monitor_w*.75 monitor_h*.6"
+	"match:class easyeffects, float on, center on, size monitor_w*.75 monitor_h*.6"
       ];
 
 

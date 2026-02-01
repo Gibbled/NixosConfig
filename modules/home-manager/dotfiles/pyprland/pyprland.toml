@@ -33,7 +33,7 @@ max_size = "1920px 100%"
 
 [scratchpads.signal]
 animation = "fromTop"
-command = "[signal-desktop] signal-desktop "
+command = "/etc/profiles/per-user/ranjit/bin/signal-desktop"
 class = "signal"
 size = "75% 60%"
 max_size = "1920px 100%"
