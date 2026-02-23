@@ -13,7 +13,7 @@
     configure = {
       customRC = '''';
       packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ctrlp];
+        start = [ctrlp-vim];
       };
     };
   };

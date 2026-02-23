@@ -55,8 +55,8 @@
     rustup
     #kicad
     darktable
-    freecad
-    openscad
+    #freecad
+    #openscad
 
     filezilla
 
@@ -89,7 +89,7 @@
     qmk_hid
     keymapviz
 
-    calibre
+    #calibre
 
     #For Arduino
     #arduino
@@ -132,6 +132,9 @@
 
     #Search wiki from command line
     wikit
+
+    #Matrix Screensaver for terminal
+    unimatrix
 
   ];
 

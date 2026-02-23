@@ -41,6 +41,9 @@ in {
         "browser.newtabpage.activity-stream.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+	#To get rid of annoying DRM message banner
+	"browser.eme.ui" = lock-false
+	"media.eme.enabled" = lock-false
       };
     };
   };

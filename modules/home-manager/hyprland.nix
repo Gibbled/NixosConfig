@@ -232,7 +232,7 @@ in {
 	"match:class mpv, no_dim on, no_shadow on, opacity 1.0"
 	"match:modal true, stay_focused on, float on, move 0 0"
 	"match:class signal, float on, center on, size monitor_w*.75 monitor_h*.6"
-	"match:class easyeffects, float on, center on, size monitor_w*.75 monitor_h*.6"
+	"match:class com.github.wwmm.easyeffects, float on, center on, size monitor_w*.75 monitor_h*.6"
       ];
 
 
