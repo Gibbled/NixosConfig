@@ -137,12 +137,19 @@ in {
         "browser.search.region" = "EU";
         "doh-rollout.doneFirstRun" = lock-false;
         "doh-rollout.home-region" = "EU";
+	"browser.ai.control.default" = "blocked";
+	"browser.ai.control.linkPreviewKeyPoints" = "blocked";
+	"browser.ai.control.pdfjsAltText" = "blocked";
+	"browser.ai.control.sidebarChatbot" = "blocked";
+	"browser.ai.control.smartTabGroups" = "blocked";
+	"browser.ai.control.translations" = "blocked";
       };
 
       ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
+	  private_browsing = true;
         };
         "sponsorBlocker@ajay.app" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
@@ -151,10 +158,12 @@ in {
         "jid1-MnnxcxisBPnSXQ@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
           installation_mode = "force_installed";
+	  private_browsing = true;
         };
         "idcac-pub@guus.ninja" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
           installation_mode = "force_installed";
+	  private_browsing = true;
         };
         "enhancerforyoutube@maximerf.addons.mozilla.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/latest.xpi";
@@ -163,6 +172,7 @@ in {
         "jid1-BoFifL9Vbdl2zQ@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi";
           installation_mode = "force_installed";
+	  private_browsing = true;
         };
         "keepassxc-browser@keepassxc.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/keepassxc-browser/latest.xpi";
@@ -175,6 +185,7 @@ in {
         "remove-login-with-google@RcCookie" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/remove-login-with-google/latest.xpi";
           installation_mode = "force_installed";
+	  private_browsing = true;
         };
         "plasma-browser-integration@kde.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-broweser-integration/latest.xpi";
@@ -188,6 +199,7 @@ in {
         "gdpr@cavi.au.dk" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/Consent-O-Matic/latest.xpi";
           installation_mode = "force_installed";
+	  private_browsing = true;
         };
         "zotero@chnm.gmu.edu" = {
           install_url = "https://www.zotero.org/download/connector/dl?browser=firefox&version=5.0.176";
