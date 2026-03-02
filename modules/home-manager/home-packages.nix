@@ -55,8 +55,8 @@
     rustup
     #kicad
     darktable
-    #freecad
-    #openscad
+    freecad
+    openscad
 
     filezilla
 

@@ -18,6 +18,7 @@ in {
   wayland.windowManager.hyprland = {
 
     enable = true;
+    systemd.enable = true;
 
     settings = {
       ecosystem.no_update_news = true;
@@ -28,6 +29,15 @@ in {
         ##stinkpad
         "desc:Chimei Innolux Corporation 0x1471,1366x768@60,0x0,1"
       ];
+
+    plugins = [
+      #Most of these have been broken for months, now, 20260301, they are all broken
+      #pkgs.hyprlandPlugins.hyprsplit
+      #pkgs.hyprlandPlugins.xtra-dispatchers
+      #pkgs.hyprlandPlugins.hyprspace
+      #pkgs.hyprlandPlugins.hyprexpo
+      #pkgs.hyprlandPlugins.hypr-dynamic-cursors
+    ];
 
       "$terminal" = "alacritty";
       "$fileManager" = "dolphin";
