@@ -14,6 +14,7 @@
       "dolphin3"
       "gemma3"
       "gemma3:4b"
+      "gemma4:4b"
       "deepseek-r1:latest"
       "deepseek-r1:1.5b"
       "mistral:latest"
@@ -29,8 +30,8 @@
   ];
 
   services.open-webui = {
-    enable = true;
-    #enable = false;
+    #enable = true;
+    enable = false;
 
     environment = {
       ANONYMIZED_TELEMETRY = "False";

@@ -242,6 +242,7 @@ in {
 	"match:class mpv, no_dim on, no_shadow on, opacity 1.0"
 	"match:modal true, stay_focused on, float on, move 0 0"
 	"match:class signal, float on, center on, size monitor_w*.75 monitor_h*.6"
+	"match:class com.rtosta.zapzap, float on, center on, size monitor_w*.75 monitor_h*.6"
 	"match:class com.github.wwmm.easyeffects, float on, center on, size monitor_w*.75 monitor_h*.6"
       ];
 
@@ -268,7 +269,7 @@ in {
         #"keepassxc"
         "systemctl --user start hyprpolkitagent"
 	"pypr"
-        "${pkgs.swww}/bin/swww-daemon"
+        "${pkgs.awww}/bin/awww-daemon"
         "exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE \"$HYPRLAND_INSTANCE_SIGNATURE\""
       ];
 

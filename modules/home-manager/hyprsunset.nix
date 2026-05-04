@@ -29,7 +29,7 @@
     }
     {
       time = "18:00";
-      temperature = 4000;
+      temperature = 5000;
       gamma = 0.8;
     }
 

@@ -5,6 +5,10 @@
 }: {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-38.8.4"
+  ];
+
   environment.systemPackages = with pkgs; [
     lact
     neovim
@@ -80,7 +84,7 @@
     waybar
     dunst
     libnotify
-    swww
+    awww
     #rofi-wayland
     hyprlock
     pulseaudio
@@ -91,7 +95,7 @@
 
     # Postgresql for linkwarden
     #postgresql
-    prisma
+    #prisma
     monolith
 
     # to get rid of a boot warning
@@ -104,7 +108,6 @@
 
     #for rust, alejandra needs it
     rustup
-
   ];
 
   # Allow unfree packages

@@ -21,6 +21,7 @@ in {
     enable = true;
     profiles.New-Main.extensions.force = true;
     #enableGnomeExtensions = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     policies = {
       DisableTelemetry = lib.mkForce true;
@@ -143,6 +144,8 @@ in {
 	"browser.ai.control.sidebarChatbot" = "blocked";
 	"browser.ai.control.smartTabGroups" = "blocked";
 	"browser.ai.control.translations" = "blocked";
+	"browser.eme.ui.enabled" = "false";
+	"media.eme.enabled" = "false";
       };
 
       ExtensionSettings = {

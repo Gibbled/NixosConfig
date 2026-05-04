@@ -63,8 +63,8 @@
     obs-studio
     octaveFull
     nodejs
-    #libreoffice
-    #kdePackages.kdenlive
+    libreoffice
+    kdePackages.kdenlive
     zotero
     yt-dlp
     gimp3-with-plugins
@@ -79,7 +79,7 @@
 
     tor-browser
     chromium
-    signal-desktop-bin
+    signal-desktop
     zapzap
 
     #vial
@@ -89,7 +89,7 @@
     qmk_hid
     keymapviz
 
-    #calibre
+    calibre
 
     #For Arduino
     #arduino
@@ -114,7 +114,7 @@
     waybar
     waypaper
     hyprpaper
-    swww
+    awww
     pyprland
 
     nwg-look
