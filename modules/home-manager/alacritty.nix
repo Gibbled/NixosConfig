@@ -10,7 +10,7 @@
     #theme = "tokyo_night_enhanced";
     settings = {
       font = {
-        normal.family = "Hack";
+        normal.family = "DejaVuSansM Nerd Font";
         size = 18;
 	};
       window.opacity = lib.mkForce 0.8;

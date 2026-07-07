@@ -55,8 +55,8 @@
     rustup
     #kicad
     darktable
-    freecad
-    openscad
+    #freecad
+    #openscad
 
     filezilla
 
@@ -74,6 +74,9 @@
     ardour
     qjackctl
     pavucontrol
+    qmmp
+    tuner
+    rhythmbox
 
     orca-slicer
 
@@ -97,7 +100,7 @@
     vlc
     mpv
     #youtube-music
-    pear-desktop
+    #pear-desktop
 
     ffmpeg-full
     v4l-utils
@@ -135,6 +138,9 @@
 
     #Matrix Screensaver for terminal
     unimatrix
+
+    #Bit torrents
+    transmission_4-gtk
 
   ];
 

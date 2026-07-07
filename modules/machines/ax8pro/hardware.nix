@@ -11,8 +11,8 @@
     loader.efi.canTouchEfiVariables = true;
 
     plymouth = {
-      enable = false;
-      theme = "cyanide";
+      enable = true;
+      theme = "rings";
       themePackages = with pkgs; [
         # By default we would install all themes
         (adi1090x-plymouth-themes.override {

@@ -7,9 +7,11 @@
     enable = true;
     package = pkgs.ollama-rocm;
     environmentVariables = {
-      HCC_AMDGPU_TARGET = "gfx1102";
+      #HCC_AMDGPU_TARGET = "gfx1102";
+      HCC_AMDGPU_TARGET = "gfx1103";
     };
-    rocmOverrideGfx = "11.0.2";
+    #rocmOverrideGfx = "11.0.2";
+    rocmOverrideGfx = "11.0.3";
     loadModels = [
       "dolphin3"
       "gemma3"
@@ -30,8 +32,7 @@
   ];
 
   services.open-webui = {
-    #enable = true;
-    enable = false;
+    enable = true;
 
     environment = {
       ANONYMIZED_TELEMETRY = "False";

@@ -79,8 +79,9 @@
     nerd-fonts.zed-mono
     open-sans
     noto-fonts-color-emoji
-    font-awesome
+    font-awesome_4
     gubbi-font
+    hack-font
     lohit-fonts.kannada
   ];
 }

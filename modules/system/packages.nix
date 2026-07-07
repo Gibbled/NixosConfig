@@ -6,7 +6,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-38.8.4"
+    #"electron-38.8.4"
   ];
 
   environment.systemPackages = with pkgs; [
@@ -102,7 +102,7 @@
     nssmdns
 
     #Terminal Stuff
-    alacritty
+    alacritty-graphics
     browsh
     xclip
 

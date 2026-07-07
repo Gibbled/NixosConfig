@@ -19,6 +19,7 @@ in {
 
     enable = true;
     systemd.enable = true;
+    configType = "hyprlang";
 
     settings = {
       ecosystem.no_update_news = true;
@@ -51,6 +52,7 @@ in {
       "$zapzap" = "zapzap";
       "$signal" = "signal";
       "$gucharmap" = "gucharmap";
+      "$torrent" = "transmission-gtk";
 
       "$mainMod" = "CTRL_ALT";
       "$nxtMod" = "SHIFT_ALT";
@@ -67,7 +69,7 @@ in {
         "$mainMod, RETURN, exec, $menu"
         "$mainMod, O, exec, $wallpaper"
         "$mainMod, P, pseudo, "
-        "$mainMod, J, togglesplit, "
+        #"$mainMod, J, togglesplit, "
         "$mainMod, H, movefocus, l"
         "$mainMod, J, movefocus, u"
         "$mainMod, K, movefocus, d"
@@ -107,6 +109,7 @@ in {
         "$nxtMod, V, exec, pypr toggle pavucontrol"
         "$nxtMod, D, exec, pypr toggle dolphin"
         "$nxtMod, E, exec, pypr toggle easyeffects"
+        "$nxtMod, Q, exec, pypr toggle $torrent"
 	##Window Management
 	"$fullMod, R, exec, hyprctl dispatch plugin:xtd:moveorexec \"firefox,firefox\""
 	"$fullMod, C, exec, hyprctl dispatch plugin:xtd:closeunfocused" 
@@ -198,7 +201,7 @@ in {
       };
 
       dwindle = {
-        pseudotile = true;
+        #pseudotile = true;
         preserve_split = true;
       };
 
@@ -220,20 +223,6 @@ in {
         follow_mouse = "1";
         sensitivity = "0 # -1.0 - 1.0, 0 means no modification.";
 
-        touchpad = {
-          natural_scroll = "false";
-        };
-      };
-
-      #gestures = {
-        #workspace_swipe = "false";
-      #};
-
-      device = {
-        name = "epic-mouse-v1";
-        sensitivity = "-0.5";
-      };
-
       windowrule = [
         "match:class alacritty, float on, border_size 5, opacity 0.9"
         "suppress_event maximize, match:class .*"
@@ -242,26 +231,10 @@ in {
 	"match:class mpv, no_dim on, no_shadow on, opacity 1.0"
 	"match:modal true, stay_focused on, float on, move 0 0"
 	"match:class signal, float on, center on, size monitor_w*.75 monitor_h*.6"
+	"match:class com.transmissionbt.*, float on, center on, size monitor_w*.75 monitor_h*.6"
 	"match:class com.rtosta.zapzap, float on, center on, size monitor_w*.75 monitor_h*.6"
 	"match:class com.github.wwmm.easyeffects, float on, center on, size monitor_w*.75 monitor_h*.6"
       ];
-
-
-
-      #windowrule = [
-      #"match:class(alacritty), border_size 10"
-      #"float=true,class:^(alacritty)$,title:^(alacritty)$"
-      #"float on,class:^(alacritty)$,title:^(alacritty)$"
-      #"suppressevent maximize, class:.*"
-      #"nofocus=false,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-      #"$scratchpadsize=size 80% 85%"
-      #"$scratchpad=class:^(scratchpad)$"
-      #"float,$scratchpad"
-      #"$scratchpadsize,$scratchpad"
-      #"workspace special silent,$scratchpad"
-      #"center,$scratchpad"
-
-      #];
 
       exec-once = [
         "nm-applet --indicator &"
@@ -270,7 +243,8 @@ in {
         "systemctl --user start hyprpolkitagent"
 	"pypr"
         "${pkgs.awww}/bin/awww-daemon"
-        "exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE \"$HYPRLAND_INSTANCE_SIGNATURE\""
+        "tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE \"$HYPRLAND_INSTANCE_SIGNATURE\""
+	#"hyprctl keyword monitor eDP-1, vrr:2"
       ];
 
       env = [
@@ -279,4 +253,5 @@ in {
       ];
     };
   };
+};
 }
