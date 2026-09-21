@@ -25,10 +25,10 @@ in {
       ecosystem.no_update_news = true;
       monitor = [
         ##ax8
-        "desc:Nreal Air 0x66666600,1920x1080@120,0x2160,1"
-        "desc:Samsung Electric Company U28E570 HTPK700431,3840x2160@30,0x0,2"
+        #"desc:Nreal Air 0x66666600,1920x1080@120,0x2160,1"
+        #"desc:Samsung Electric Company U28E570 HTPK700431,3840x2160@30,0x0,2"
         ##stinkpad
-        "desc:Chimei Innolux Corporation 0x1471,1366x768@60,0x0,1"
+        #"desc:Chimei Innolux Corporation 0x1471,1366x768@60,0x0,1"
       ];
 
     plugins = [
@@ -53,6 +53,8 @@ in {
       "$signal" = "signal";
       "$gucharmap" = "gucharmap";
       "$torrent" = "transmission-gtk";
+      "$weather" = "mousam";
+      "$radio" = "com.github.louis77.tuner";
 
       "$mainMod" = "CTRL_ALT";
       "$nxtMod" = "SHIFT_ALT";
@@ -110,6 +112,8 @@ in {
         "$nxtMod, D, exec, pypr toggle dolphin"
         "$nxtMod, E, exec, pypr toggle easyeffects"
         "$nxtMod, Q, exec, pypr toggle $torrent"
+        "$nxtMod, M, exec, pypr toggle $weather"
+        "$nxtMod, R, exec, pypr toggle $radio"
 	##Window Management
 	"$fullMod, R, exec, hyprctl dispatch plugin:xtd:moveorexec \"firefox,firefox\""
 	"$fullMod, C, exec, hyprctl dispatch plugin:xtd:closeunfocused" 
@@ -225,6 +229,7 @@ in {
 
       windowrule = [
         "match:class alacritty, float on, border_size 5, opacity 0.9"
+        "match:class io.github.amit9838.mousam, float on, border_size 5, opacity 0.9"
         "suppress_event maximize, match:class .*"
 	"match:class firefox, opacity 1.0, border_size 5"
         "no_focus off,match:class ^$, float on, fullscreen off, pin off"

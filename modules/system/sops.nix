@@ -13,10 +13,12 @@
       private_keys = {
         owner = config.users.users.ranjit.name;
         path = "/home/ranjit/.ssh/id_ed25519-20250202";
+	mode = "0700";
       };
       public_keys = {
         owner = config.users.users.ranjit.name;
         path = "/home/ranjit/.ssh/id_ed25519-20250202.pub";
+	mode = "0700";
       };
       ranjit-password = {
         neededForUsers = true;
@@ -30,43 +32,52 @@
       publicKey_id_noringu_ecdsa = {
         path = "/home/ranjit/.ssh/id_noringu_ecdsa.pub";
         owner = config.users.users.ranjit.name;
+	mode = "0700";
       };
       publicKey_id_ringu_ecdsa = {
         path = "/home/ranjit/.ssh/id_ringu_ecdsa.pub";
         owner = config.users.users.ranjit.name;
+	mode = "0700";
       };
       publicKey_xybr_id_ed25519-20250202 = {
         path = "/home/ranjit/.ssh/xybr_id_ed25519-20250202.pub";
         owner = config.users.users.ranjit.name;
+	mode = "0700";
       };
       publicKey_xybr_id_rsa = {
         path = "/home/ranjit/.ssh/xybr_id_rsa.pub";
         owner = config.users.users.ranjit.name;
+	mode = "0700";
       };
 
       privateKey_id_noringu_ecdsa = {
         path = "/home/ranjit/.ssh/id_noringu_ecdsa";
         owner = config.users.users.ranjit.name;
+	mode = "0700";
       };
 
       privateKey_id_ringu_ecdsa = {
         path = "/home/ranjit/.ssh/id_ringu_ecdsa";
         owner = config.users.users.ranjit.name;
+	mode = "0700";
       };
 
       privateKey_xybr_id_ed25519-20250202 = {
         path = "/home/ranjit/.ssh/xybr_id_ed25519-20250202";
         owner = config.users.users.ranjit.name;
+	mode = "0700";
       };
 
       privateKey_xybr_id_rsa = {
         path = "/home/ranjit/.ssh/xybr_id_rsa";
         owner = config.users.users.ranjit.name;
+	mode = "0700";
       };
 
       linkwarden-secret = {
         path = "/run/secrets/linkwarden-secret";
         owner = config.users.users.linkwarden.name;
+	mode = "0700";
       };
 
       Samsung2 = {

@@ -142,6 +142,8 @@
     #Bit torrents
     transmission_4-gtk
 
+    #Weather app
+    mousam
   ];
 
   starship-program.enable = true;
@@ -152,4 +154,5 @@
   neovim-program.enable = true;
   keepassxc-program.enable = true;
   dunst-service.enable = true;
+  claude-code-program.enable = true;
 }

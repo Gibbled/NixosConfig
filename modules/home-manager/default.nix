@@ -28,5 +28,6 @@
     ./btop.nix
     ./dunst.nix
     ./hyprsunset.nix
+    ./claude-code.nix
   ];
 }

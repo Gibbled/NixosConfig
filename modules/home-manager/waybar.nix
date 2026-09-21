@@ -9,7 +9,6 @@
     enable = true;
     systemd = {
       enable = true;
-      #target = "hyprland-session.target";
       targets = [ "hyprland-session.target" ];
     };
     style = ''
@@ -124,16 +123,13 @@
           "hyprland/window"
         ];
         modules-right = [
-          "mpd"
-          "idle_inhibitor"
+          "clock"
+          "tray"
           "pulseaudio"
           "network"
-          "power-profiles-daemon"
           "cpu"
           "memory"
           "temperature"
-          "clock"
-          "tray"
         ];
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -228,7 +224,7 @@
             phone = "";
             portable = "";
             car = "";
-            default = ''["" "" ""]'';
+            #default = ''["" "" ""]'';
           };
           on-click = "pavucontrol";
         };

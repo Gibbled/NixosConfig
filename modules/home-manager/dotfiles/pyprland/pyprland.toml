@@ -9,11 +9,25 @@ plugins = [
 [pyprland.variables]
 term_classed = "alacritty --class"
 passwordManager_classed = "keepassxc --class"
+#mousam_classed = "mousam --class"
 
 [scratchpads.term]
 animation = "fromTop"
 command = "[term_classed] main-dropterm"
 class = "main-dropterm"
+size = "75% 60%"
+max_size = "1920px 100%"
+
+
+[scratchpads.mousam]
+animation = "fromTop"
+command = "/etc/profiles/per-user/ranjit/bin/mousam"
+size = "75% 60%"
+max_size = "1920px 100%"
+
+[scratchpads.radio]
+animation = "fromTop"
+command = "com.github.louis77.tuner"
 size = "75% 60%"
 max_size = "1920px 100%"
 

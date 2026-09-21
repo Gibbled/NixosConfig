@@ -4,7 +4,7 @@
   ...
 }: {
   services.hyprsunset = {
-    enable = true;
+    #enable = true;
     package = pkgs.hyprsunset;
 #    transitions = {
       #sunrise = {

@@ -13,6 +13,7 @@
     #rocmOverrideGfx = "11.0.2";
     rocmOverrideGfx = "11.0.3";
     loadModels = [
+      "qwen3-coder:30b"
       "dolphin3"
       "gemma3"
       "gemma3:4b"
@@ -29,6 +30,10 @@
   environment.systemPackages = with pkgs; [
     python313Packages.rapidocr-onnxruntime
     oterm
+    claude-code
+    kdePackages.alpaka
+    claude-mergetool
+    claude-code-router
   ];
 
   services.open-webui = {
