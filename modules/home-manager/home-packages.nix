@@ -144,6 +144,9 @@
 
     #Weather app
     mousam
+
+    #backgammon
+    gnubg
   ];
 
   starship-program.enable = true;

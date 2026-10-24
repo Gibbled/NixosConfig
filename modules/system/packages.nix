@@ -108,6 +108,9 @@
 
     #for rust, alejandra needs it
     rustup
+
+    #openjdk for ib
+    openjdk
   ];
 
   # Allow unfree packages
