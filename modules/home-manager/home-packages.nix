@@ -65,7 +65,7 @@
     nodejs
     libreoffice
     kdePackages.kdenlive
-    zotero
+    #zotero
     yt-dlp
     gimp3-with-plugins
     inkscape

@@ -29,11 +29,11 @@
     };
     avahi = {
       enable = true;
-      publish.enable = true;
-      publish.domain = true;
+      settings.publish.publish-domain = true;
       openFirewall = true;
-      ipv4 = true;
-      hostName = config.networking.hostName;
+      settings.server.use-ipv4 = true;
+      settings.publish."disable-publishing" = false;
+      settings.server.host-name = config.networking.hostName;
     };
     tzupdate = {
       enable = true;
@@ -82,7 +82,7 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
     #xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
+    #xdg-desktop-portal-hyprland
     kdePackages.xdg-desktop-portal-kde
   ];
 

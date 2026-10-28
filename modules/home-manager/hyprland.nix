@@ -50,11 +50,11 @@ in {
       "$wallpaper" = "change-wallpaper";
       "$passwordManager" = "keepassxc";
       "$zapzap" = "zapzap";
-      "$signal" = "signal";
+      "$signal" = "Signal";
       "$gucharmap" = "gucharmap";
-      "$torrent" = "transmission-gtk";
+      "$torrent" = "transmission-gtk";#
       "$weather" = "mousam";
-      "$radio" = "com.github.louis77.tuner";
+      "$radio" = "com.github.louis77.tuner";#
 
       "$mainMod" = "CTRL_ALT";
       "$nxtMod" = "SHIFT_ALT";
@@ -104,7 +104,7 @@ in {
         "$nxtMod, T, exec, pypr toggle term"
         "$nxtMod, K, exec, pypr toggle password-manager"
         "$nxtMod, Z, exec, pypr toggle $zapzap"
-        "$nxtMod, S, exec, pypr toggle signal"
+        "$nxtMod, S, exec, pypr toggle $signal"
         "$nxtMod, N, exec, pypr toggle specialworkspace, minimized"
         "$nxtMod, C, exec, pypr toggle gucharmap"
         "$nxtMod, Y, exec, pypr toggle youtube-music"

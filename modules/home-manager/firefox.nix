@@ -204,10 +204,10 @@ in {
           installation_mode = "force_installed";
 	  private_browsing = true;
         };
-        "zotero@chnm.gmu.edu" = {
-          install_url = "https://www.zotero.org/download/connector/dl?browser=firefox&version=5.0.176";
-          installation_mode = "force_installed";
-        };
+        #"zotero@chnm.gmu.edu" = {
+          #install_url = "https://www.zotero.org/download/connector/dl?browser=firefox&version=5.0.176";
+          #installation_mode = "force_installed";
+        #};
         "jordanlinkwarden@gmail.com" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/Linkwarden/latest.xpi";
           installation_mode = "force_installed";

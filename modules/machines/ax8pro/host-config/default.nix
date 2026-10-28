@@ -5,11 +5,11 @@
   ...
 }: {
   imports = [
-    ./ollama.nix
+    #./ollama.nix
     ./ddclient.nix
     ./smartd.nix
     ./packages.nix
-    ./wireguard.nix
+    #./wireguard.nix
     ./sops.nix
     ./locale.nix
   ];

@@ -37,7 +37,6 @@
     tree-sitter
     jq
     pandoc
-    zotero
     pass
     nodejs
     qemu

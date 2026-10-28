@@ -11,9 +11,9 @@
   config = lib.mkIf config.rofi-program.enable {
     programs.rofi = {
       enable = true;
-      font = "Nerd Fonts Hack 18";
+      #font = "Nerd Fonts Hack 18";
       package = pkgs.rofi;
-      location = "center";
+      #location = "center";
       plugins = [
         pkgs.rofi-emoji
         pkgs.rofi-systemd
@@ -21,19 +21,19 @@
         pkgs.rofi-network-manager
         pkgs.pinentry-rofi
       ];
-      modes = [
-        "window"
-        "drun"
-        "run"
-        "ssh"
-        "combi"
-        "keys"
-        "filebrowser"
-        "recursivebrowser"
-        "emoji"
-      ];
+      #settings.modes = [
+        #"window"
+        #"drun"
+        #"run"
+        #"ssh"
+        #"combi"
+        #"keys"
+        #"filebrowser"
+        #"recursivebrowser"
+        #"emoji"
+      #];
 
-      extraConfig = {
+      settings = {
         display-drun = "Applications:";
         drun-display-format = "{icon} {name}";
         font = "Nerd Fonts Hack 18";
@@ -41,6 +41,17 @@
         show-icons = true;
         xoffset = 0;
         yoffset = 0;
+	modes = [
+          "window"
+          "drun"
+          "run"
+          "ssh"
+          "combi"
+          "keys"
+          "filebrowser"
+          "recursivebrowser"
+          "emoji"
+          ];
       };
 
       theme = let
