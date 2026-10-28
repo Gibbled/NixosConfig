@@ -78,6 +78,9 @@
     ntopng
     redis
     eza
+    
+    #Graphics
+    imagemagick
 
     #Hyprland
     waybar
